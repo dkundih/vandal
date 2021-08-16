@@ -1,0 +1,8 @@
+CHANGELOG
+.
+
+0.0.1 (16/08/2021)
+- initial release.
+
+0.0.2. (16/08/2021)
+- reupload for functionality.
