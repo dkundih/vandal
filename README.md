@@ -17,7 +17,7 @@ alunari is completely free of charge for both personal and commercial use, but o
 # See more about alunari
 
 > **Documentation**
-https://www.notion.so/alunari/alunari-for-Python-abb9c9672e9649af951420a16b5b988f
+https://alunari.notion.site/alunari-for-Python-abb9c9672e9649af951420a16b5b988f
 
 > **alunari GitHub repository**
 https://github.com/alunari/alunari
