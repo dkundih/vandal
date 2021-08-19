@@ -1,9 +1,7 @@
 # alunari
 Data science and Machine learning module developed by David Kundih.
 Use permitted according to the terms of use and conditions set by the attached license.
-<img src="../main/.logistics/promo2.png" width="500" height="500"><img src="../main/.logistics/promo2.png" width="500" height="500">
-
-
+<img src="../main/.logistics/promo1.png" width="500" height="500"> <img src="../main/.logistics/promo2.png" width="500" height="500">
 
 # What is alunari?
 
