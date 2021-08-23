@@ -9,7 +9,7 @@ def license():
         print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://dkundih.wordpress.com/')
 
 def documentation():
-        print('https://dkundih.wordpress.com/')
+        print('https://davidkundih.iz.hr')
 
 class montecarlo:
     
@@ -37,7 +37,7 @@ class montecarlo:
         print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at dkundih.wordpress.com')
 
     def documentation():
-        print('https://dkundih.wordpress.com/')
+        print('https://davidkundih.iz.hr')
     
     def execute(self, ref_value_index = 0):
             import numpy as np
