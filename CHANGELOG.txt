@@ -1,0 +1,20 @@
+CHANGELOG
+.
+
+0.0.1 (16/08/2021)
+- initial release.
+
+0.0.2 (16/08/2021)
+- reupload for functionality.
+
+0.0.3 (16/08/2021)
+- README update
+- LICENSE update
+- stability downgrade to 4 - Beta in order to provide more testing and feedback.
+
+0.0.4 (17/08/2021)
+- minor README update
+- functionality confirmed in testing environment (Visual Studio Code, PyCharm, JupyterLab, Google Colab)
+
+0.0.5 (23/08/2021)
+-minor README update with Documentation link changed 
