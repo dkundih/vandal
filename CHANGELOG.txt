@@ -1,5 +1,5 @@
 CHANGELOG
-.
+==========
 
 0.0.1 (16/08/2021)
 - initial release.
@@ -8,13 +8,30 @@ CHANGELOG
 - reupload for functionality.
 
 0.0.3 (16/08/2021)
-- README update
-- LICENSE update
+- README update.
+- LICENSE update.
 - stability downgrade to 4 - Beta in order to provide more testing and feedback.
 
 0.0.4 (17/08/2021)
-- minor README update
-- functionality confirmed in testing environment (Visual Studio Code, PyCharm, JupyterLab, Google Colab)
+- minor README update.
+- functionality confirmed in testing environment (Visual Studio Code, PyCharm, JupyterLab, Google Colab).
 
 0.0.5 (23/08/2021)
--minor README update with Documentation link changed 
+-minor README update with Documentation link changed.
+
+1.0.0 (28/08/2021)
+- first stable release.
+- major functionality changes.
+- reworked 2 functions (.stats is now .get_stats, .risk is now .get_risk).
+- added 1 new function (.get_change).
+- .documentation updated.
+- .montecarlo.functions updated.
+- developement status is now 5 - Production/Stable.
+
+1.0.1 (28/08/2021)
+- small repository update.
+
+1.0.2 (28/08/2021)
+- license website change.
+- updated information in the functions.
+
