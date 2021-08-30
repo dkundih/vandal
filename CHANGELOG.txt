@@ -32,6 +32,10 @@ CHANGELOG
 - small repository update.
 
 1.0.2 (28/08/2021)
-- license website change.
+- LICENSE website change.
 - updated information in the functions.
 
+1.1.0 (30/08/2021)
+- README update
+- alunariTools class created to distinguish logistics tools and functions from original montecarlo class.
+- created a counter of iterations to track live progress.
