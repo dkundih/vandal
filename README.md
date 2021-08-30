@@ -39,10 +39,13 @@ https://www.linkedin.com/company/alunari/
 The module itself, it's maintenance, updates and stability, logo, videos, promotional materials and everything associated with alunari are done by **David Kundih** from Croatia.
 
 > **David Kundih Patreon**
-http://patreon.com/dkundih
+https://patreon.com/dkundih
+
+> **David Kundih BuyMEACoffee**
+https://buymeacoffee.com/dkundih
 
 > **David Kundih website**
-http://dkundih.wordpress.com
+https://dkundih.wordpress.com
 
 > **David Kundih GitHub repository**
 https://github.com/dkundih
