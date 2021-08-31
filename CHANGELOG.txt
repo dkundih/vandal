@@ -39,3 +39,6 @@ CHANGELOG
 - README update
 - alunariTools class created to distinguish logistics tools and functions from original montecarlo class.
 - created a counter of iterations to track live progress.
+
+1.1.1 (31/08/2021)
+- now requires alunariTools in order to provide less confusing code, done outside of the original function.
