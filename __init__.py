@@ -16,13 +16,6 @@ def donate():
         print('https://patreon.com/dkundih\nhttps://buymeacoffee.com/dkundih')
 
 
-class alunariTools:
-
-    def randomPool(x,y):
-        import random
-        return random.gauss(x,y)
-
-
 class montecarlo:
     
     def __init__(self, list_of_values, time_seq, num_sim): 
@@ -58,6 +51,7 @@ class montecarlo:
             print('MonteCarlo() has been executed')
             print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.\nThe model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
             import pandas as pd
+            import alunariTools
             self.ref_value_index = ref_value_index
             today_value = self.list_of_values.iloc[ref_value_index]
             data = pd.DataFrame()
