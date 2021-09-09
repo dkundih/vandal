@@ -35,7 +35,6 @@ https://www.linkedin.com/company/alunari/
 
 # Who stands behind alunari?
 
-**David Kundih.**
 The module itself, it's maintenance, updates and stability, logo, videos, promotional materials and everything associated with alunari are done by **David Kundih** from Croatia.
 
 > **David Kundih Patreon**
