@@ -36,9 +36,14 @@ CHANGELOG
 - updated information in the functions.
 
 1.1.0 (30/08/2021)
-- README update
+- README update.
 - alunariTools class created to distinguish logistics tools and functions from original montecarlo class.
 - created a counter of iterations to track live progress.
 
 1.1.1 (31/08/2021)
 - now requires alunariTools in order to provide less confusing code, done outside of the original function.
+
+1.1.2 (09/09/2021)
+- confirmed functionality in Sublime Text.
+- added __name__ == '__main__' info.
+- minor README update.

@@ -58,7 +58,7 @@ class montecarlo:
             loading = 0
 
             for num_sim in range(self.num_sims):
-                rand_change = alunariTools.randomPool(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                rand_change = alunariTools.random_pool(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                 count = 0
                 index_array = []
                 simulated_index = today_value * (1 + rand_change)
@@ -69,7 +69,7 @@ class montecarlo:
                         
                 for num_day in range(self.time_seq):
                     
-                    rand_change = alunariTools.randomPool(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                    rand_change = alunariTools.random_pool(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                     if count == self.time_seq:
                         break
                     simulated_index = index_array[count] * (1 + rand_change)
@@ -192,3 +192,9 @@ class montecarlo:
             plt.ylabel(y_title, weight= 'semibold')
             plt.show()
             print('Histogram plotting finished.')
+
+def main():
+    print('Setup successful.')
+
+if __name__ == '__main__':
+        main()
