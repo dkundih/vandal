@@ -47,3 +47,6 @@ CHANGELOG
 - confirmed functionality in Sublime Text.
 - added __name__ == '__main__' info.
 - minor README update.
+
+1.1.3 (10/09/2021)
+- redefined documentation.
