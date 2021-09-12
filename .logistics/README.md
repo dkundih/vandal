@@ -2,8 +2,6 @@
 Data science and Machine learning package developed by David Kundih.
 Use permitted according to the terms of use and conditions set by the attached license. alunari is a part of the alunari project
 
-<img src="../main/.logistics/promo1.png" width="400" height="200"> <img src="../main/.logistics/promo2.png" width="400" height="200">
-
 # For whom is alunari made for?
 
 alunari is a Python package for Data science and Machine learning, designed to aid researchers and engineers to meet their goals with small effort.
