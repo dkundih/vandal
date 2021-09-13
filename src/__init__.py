@@ -1,16 +1,18 @@
 def functions():
         print('alunari CALLABLE FUNCTIONS:\n')
+        print('.montecarlo() - defines the parameters of MonteCarlo simulation.\n * takes 3 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.\n')
+        print('--- MISCELLANEOUS ---\n')
         print('.functions()- information about the available functions in the module.\n * takes no additional arguments.\n')
         print('.license() - shows the licence and terms of use.\n * takes no additional arguments.\n')
         print('.donate() - shows the donation link.\n * takes no additional arguments.\n')
         print('.documentation() - shows the documentation link.\n * takes no additional arguments.\n')
-        print('.montecarlo() - defines the parameters of MonteCarlo simulation.\n * takes 3 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.')
+        print('.main() - general setup confirmation.')
 
 def license():
         print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://davidkundih.iz.hr')
 
 def documentation():
-        print('https://davidkundih.iz.hr')
+        print('https://github.com/dkundih/alunari\nhttps://pypi.org/project/alunari')
 
 def donate():
         print('https://patreon.com/dkundih\nhttps://buymeacoffee.com/dkundih')
@@ -26,23 +28,25 @@ class montecarlo:
     def functions():  
         print('*** NOTE: alunari.montecarlo works only for sequential data with reasonable standard deviation, otherwise simulated data would expand to infinity.\nIf exponential increase in data is detected, error is raised automatically. ***\n')
         print('alunari.montecarlo CALLABLE FUNCTIONS:\n')
-        print('.functions()- information about the available functions in the module.\n * takes no additional arguments.\n')
-        print('.license() - shows the licence and terms of use.\n * takes no additional arguments.\n')
         print('.montecarlo() - defines the data, desired time sequence and number of simulations.\n * takes 3 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.\n')
-        print('.documentation() - shows the documentation link.\n * takes no additional arguments.\n')
-        print('.donate() - shows the donation link.\n * takes no additional arguments.\n')
         print('.execute() - creates a Monte Carlo simulation on a defined data set.\n * takes 1 optional argument (default: ref_value_index = 0)\n   ref_value_index - index of a reference value as a simulation starting point.\n * Requirements:\n   alunari.montecarlo().\n * Limitations:\n If exponential increase in data values is detected, automatically raises error.\n')
         print('.graph() - plots the MonteCarlo function on a graph.\n * takes 4 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10).)\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n * Requirements:\n   alunari.montecarlo.execute().\n')
         print('.get_risk() - calculates the risk of negative values occuring.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.execute().\n')
         print('.get_stats() - shows the statistics of the MonteCarlo function.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.execute().\n')
         print('.get_change() - shows the percentage of MonteCarlo function value change for every iteration.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.execute().\n')
-        print('.hist() - plots the histogram of MonteCarlo function.\n * takes 5 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10), method = \'b\'.)\nIf method = \'e\' is chosen, no customization arguments apply.\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n   method - default method is Basic histogram and it\'s performed by automation. In order to plot Empirical rule histogram add method = \'e\' as the last argument. - NOTE: method of a histogram must be placed within quotation marks.\n * Requirements:\n   alunari.montecarlo.execute().\n   alunari.montecarlo.get_stats().')
+        print('.hist() - plots the histogram of MonteCarlo function.\n * takes 5 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10), method = \'b\'.)\nIf method = \'e\' is chosen, no customization arguments apply.\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n   method - default method is Basic histogram and it\'s performed by automation. In order to plot Empirical rule histogram add method = \'e\' as the last argument. - NOTE: method of a histogram must be placed within quotation marks.\n * Requirements:\n   alunari.montecarlo.execute().\n   alunari.montecarlo.get_stats().\n')
+        print('--- MISCELLANEOUS ---\n')
+        print('.functions()- information about the available functions in the module.\n * takes no additional arguments.\n')
+        print('.license() - shows the licence and terms of use.\n * takes no additional arguments.\n')
+        print('.documentation() - shows the documentation link.\n * takes no additional arguments.\n')
+        print('.donate() - shows the donation link.\n * takes no additional arguments.\n')
+        print('.main() - general setup confirmation.')
 
     def license():
         print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://davidkundih.iz.hr')
 
     def documentation():
-        print('https://davidkundih.iz.hr')
+        print('https://github.com/dkundih/alunari\nhttps://pypi.org/project/alunari')
 
     def donate():
         print('https://patreon.com/dkundih\nhttps://buymeacoffee.com/dkundih')
@@ -193,6 +197,7 @@ class montecarlo:
             plt.show()
             print('Histogram plotting finished.')
 
+#general setup confirmation.
 def main():
     print('Setup successful.')
 
