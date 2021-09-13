@@ -50,3 +50,6 @@ CHANGELOG
 
 1.1.3 (10/09/2021)
 - redefined documentation.
+
+1.1.4 (13/09/2021)
+- improved user experience and stability.
