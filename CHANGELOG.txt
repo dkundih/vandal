@@ -53,3 +53,6 @@ CHANGELOG
 
 1.1.4 (13/09/2021)
 - improved user experience and stability.
+
+1.1.5 (13/09/2021)
+- typo corrections.
