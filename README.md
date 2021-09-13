@@ -17,8 +17,9 @@ alunari is completely free of charge for both personal and commercial use, but o
 # More from the alunari project.
 
 **alunariTools**
-
+PyPi
 https://pypi.org/project/alunariTools/
+GitHub
 https://github.com/dkundih/alunariTools/
 
 # Who stands behind alunari?
