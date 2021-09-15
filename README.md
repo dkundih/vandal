@@ -36,9 +36,6 @@ https://github.com/dkundih
 > **David Kundih PyPi repository**
 https://pypi.org/user/dkundih/
 
-> **David Kundih website**
-https://dkundih.wordpress.com
-
 > **David Kundih ResearchGate**
 https://www.researchgate.net/profile/David-Kundih
 
