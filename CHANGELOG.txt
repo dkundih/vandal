@@ -56,3 +56,13 @@ CHANGELOG
 
 1.1.5 (13/09/2021)
 - typo corrections.
+
+1.1.6 (19/09/2021)
+- adjustments to montecarlo.execute() following the dependency changes of alunariTools package.
+- stability and functionality confirmed in repl.it environment.
+
+1.1.7 (19/09/2021)
+- dependencies bug fix.
+
+1.1.8 (19/09/2021)
+- upload bug fix.
