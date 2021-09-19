@@ -9,7 +9,7 @@ def functions():
         print('.main() - general setup confirmation.')
 
 def license():
-        print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://davidkundih.iz.hr')
+        print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://github.com/dkundih/alunari and https://pypi.org/project/alunari')
 
 def documentation():
         print('https://github.com/dkundih/alunari\nhttps://pypi.org/project/alunari')
@@ -43,7 +43,7 @@ class montecarlo:
         print('.main() - general setup confirmation.')
 
     def license():
-        print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://davidkundih.iz.hr')
+        print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://github.com/dkundih/alunari and https://pypi.org/project/alunari')
 
     def documentation():
         print('https://github.com/dkundih/alunari\nhttps://pypi.org/project/alunari')
@@ -62,7 +62,7 @@ class montecarlo:
             loading = 0
 
             for num_sim in range(self.num_sims):
-                rand_change = alunariTools.random_pool(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                rand_change = alunariTools.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                 count = 0
                 index_array = []
                 simulated_index = today_value * (1 + rand_change)
@@ -73,7 +73,7 @@ class montecarlo:
                         
                 for num_day in range(self.time_seq):
                     
-                    rand_change = alunariTools.random_pool(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                    rand_change = alunariTools.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                     if count == self.time_seq:
                         break
                     simulated_index = index_array[count] * (1 + rand_change)
