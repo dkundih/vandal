@@ -66,3 +66,9 @@ CHANGELOG
 
 1.1.8 (19/09/2021)
 - upload bug fix.
+
+1.1.9+ (22/09/2021)
+- merge test.
+
+1.2.0 (22/09/2021)
+- alunari and alunariTools are now merged into alunari.Former alunariTools functions are now called with alunari.essence.
