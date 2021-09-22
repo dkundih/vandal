@@ -16,13 +16,13 @@ alunari is completely free of charge for both personal and commercial use, but o
 
 # More from the alunari project.
 
-**alunariTools**
+**University North, Croatia**
 
 PyPi
-https://pypi.org/project/alunariTools/
+https://pypi.org/project/UNIN/
 
 GitHub
-https://github.com/dkundih/alunariTools/
+https://github.com/University-North/
 
 # Who stands behind alunari?
 
