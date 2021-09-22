@@ -1,3 +1,5 @@
+from alunari import essence
+
 def functions():
         print('alunari CALLABLE FUNCTIONS:\n')
         print('.montecarlo() - defines the parameters of MonteCarlo simulation.\n * takes 3 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.\n')
@@ -55,14 +57,13 @@ class montecarlo:
             print('MonteCarlo() has been executed')
             print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.\nThe model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
             import pandas as pd
-            import alunariTools
             self.ref_value_index = ref_value_index
             today_value = self.list_of_values.iloc[ref_value_index]
             data = pd.DataFrame()
             loading = 0
 
             for num_sim in range(self.num_sims):
-                rand_change = alunariTools.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                rand_change = essence.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                 count = 0
                 index_array = []
                 simulated_index = today_value * (1 + rand_change)
@@ -73,7 +74,7 @@ class montecarlo:
                         
                 for num_day in range(self.time_seq):
                     
-                    rand_change = alunariTools.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                    rand_change = essence.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                     if count == self.time_seq:
                         break
                     simulated_index = index_array[count] * (1 + rand_change)
