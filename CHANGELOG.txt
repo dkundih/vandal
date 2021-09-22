@@ -71,4 +71,4 @@ CHANGELOG
 - merge test.
 
 1.2.0 (22/09/2021)
-- alunari and alunariTools are now merged into alunari.Former alunariTools functions are now called with alunari.essence.
+- alunari and alunariTools are now merged into alunari. Former alunariTools functions are now called with alunari.essence.
