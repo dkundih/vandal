@@ -186,10 +186,3 @@ class Configuration:
             plt.ylabel(y_title, weight= 'semibold')
             plt.show()
             print('Histogram plotting finished.')
-
-#general setup confirmation.
-def main():
-    print('Setup successful.')
-
-if __name__ == '__main__':
-        main()
