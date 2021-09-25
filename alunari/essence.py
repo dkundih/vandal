@@ -1,3 +1,5 @@
+from alunari.global_functions import *
+
 #gives a random value of mean and standard deviation inputed, if rounded = 'y', value will be rounded.
 def random_value(mean, st_dev, **rounded):
         import random
@@ -83,23 +85,10 @@ def auto_sort(data, split_method, trigger = lambda x: x[0]):
                 merged_final.append(d)
         return merged_final
 
-#MISCELLANEOUS LOGISTICS FUNCTIONS
-
-#shows the license.
-def license():
-        print('Copyright (c) 2021- David Kundih. All rights reserved.\nLicensed under the Apache License, Version 2.0.\n\nFor more details about the license and terms of use visit the official alunari documentation linked at https://github.com/dkundih/alunari and https://pypi.org/project/alunari')
-
-#shows the documentation.
-def documentation():
-        print('https://github.com/dkundih/alunari\nhttps://pypi.org/project/alunari')
-
-#shows the donation options.
-def donate():
-        print('https://patreon.com/dkundih\nhttps://buymeacoffee.com/dkundih')
-
 #shows available functions in the module.
-def functions():
+def help():
         print('alunari.essence CALLABLE FUNCTIONS:\n')
+        print('.help() - shows available functions in the module.\n')
         print('.random_value(mean, st_dev, **rounded) - gives a random value of mean and standard deviation inputed, if rounded = \'y\', value will be rounded.\n')
         print('.random_pool(mean, st_dev, pool_size, **rounded) - gives random values of mean and standard deviation inputed for the amount of values defined in the pool size, if rounded = \'y\', values will be rounded.\n')
         print('.split_values(data, split_method) - splits the data using a split method character.\n')
@@ -107,17 +96,4 @@ def functions():
         print('.replace_values(data, replaced_value, replacing_value) - replaces a defined value with a desired value.\n')
         print('.list_sort(data, array) - manually sorts data depending on defined array of indexes.\n')
         print('.index_sort(data, split_method, index_array) - sorts the indicies in a list of values based on the index array defined as [x,x,x].\n')
-        print('.auto_sort(data, split_method, trigger = lambda x: x[0]) - automatically splits all values in a list and sorts them based on the added trigger as lambda x: [x[i], x[i]] and joins them back together.\n')
-        print('--- MISCELLANEOUS ---\n')
-        print('.functions() - shows available functions in the module.\n')
-        print('.license() - shows the license.\n')
-        print('.documentation - shows the documentation.\n')
-        print('.donate() - shows the donation options.\n')
-        print('.main() - general setup confirmation.')
-
-#general setup confirmation.
-def main():
-    print('Setup successful.')
-
-if __name__ == '__main__':
-        main()
+        print('.auto_sort(data, split_method, trigger = lambda x: x[0]) - automatically splits all values in a list and sorts them based on the added trigger as lambda x: [x[i], x[i]] and joins them back together.')
