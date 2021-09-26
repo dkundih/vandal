@@ -1,5 +1,5 @@
 #imports essential functions from the alunari module.
-from alunari.essence import essence
+from alunari.essence.essence import random_value
 from alunari.misc.global_functions import *
 
 def help():  
@@ -19,11 +19,11 @@ class Configuration:
 
     #class information.
     def __str__(self):
-        return f'This is a Monte Carlo defining Object that performs {self.num_sims} simulations over the defined data in a time period of {self.time_seq}.'
+        return f'This is a Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
     #class information.
     def __repr__(self):
-        return f'This is a Monte Carlo defining Object that performs {self.num_sims} simulations over the defined data in a time period of {self.time_seq}.'
+        return f'This is a Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
         
     #information about the available functions in the module.
     def help():  
@@ -47,7 +47,7 @@ class Configuration:
             loading = 0
 
             for num_sim in range(self.num_sims):
-                rand_change = essence.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                rand_change = random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                 count = 0
                 index_array = []
                 simulated_index = today_value * (1 + rand_change)
@@ -58,7 +58,7 @@ class Configuration:
                         
                 for num_day in range(self.time_seq):
                     
-                    rand_change = essence.random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                    rand_change = random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
                     if count == self.time_seq:
                         break
                     simulated_index = index_array[count] * (1 + rand_change)
