@@ -1,4 +1,4 @@
-from alunari.global_functions import *
+from alunari.misc.global_functions import *
 
 def help():  
     print('alunari.eoq CALLABLE FUNCTIONS:\n')
