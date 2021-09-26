@@ -1,4 +1,4 @@
-from alunari.global_functions import *
+from alunari.misc.global_functions import *
 
 #gives a random value of mean and standard deviation inputed, if rounded = 'y', value will be rounded.
 def random_value(mean, st_dev, **rounded):
