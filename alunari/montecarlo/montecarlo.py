@@ -1,6 +1,6 @@
 #imports essential functions from the alunari module.
-from alunari import essence
-from alunari.global_functions import *
+from alunari.essence import essence
+from alunari.misc.global_functions import *
 
 def help():  
     print('*** NOTE: alunari.montecarlo works only for sequential data with reasonable standard deviation, otherwise simulated data would expand to infinity.\nIf exponential increase in data is detected, error is raised automatically. ***\n')
@@ -19,11 +19,11 @@ class Configuration:
 
     #class information.
     def __str__(self):
-        return f'This is a Monte Carlo defining function that performs {self.num_sims} simulations over the defined data in a time period of {self.time_seq}.'
+        return f'This is a Monte Carlo defining Object that performs {self.num_sims} simulations over the defined data in a time period of {self.time_seq}.'
 
     #class information.
     def __repr__(self):
-        return f'This is a Monte Carlo defining function that performs {self.num_sims} simulations over the defined data in a time period of {self.time_seq}.'
+        return f'This is a Monte Carlo defining Object that performs {self.num_sims} simulations over the defined data in a time period of {self.time_seq}.'
         
     #information about the available functions in the module.
     def help():  
