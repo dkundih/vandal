@@ -10,7 +10,7 @@ classifiers = [
  
 setup(
   name='alunari',
-  version='1.3.1',
+  version='1.3.6',
   description='Data science and Machine learning package.',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(), 
   author='David Kundih',
@@ -20,5 +20,5 @@ setup(
   classifiers=classifiers,
   keywords='data science, machine learning, artificial intelligence, AI, alunari',
   packages=find_packages(),
-  install_requires=['pandas == 1.2.3', 'numpy == 1.19.5', 'matplotlib == 3.4.3', 'UNIN >= 0.0.2']
+  install_requires=['pandas >= 1.2.3', 'numpy >= 1.19.5', 'matplotlib >= 3.4.3', 'UNIN >= 0.0.2']
 )
