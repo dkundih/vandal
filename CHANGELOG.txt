@@ -90,3 +90,7 @@ CHANGELOG
 
 1.3.4 (26/09/2021)
 - minor bug fix.
+
+1.3.5 (27/09/2021)
+- alunari.montecarlo.Configuration().get_risk() now works independently with it's unique simulation counter that is set to 5000 by default.
+- alunari.montecarlo.Configuration.help() updated to match the changes made to the function.
