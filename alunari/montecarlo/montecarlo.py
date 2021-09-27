@@ -19,11 +19,11 @@ class Configuration:
 
     #class information.
     def __str__(self):
-        return f'This is a Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
+        return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
     #class information.
     def __repr__(self):
-        return f'This is a Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
+        return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
         
     #information about the available functions in the module.
     def help():  
@@ -31,7 +31,7 @@ class Configuration:
         print('.help() - information about the available functions in the class.\n * takes no additional arguments.\n')
         print('.execute() - executes a Monte Carlo simulation on a defined data set.\n * takes 1 optional argument (default: ref_value_index = 0)\n   ref_value_index - index of a reference value as a simulation starting point.\n * Requirements:\n   alunari.montecarlo.Configuration().\n * Limitations:\n If exponential increase in data values is detected, automatically raises error.\n')
         print('.graph() - plots the Monte Carlo simulation on a graph.\n * takes 4 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10).)\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
-        print('.get_risk() - calculates the risk of negative values occuring.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
+        print('.get_risk() - calculates the risk of value decrease over time.\n * takes 1 optional argument (default: risk_sims = 5000).\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
         print('.get_stats() - shows the statistics of the Monte Carlo simulation.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
         print('.get_change() - shows the percentage of Monte Carlo simulation value change for every iteration.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
         print('.hist() - plots the histogram of Monte Carlo simulation.\n * takes 5 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10), method = \'b\'.)\nIf method = \'e\' is chosen, no customization arguments apply.\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n   method - default method is Basic histogram and it\'s performed by automation. In order to plot Empirical rule histogram add method = \'e\' as the last argument. - NOTE: method of a histogram must be placed within quotation marks.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n   alunari.montecarlo.Configuration.get_stats().')
@@ -83,15 +83,15 @@ class Configuration:
         return self.results.pct_change()
    
     #calculates the risk of negative values occuring.
-    def get_risk(self):
-        import pandas as pd
+    def get_risk(self, risk_sims = 5000):
         import random
+        import pandas as pd
         today_value = self.list_of_values.iloc[self.ref_value_index]
         percent_change = self.list_of_values.pct_change()
         data = pd.DataFrame()
         smaller = []
 
-        for num_sim in range(self.time_seq): 
+        for num_sim in range(risk_sims): 
             random_change = random.choice(percent_change)
             index_array = []
 
