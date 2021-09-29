@@ -2,6 +2,7 @@
 from alunari.essence.essence import random_value
 from alunari.misc.global_functions import *
 
+#shows detailed overview of available functions.
 def help():  
     print('*** NOTE: alunari.montecarlo works only for sequential data with reasonable standard deviation, otherwise simulated data would expand to infinity.\nIf exponential increase in data is detected, error is raised automatically. ***\n')
     print('alunari.montecarlo CALLABLE FUNCTIONS:\n')
@@ -25,7 +26,7 @@ class Configuration:
     def __repr__(self):
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
         
-    #information about the available functions in the module.
+    #shows detailed overview of available functions.
     def help():  
         print('alunari.montecarlo.Configuration CALLABLE FUNCTIONS:\n')
         print('.help() - information about the available functions in the class.\n * takes no additional arguments.\n')
