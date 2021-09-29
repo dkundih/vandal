@@ -85,7 +85,7 @@ def auto_sort(data, split_method, trigger = lambda x: x[0]):
                 merged_final.append(d)
         return merged_final
 
-#shows available functions in the module.
+#shows detailed overview of available functions.
 def help():
         print('alunari.essence CALLABLE FUNCTIONS:\n')
         print('.help() - shows available functions in the module.\n')
