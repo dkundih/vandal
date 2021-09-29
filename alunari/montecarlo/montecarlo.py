@@ -16,7 +16,7 @@ class Configuration:
         self.list_of_values = list_of_values
         self.time_seq = time_seq
         self.num_sims = num_sims
-
+        print(f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units.')
     #class information.
     def __str__(self):
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
