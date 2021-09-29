@@ -1,5 +1,6 @@
 from alunari.misc.global_functions import *
 
+#shows detailed overview of available functions.
 def help():  
     print('alunari.eoq CALLABLE FUNCTIONS:\n')
     print('.help() - information about the available functions in the alunari.montecarlo module.\n * takes no additional arguments.\n')
