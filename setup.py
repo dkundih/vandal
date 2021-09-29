@@ -10,7 +10,7 @@ classifiers = [
  
 setup(
   name='alunari',
-  version='1.3.6',
+  version='1.3.7',
   description='Data science and Machine learning package.',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(), 
   author='David Kundih',

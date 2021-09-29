@@ -97,3 +97,6 @@ CHANGELOG
 
 1.3.6 (27/09/2021)
 - dependencies updated to meet repl.it requirements.
+
+1.3.7 (29/09/2021)
+- Configuration function now prints the confirmation of the simulation set up.
