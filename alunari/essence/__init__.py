@@ -1,3 +1,3 @@
-from alunari.essence import essence
-from alunari.misc.global_functions import *
+from vandal.essence import essence
+from vandal.misc.global_functions import *
 import random

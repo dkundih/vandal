@@ -1,4 +1,4 @@
-from alunari.misc.global_functions import *
+from vandal.misc.global_functions import *
 
 #gives a random value of mean and standard deviation inputed, if rounded = 'y', value will be rounded.
 def random_value(mean, st_dev, **rounded):
@@ -87,7 +87,7 @@ def auto_sort(data, split_method, trigger = lambda x: x[0]):
 
 #shows detailed overview of available functions.
 def help():
-        print('alunari.essence CALLABLE FUNCTIONS:\n')
+        print('vandal.essence CALLABLE FUNCTIONS:\n')
         print('.help() - shows available functions in the module.\n')
         print('.random_value(mean, st_dev, **rounded) - gives a random value of mean and standard deviation inputed, if rounded = \'y\', value will be rounded.\n')
         print('.random_pool(mean, st_dev, pool_size, **rounded) - gives random values of mean and standard deviation inputed for the amount of values defined in the pool size, if rounded = \'y\', values will be rounded.\n')
