@@ -1,44 +1,67 @@
-#imports essential functions from the alunari module.
-from alunari.essence.essence import random_value
-from alunari.misc.global_functions import *
+#imports essential functions from the vandal module.
+from vandal.essence.essence import random_value
+from vandal.misc.global_functions import *
 
 #shows detailed overview of available functions.
 def help():  
-    print('*** NOTE: alunari.montecarlo works only for sequential data with reasonable standard deviation, otherwise simulated data would expand to infinity.\nIf exponential increase in data is detected, error is raised automatically. ***\n')
-    print('alunari.montecarlo CALLABLE FUNCTIONS:\n')
-    print('.help() - information about the available functions in the alunari.montecarlo module.\n * takes no additional arguments.\n')
-    print('.Configuration() - main class that defines the data, desired time sequence and number of simulations.\n * takes 3 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.')
+    print('*** NOTE: vandal.montecarlo works only for sequential data with reasonable standard deviation, otherwise simulated data would expand to infinity.\nIf exponential increase in data is detected, error is raised automatically. ***\n')
+    print('vandal.montecarlo CALLABLE FUNCTIONS:\n')
+    print('.help() - information about the available functions in the vandal.montecarlo module.\n * takes no additional arguments.\n')
+    print('.Configuration() - main class that defines the data, desired time sequence and number of simulations.\n * takes 4 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n   log_summary (default: log_summary = False) - event log of executed functions.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.')
 
 #object that contains the simulation data.
 class Configuration:
-    
+
     #initial value configuration.
-    def __init__(self, list_of_values, time_seq, num_sims): 
+    def __init__(self, list_of_values, time_seq, num_sims, log_summary = False): 
         self.list_of_values = list_of_values
         self.time_seq = time_seq
         self.num_sims = num_sims
+        self.log_summary = log_summary
         print(f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units.')
+
+    #creates an event log that tracks the function execution time and duration.
+    def classLog(func_name):
+        def log(func):
+                import time
+                import datetime
+                def logsaver(self, *args, **kwargs):
+                    if self.log_summary == True:
+                        start = time.time()
+                        results = func(self, *args, **kwargs)
+                        with open('vandal Logs.txt', 'a') as f:
+                            f.write('Perfomed a function ' + func_name + ' at: ' + str(datetime.datetime.now()) + '.' + ' Time spent performing the action: ' + str(time.time() - start) + ' seconds.' + '\n')
+                            return results
+                    else:
+                            results = func(self, *args, **kwargs)
+                            return results
+                return logsaver
+        return log
         
     #class information.
+    @classLog('__str__()')
     def __str__(self):
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
     #class information.
+    @classLog('__repr__()')
     def __repr__(self):
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
         
     #shows detailed overview of available functions.
     def help():  
-        print('alunari.montecarlo.Configuration CALLABLE FUNCTIONS:\n')
+        print('vandal.montecarlo.Configuration CALLABLE FUNCTIONS:\n')
         print('.help() - information about the available functions in the class.\n * takes no additional arguments.\n')
-        print('.execute() - executes a Monte Carlo simulation on a defined data set.\n * takes 1 optional argument (default: ref_value_index = 0)\n   ref_value_index - index of a reference value as a simulation starting point.\n * Requirements:\n   alunari.montecarlo.Configuration().\n * Limitations:\n If exponential increase in data values is detected, automatically raises error.\n')
-        print('.graph() - plots the Monte Carlo simulation on a graph.\n * takes 4 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10).)\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
-        print('.get_risk() - calculates the risk of value decrease over time.\n * takes 1 optional argument (default: risk_sims = 5000).\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
-        print('.get_stats() - shows the statistics of the Monte Carlo simulation.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
-        print('.get_change() - shows the percentage of Monte Carlo simulation value change for every iteration.\n * takes no additional arguments.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n')
-        print('.hist() - plots the histogram of Monte Carlo simulation.\n * takes 5 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10), method = \'b\'.)\nIf method = \'e\' is chosen, no customization arguments apply.\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n   method - default method is Basic histogram and it\'s performed by automation. In order to plot Empirical rule histogram add method = \'e\' as the last argument. - NOTE: method of a histogram must be placed within quotation marks.\n * Requirements:\n   alunari.montecarlo.Configuration.execute().\n   alunari.montecarlo.Configuration.get_stats().')
+        print('.execute() - executes a Monte Carlo simulation on a defined data set.\n * takes 1 optional argument (default: ref_value_index = 0)\n   ref_value_index - index of a reference value as a simulation starting point.\n * Requirements:\n   vandal.montecarlo.Configuration().\n * Limitations:\n If exponential increase in data values is detected, automatically raises error.\n')
+        print('.graph() - plots the Monte Carlo simulation on a graph.\n * takes 4 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10).)\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.get_risk() - calculates the risk of value decrease over time.\n * takes 1 optional argument (default: risk_sims = 5000).\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.get_stats() - shows the statistics of the Monte Carlo simulation.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.get_logs() - shows the event log of executed functions.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.get_change() - shows the percentage of Monte Carlo simulation value change for every iteration.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.hist() - plots the histogram of Monte Carlo simulation.\n * takes 5 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10), method = \'b\'.)\nIf method = \'e\' is chosen, no customization arguments apply.\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n   method - default method is Basic histogram and it\'s performed by automation. In order to plot Empirical rule histogram add method = \'e\' as the last argument. - NOTE: method of a histogram must be placed within quotation marks.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n   vandal.montecarlo.Configuration.get_stats().')
 
     #executes a Monte Carlo simulation on a defined data set.
+    @classLog('execute()')
     def execute(self, ref_value_index = 0):
             print('Monte Carlo simulation has been executed')
             print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.\nThe model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
@@ -80,11 +103,14 @@ class Configuration:
             self.results = data
             return data
 
+
     #shows the percentage of Monte Carlo simulation value change for every iteration.
+    @classLog('get_change()')
     def get_change(self):
         return self.results.pct_change()
    
     #calculates the risk of negative values occuring.
+    @classLog('get_risk()')
     def get_risk(self, risk_sims = 5000):
         import random
         import pandas as pd
@@ -111,6 +137,7 @@ class Configuration:
         print('Risk for this option is', round(NRisk,2), '%.')
      
     #plots the Monte Carlo simulation on a graph.   
+    @classLog('graph()')
     def graph(self, graph_title = 'Monte Carlo simulation', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10)):
         print('MonteCarlo() plotting initialized.')
         import matplotlib.pyplot as plt
@@ -125,6 +152,7 @@ class Configuration:
         print('MonteCarlo() plotting finished.')
    
     #shows the statistics of the Monte Carlo simulation.
+    @classLog('get_stats()')
     def get_stats(self): 
         import numpy as np
         print('Number of simulations: ', self.time_seq)
@@ -145,6 +173,7 @@ class Configuration:
         self.mean_value = mean_value
 
     #plots the histogram of Monte Carlo simulation.
+    @classLog('hist()')
     def hist(self, graph_title = 'Histogram of value frequencies', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), **method):
         std_plus = self.mean_value + self.standard_deviation
         std_minus = self.mean_value - self.standard_deviation
@@ -154,14 +183,19 @@ class Configuration:
         std_minus3 = self.mean_value - (self.standard_deviation * 3)
 
         if self.time_seq > 50:
-            print('NOTE: Time sequence defined greatly impacts the lenght of histogram plotting.\n')
+            print('NOTE: Time sequence defined greatly impacts the lenght of histogram plotting.\n') 
 
+        print('Histogram plotting initiated...')
+        import matplotlib.pyplot as plt
+        plt.figure(figsize = plot_size)
+        plt.title('alunari (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
+
+        if method.get("method") != "e":
+            print('CHOSEN METHOD: Basic histogram model.')
+            plt.suptitle(graph_title, fontsize = 25, weight = 'bold')
+            
         if method.get("method") == "e":
-            print('CHOSEN METHOD: Empirical rule.')   
-            print('Histogram plotting initiated...')
-            import matplotlib.pyplot as plt
-            plt.figure(figsize = plot_size)
-            plt.title('alunari (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
+            print('CHOSEN METHOD: Empirical rule.')
             plt.suptitle('Value division based on the Empirical rule', fontsize = 25, weight = 'bold')
             plt.axvline(x = std_plus, color = 'g', linestyle = 'dashed')
             plt.axvline(x = std_minus, color = 'r', linestyle = 'dashed')
@@ -170,21 +204,13 @@ class Configuration:
             plt.axvline(x = std_minus2, color = 'r', linestyle = 'dashed')
             plt.axvline(x = std_plus3, color = 'g', linestyle = 'dashed')
             plt.axvline(x = std_minus3, color = 'r', linestyle = 'dashed')
-            plt.hist(self.results, bins = self.time_seq , ec = 'm')
-            plt.xlabel(x_title, weight = 'semibold')
-            plt.ylabel(y_title, weight= 'semibold')
-            plt.show()
-            print('Histogram plotting finished.')
+        plt.hist(self.results, bins = self.time_seq , ec = 'm')
+        plt.xlabel(x_title, weight = 'semibold')
+        plt.ylabel(y_title, weight= 'semibold')
+        plt.show()
+        print('Histogram plotting finished.')
 
-        else:
-            print('CHOSEN METHOD: Basic histogram model.')
-            print('Histogram plotting initiated...')
-            import matplotlib.pyplot as plt
-            plt.figure(figsize = plot_size)
-            plt.title('alunari (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
-            plt.suptitle(graph_title, fontsize = 25, weight = 'bold')
-            plt.hist(self.results, bins = self.time_seq , ec = 'm')
-            plt.xlabel(x_title, weight = 'semibold')
-            plt.ylabel(y_title, weight= 'semibold')
-            plt.show()
-            print('Histogram plotting finished.')
+    @classLog('get_logs()')
+    def get_logs(self):
+        f = open('vandal Logs.txt', 'r')
+        print(f.read())
