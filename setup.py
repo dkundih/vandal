@@ -9,16 +9,16 @@ classifiers = [
 ]
  
 setup(
-  name='alunari',
-  version='1.3.7',
+  name='vandal',
+  version='1.1.1',
   description='Data science and Machine learning package.',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(), 
   author='David Kundih',
   author_email='kundihdavid@gmail.com',
-  url='http://github.com/dkundih/alunari',
+  url='http://github.com/dkundih/vandal',
   license='Apache Software License', 
   classifiers=classifiers,
-  keywords='data science, machine learning, artificial intelligence, AI, alunari',
+  keywords='data science, machine learning, artificial intelligence, AI, vandal',
   packages=find_packages(),
-  install_requires=['pandas >= 1.2.3', 'numpy >= 1.19.5', 'matplotlib >= 3.4.3', 'UNIN >= 0.0.2']
+  install_requires=['pandas >= 1.2.3', 'numpy >= 1.19.5', 'matplotlib >= 3.4.3']
 )
