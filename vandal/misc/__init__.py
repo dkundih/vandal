@@ -1,0 +1,1 @@
+from vandal.misc import global_functions
