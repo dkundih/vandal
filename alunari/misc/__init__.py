@@ -1,1 +1,1 @@
-from alunari.misc import global_functions
+from vandal.misc import global_functions
