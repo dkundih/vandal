@@ -1,2 +1,2 @@
-from alunari.eoq import eoq
-from alunari.misc.global_functions import *
+from vandal.eoq import eoq
+from vandal.misc.global_functions import *
