@@ -12,4 +12,4 @@ CHANGELOG
 - added event log that tracks the execution time and duration of functions.
 
 1.1.1 (10/11/2021)
--log tracking now applies on all relevant class functions.
+- log tracking now applies on all relevant class functions.
