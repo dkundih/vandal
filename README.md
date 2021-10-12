@@ -8,7 +8,7 @@ Use permitted according to the terms of use and conditions set by the attached l
 
 # For whom is 'vandal' made for?
 
-vandal is a Python package for Data science and Machine learning, designed to aid researchers and engineers to meet their goals with small effort.
+'vandal' is a Python package for Data science and Machine learning, designed to aid researchers and engineers to meet their goals with small effort.
 
 # Why 'vandal'?
 
