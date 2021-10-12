@@ -1,4 +1,6 @@
-![Header](.logistics/vandal-header.jpg)
+<p align="center">
+<img src=".logistics/vandal-header.jpg" width="350" title="hover text">
+ </p>
 # vandal
 Data science and Machine learning package developed by David Kundih.
 Use permitted according to the terms of use and conditions set by the attached license.
