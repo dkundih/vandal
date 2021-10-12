@@ -10,9 +10,9 @@ classifiers = [
  
 setup(
   name='vandal',
-  version='1.1.1',
+  version='insert_the_version',
   description='Data science and Machine learning package.',
-  long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(), 
+  long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.md').read(), 
   author='David Kundih',
   author_email='kundihdavid@gmail.com',
   url='http://github.com/dkundih/vandal',
