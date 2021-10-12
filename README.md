@@ -1,5 +1,5 @@
 <p align="center">
-<img src=".logistics/vandal-header.jpg" width="800" title="hover text">
+<img src=".logistics/vandal-header.jpg" width="900" title="hover text">
  </p>
 # vandal
 Data science and Machine learning package developed by David Kundih.
