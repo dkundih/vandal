@@ -33,3 +33,6 @@ CHANGELOG
 2.1.1 (13/10/2021)
 - replaced alunari with vandal where it was initially missed out.
 - now propely applies highly fragmented dataframe warning removal for simulations over 102.
+
+2.1.2 (13/10/2021)
+- stability update.
