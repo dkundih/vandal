@@ -66,6 +66,10 @@ class Configuration:
             print('Monte Carlo simulation has been executed')
             print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.\nThe model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
             import pandas as pd
+            #This removes pandas warning of highly fragmented DataFrame for newer pandas versions.
+            from warnings import simplefilter
+            simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
+            #End of pandas warning removal block.
             self.ref_value_index = ref_value_index
             today_value = self.list_of_values.iloc[ref_value_index]
             data = pd.DataFrame()
@@ -114,6 +118,10 @@ class Configuration:
     def get_risk(self, risk_sims = 5000):
         import random
         import pandas as pd
+        #This removes pandas warning of highly fragmented DataFrame for newer pandas versions.
+        from warnings import simplefilter
+        simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
+        #End of pandas warning removal block.
         today_value = self.list_of_values.iloc[self.ref_value_index]
         percent_change = self.list_of_values.pct_change()
         data = pd.DataFrame()
@@ -188,7 +196,7 @@ class Configuration:
         print('Histogram plotting initiated...')
         import matplotlib.pyplot as plt
         plt.figure(figsize = plot_size)
-        plt.title('alunari (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
+        plt.title('vandal (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
 
         if method.get("method") != "e":
             print('CHOSEN METHOD: Basic histogram model.')
