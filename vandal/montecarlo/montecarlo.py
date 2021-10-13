@@ -107,7 +107,6 @@ class Configuration:
             self.results = data
             return data
 
-
     #shows the percentage of Monte Carlo simulation value change for every iteration.
     @classLog('get_change()')
     def get_change(self):
