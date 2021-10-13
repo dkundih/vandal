@@ -8,7 +8,7 @@ CHANGELOG
 - vandal replaces the functionality of the currently discarded alunari python package.
 
 1.1.0 (11/10/2021)
-- redefined code of hist() function.
+- redefined code of .hist() function.
 - added event log that tracks the execution time and duration of functions.
 
 1.1.1 (11/10/2021)
@@ -26,3 +26,10 @@ CHANGELOG
 
 2.0.3 (12/10/2021)
 - confirmed stabile version after test.
+
+2.1.0 (12/10/2021)
+- republished.
+
+2.1.1 (13/10/2021)
+- replaced alunari with vandal where it was initially missed out.
+- now propely applies highly fragmented dataframe warning removal for simulations over 102.
