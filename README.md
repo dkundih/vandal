@@ -2,7 +2,7 @@
 
 **vandal** 
 
-Data science and Machine learning package developed by David Kundih.
+Data science and Machine learning package.
 Use permitted according to the terms of use and conditions set by the attached license.
 
 **For whom is vandal made for?**
