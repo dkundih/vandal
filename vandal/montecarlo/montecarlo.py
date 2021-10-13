@@ -149,7 +149,7 @@ class Configuration:
         print('MonteCarlo() plotting initialized.')
         import matplotlib.pyplot as plt
         plt.figure(figsize = plot_size)
-        plt.title('alunari (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
+        plt.title('vandal (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
         plt.suptitle(graph_title, fontsize = 25, weight = 'bold')
         plt.plot(self.results)
         plt.axhline(y = self.results[0][0], color = 'k', linestyle = 'solid')
