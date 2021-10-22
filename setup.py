@@ -20,8 +20,8 @@ classifiers = [
  
 setup(
   name='vandal',
-  version='version_number',
-  description='Data science and Machine learning package.',
+  version='2.2.1',
+  description='Data science, Data manipulation and Machine learning package.',
   long_description_content_type='text/markdown',
   long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.md').read(), 
   author='David Kundih',
@@ -29,7 +29,7 @@ setup(
   url='http://github.com/dkundih/vandal',
   license='Apache Software License', 
   classifiers=classifiers,
-  keywords='data science, machine learning, artificial intelligence, AI, vandal',
+  keywords='data science, machine learning, data manipulation, artificial intelligence, AI, vandal',
   packages=find_packages(),
   install_requires=['pandas >= 1.2.3', 'numpy >= 1.19.5', 'matplotlib >= 3.4.3']
 )
