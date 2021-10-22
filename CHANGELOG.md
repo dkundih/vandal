@@ -36,3 +36,14 @@ CHANGELOG
 
 2.1.2 (13/10/2021)
 - stability update.
+
+2.1.3 (22/10/2021)
+- EOQ implementation.
+- vandal.essence renamed to vandal.hub.
+- this is an unstable version that has yet to be tested.
+
+2.2.0 (22/10/2021)
+- confirmed stability.
+
+2.2.1 (22/10/2021)
+- README and flexibility update.
