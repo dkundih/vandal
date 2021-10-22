@@ -5,6 +5,23 @@
 Data science, Data manipulation and Machine learning package.
 Use permitted according to the terms of use and conditions set by the attached license.
 
+**Example of use**
+
+Visit https://github.com/dkundih/vandalDemonstrationRepo in order to see the demonstration of use in practical examples.
+
+**Installation**
+
+```sh
+# using pip
+pip install vandal
+```
+
+**Import**
+
+```sh
+# for Python environment
+import vandal
+```
 **For whom is vandal made for?**
 
 vandal is a Python package for Data science and Machine learning, designed to aid researchers and engineers to meet their goals with small effort.
