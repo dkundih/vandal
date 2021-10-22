@@ -20,7 +20,7 @@ classifiers = [
  
 setup(
   name='vandal',
-  version='2.2.1',
+  version='version number',
   description='Data science, Data manipulation and Machine learning package.',
   long_description_content_type='text/markdown',
   long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.md').read(), 
