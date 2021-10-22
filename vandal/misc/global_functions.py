@@ -1,7 +1,7 @@
 #main functions
 def help():
         print('vandal CALLABLE FUNCTIONS:\n')
-        print('.essence() - main hub of data manipulation functions.\n')
+        print('.hub() - main hub of data manipulation functions.\n')
         print('.montecarlo() - defines the parameters of MonteCarlo simulation.\n * takes 3 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.\n')
         print('.eoq() - defines the parameters of EOQ analysis.\n * takes 3 additional arguments.\n   list_of_values - pandas dataframe of values.\n   time_seq - desired time sequence.\n   num_sims - desired number of simulation iterations.\n * Requirements:\n   pandas Python module\n   pd.DataFrame() function.\n')
         print('--- MISCELLANEOUS ---\n')
