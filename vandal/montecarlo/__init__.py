@@ -1,5 +1,5 @@
 from vandal.montecarlo import montecarlo
-from vandal.essence.essence import random_value
+from vandal.hub.hub import random_value
 from vandal.misc.global_functions import *
 import random
 import pandas as pd

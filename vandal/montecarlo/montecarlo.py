@@ -1,5 +1,5 @@
 #imports essential functions from the vandal module.
-from vandal.essence.essence import random_value
+from vandal.hub.hub import random_value
 from vandal.misc.global_functions import *
 
 #shows detailed overview of available functions.
@@ -11,6 +11,18 @@ def help():
 
 #object that contains the simulation data.
 class Configuration:
+
+    #shows detailed overview of available functions. Performing this action will not be tracked in class logs.
+    def help():  
+        print('vandal.montecarlo.Configuration CALLABLE FUNCTIONS:\n')
+        print('.help() - information about the available functions in the class.\n * takes no additional arguments.\n')
+        print('.execute() - executes a Monte Carlo simulation on a defined data set.\n * takes 1 optional argument (default: ref_value_index = 0)\n   ref_value_index - index of a reference value as a simulation starting point.\n * Requirements:\n   vandal.montecarlo.Configuration().\n * Limitations:\n If exponential increase in data values is detected, automatically raises error.\n')
+        print('.graph() - plots the Monte Carlo simulation on a graph.\n * takes 4 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10).)\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.get_risk() - calculates the risk of value decrease over time.\n * takes 1 optional argument (default: risk_sims = 5000).\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.get_stats() - shows the statistics of the Monte Carlo simulation.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.get_logs() - shows the event log of executed functions.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n   log_summary = True.\n')
+        print('.get_change() - shows the percentage of Monte Carlo simulation value change for every iteration.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
+        print('.hist() - plots the histogram of Monte Carlo simulation.\n * takes 5 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10), method = \'b\'.)\nIf method = \'e\' is chosen, no customization arguments apply.\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n   method - default method is Basic histogram and it\'s performed by automation. In order to plot Empirical rule histogram add method = \'e\' as the last argument. - NOTE: method of a histogram must be placed within quotation marks.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n   vandal.montecarlo.Configuration.get_stats().')
 
     #initial value configuration.
     def __init__(self, list_of_values, time_seq, num_sims, log_summary = False): 
@@ -47,18 +59,6 @@ class Configuration:
     @classLog('__repr__()')
     def __repr__(self):
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
-        
-    #shows detailed overview of available functions.
-    def help():  
-        print('vandal.montecarlo.Configuration CALLABLE FUNCTIONS:\n')
-        print('.help() - information about the available functions in the class.\n * takes no additional arguments.\n')
-        print('.execute() - executes a Monte Carlo simulation on a defined data set.\n * takes 1 optional argument (default: ref_value_index = 0)\n   ref_value_index - index of a reference value as a simulation starting point.\n * Requirements:\n   vandal.montecarlo.Configuration().\n * Limitations:\n If exponential increase in data values is detected, automatically raises error.\n')
-        print('.graph() - plots the Monte Carlo simulation on a graph.\n * takes 4 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10).)\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
-        print('.get_risk() - calculates the risk of value decrease over time.\n * takes 1 optional argument (default: risk_sims = 5000).\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
-        print('.get_stats() - shows the statistics of the Monte Carlo simulation.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
-        print('.get_logs() - shows the event log of executed functions.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n   log_summary = True.\n')
-        print('.get_change() - shows the percentage of Monte Carlo simulation value change for every iteration.\n * takes no additional arguments.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n')
-        print('.hist() - plots the histogram of Monte Carlo simulation.\n * takes 5 optional customization arguments. (default: graph_title = \'Monte Carlo simulation\', x_title = \'X axis\', y_title = \'Y axis\', plot_size = (25,10), method = \'b\'.)\nIf method = \'e\' is chosen, no customization arguments apply.\n   graph_title - title of the graph\n   x_title - title of the X axis.\n   y_title - title on the Y axis.\n   plot_size - desired size of the graph. eg. - (x_lenght_num, y_lenght_num). - NOTE: values must be inside the parentheses and divided by a comma.\n   method - default method is Basic histogram and it\'s performed by automation. In order to plot Empirical rule histogram add method = \'e\' as the last argument. - NOTE: method of a histogram must be placed within quotation marks.\n * Requirements:\n   vandal.montecarlo.Configuration.execute().\n   vandal.montecarlo.Configuration.get_stats().')
 
     #executes a Monte Carlo simulation on a defined data set.
     @classLog('execute()')
