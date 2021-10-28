@@ -1,5 +1,112 @@
-CHANGELOG
+CHANGELOG 
 ==========
+
+**as alunari**
+
+0.0.1 (16/08/2021)
+- initial release.
+
+0.0.2 (16/08/2021)
+- reupload for functionality.
+
+0.0.3 (16/08/2021)
+- README update.
+- LICENSE update.
+- stability downgrade to 4 - Beta in order to provide more testing and feedback.
+
+0.0.4 (17/08/2021)
+- minor README update.
+- functionality confirmed in testing environment (Visual Studio Code, PyCharm, JupyterLab, Google Colab).
+
+0.0.5 (23/08/2021)
+-minor README update with Documentation link changed.
+
+1.0.0 (28/08/2021)
+- first stable release.
+- major functionality changes.
+- reworked 2 functions (.stats is now .get_stats, .risk is now .get_risk).
+- added 1 new function (.get_change).
+- .documentation updated.
+- .montecarlo.functions updated.
+- developement status is now 5 - Production/Stable.
+
+1.0.1 (28/08/2021)
+- small repository update.
+
+1.0.2 (28/08/2021)
+- LICENSE website change.
+- updated information in the functions.
+
+1.1.0 (30/08/2021)
+- README update.
+- alunariTools class created to distinguish logistics tools and functions from original montecarlo class.
+- created a counter of iterations to track live progress.
+
+1.1.1 (31/08/2021)
+- now requires alunariTools in order to provide less confusing code, done outside of the original function.
+
+1.1.2 (09/09/2021)
+- confirmed functionality in Sublime Text.
+- added __name__ == '__main__' info.
+- minor README update.
+
+1.1.3 (10/09/2021)
+- redefined documentation.
+
+1.1.4 (13/09/2021)
+- improved user experience and stability.
+
+1.1.5 (13/09/2021)
+- typo corrections.
+
+1.1.6 (19/09/2021)
+- adjustments to montecarlo.execute() following the dependency changes of alunariTools package.
+- stability and functionality confirmed in repl.it environment.
+
+1.1.7 (19/09/2021)
+- dependencies bug fix.
+
+1.1.8 (19/09/2021)
+- upload bug fix.
+
+1.1.9+ (22/09/2021)
+- merge test.
+
+1.2.0 (22/09/2021)
+- alunari and alunariTools are now merged into alunari. Former alunariTools functions are now called with alunari.essence.
+
+1.2.1+ (24/09/2021)
+- EOQ setup test.
+- montecarlo class is now Configuration.
+
+1.3.1 (25/09/2021)
+- major rework and functionality update.
+- code structure redifined.
+
+1.3.2 (26/09/2021)
+- code structure redifined.
+
+1.3.3 (26/09/2021)
+- cleaner and better defined code.
+- partial imports from the library instead of whole modules applied.
+
+1.3.4 (26/09/2021)
+- minor bug fix.
+
+1.3.5 (27/09/2021)
+- alunari.montecarlo.Configuration().get_risk() now works independently with it's unique simulation counter that is set to 5000 by default.
+- alunari.montecarlo.Configuration.help() updated to match the changes made to the function.
+
+1.3.6 (27/09/2021)
+- dependencies updated to meet repl.it requirements.
+
+1.3.7 (29/09/2021)
+- Configuration function now prints the confirmation of the simulation set up.
+
+1.3.7+ (11/10/2021)
+-redefined hist() function test.
+
+**as vandal**
 
 0.0.1 (03/10/2021)
 - initial release.
@@ -47,3 +154,6 @@ CHANGELOG
 
 2.2.1 (22/10/2021)
 - README and flexibility update.
+
+2.2.2 (28/10/2021)
+- now properly shows CHANGELOG of discarded alunari package.
