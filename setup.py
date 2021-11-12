@@ -17,7 +17,8 @@ classifiers = [
     'Topic :: Education',
     'Topic :: Office/Business'
 ]
- 
+
+#import current duality version.  
 from vandal.misc._meta import __version__
 
 setup(
