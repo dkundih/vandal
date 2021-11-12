@@ -1,5 +1,3 @@
-![vandal-header](https://raw.githubusercontent.com/dkundih/vandal/main/.logistics/visforvandalpy.jpg)
-
 **vandal** 
 
 vandal is now an archived package, while all of it's functionality has been merged into the duality package.
