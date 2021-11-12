@@ -166,3 +166,6 @@ CHANGELOG
 
 2.2.5 (12/10/2021)
 - dependency resolve.
+
+2.2.6 (12/10/2021)
+- README merge.
