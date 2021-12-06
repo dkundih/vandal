@@ -24,7 +24,6 @@ AVAILABLE MODULES IN THE PACKAGE:
 #imports essential functions from the duality package.
 from duality import EOQ
 from duality.hub import hub
-from duality.hub.hub import *
 from duality import MonteCarlo
 
 #imports meta data from the vandal package.
