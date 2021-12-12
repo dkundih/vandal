@@ -6,7 +6,7 @@ import duality
 
 colorama.init()
 
-df = pd.read_excel(r'C:\Users\kundi\Desktop\testbase.xlsx')
+df = pd.read_excel(r'C:\Users\kundi\Desktop\DBCLI\testbase.xlsx')
 
 df.set_index(df['JMBAG'], inplace = True)
 df.drop(columns = 'JMBAG', inplace = True)
@@ -41,6 +41,7 @@ def menu():
 	print('2 | Liste')
 	print('3 | Izlaz')
 
+#WIP
 def sort_dates(argument):
 	argument = argument.to_list()
 	datelist = []
@@ -65,8 +66,12 @@ def CLI():
 		else:
 			print(Fore.RED + 'Nevaljan odabir, pokušajte ponovno.', Fore.RESET)
 			print('')
-		
+
 def informacije():
+	print('Raspoloživi JMBAG:')
+	for i in df.index:
+		print(i)
+	print('')
 	identification = int(input('UNESI JMBAG: '))
 	while True:
 		print(Fore.GREEN + 'OPCIJE: ime, prezime, odjel, studij, seminar, datum, izlaz', Fore.RESET)
@@ -96,10 +101,14 @@ def informacije():
 
 def liste():
 	while True:
-		print(Fore.GREEN + 'OPCIJE: jmbaginfo, baza, sorting, kriterij, izlaz', Fore.RESET)
+		print(Fore.GREEN + 'OPCIJE: jmbaginfo, baza, kriterij, izlaz', Fore.RESET)
 		print('')
 		action = input('Unesi opciju: ')
 		if action == 'jmbaginfo':
+			print('Raspoloživi JMBAG:')
+			for i in df.index:
+				print(i)
+			print('')
 			jmbag_input = int(input('Unesi jmbag: '))
 			print(jmbag_info(jmbag = jmbag_input))
 			print('')
@@ -110,8 +119,14 @@ def liste():
 			print('')
 		if action == 'kriterij':
 			print('Raspoloživi kriteriji')
+			for col in df.columns:
+				print(col)
 			print('')
 			column = input('Unesi kriterij: ')
+			print('Raspoloživi unosi:')
+			for row in df[column].unique():
+				print(row)
+			print('')
 			key = input('Unesi traženi pojam: ')
 			print(criteria_search(column = column, key = key))
 			print('')
