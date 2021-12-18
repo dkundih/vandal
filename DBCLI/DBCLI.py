@@ -6,7 +6,7 @@ import duality
 
 colorama.init()
 
-df = pd.read_excel(r'C:\Users\kundi\Desktop\testbase.xlsx')
+df = pd.read_excel(r'C:\Users\kundi\Sphere\vandal\DBCLI\testbase.xlsx')
 
 df.set_index(df['JMBAG'], inplace = True)
 df.drop(columns = 'JMBAG', inplace = True)
@@ -109,9 +109,12 @@ def liste():
 			print(sort_dates(df['DATUM']))
 			print('')
 		if action == 'kriterij':
-			print('Raspoloživi kriteriji')
+			print('RASPOLOŽIVI KRITERIJI')
+			for col in df.columns:
+				print(col)
 			print('')
 			column = input('Unesi kriterij: ')
+			column = column.upper()
 			key = input('Unesi traženi pojam: ')
 			print(criteria_search(column = column, key = key))
 			print('')
