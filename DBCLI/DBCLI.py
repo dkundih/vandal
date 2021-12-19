@@ -101,7 +101,7 @@ def informacije():
 
 def liste():
 	while True:
-		print(Fore.GREEN + 'OPCIJE: jmbaginfo, baza, kriterij, izlaz', Fore.RESET)
+		print(Fore.GREEN + 'OPCIJE: jmbaginfo, baza, kriterij, dodaj, izbriši, izlaz', Fore.RESET)
 		print('')
 		action = input('Unesi opciju: ')
 		if action == 'jmbaginfo':
@@ -114,11 +114,8 @@ def liste():
 			print('')
 		if action == 'baza':
 			print(df)
-		if action == 'sorting':
-			print(sort_dates(df['DATUM']))
-			print('')
 		if action == 'kriterij':
-			print('RASPOLOŽIVI KRITERIJI')
+			print(Fore.GREEN + 'RASPOLOŽIVI KRITERIJI', Fore.RESET)
 			for col in df.columns:
 				print(col)
 			print('')
@@ -130,6 +127,31 @@ def liste():
 		if action == 'izlaz':
 			print(Fore.RED + 'Izlazim...', Fore.RESET)
 			break
+		if action == 'dodaj':
+			new_user = []
+			new_jmbag = int(input('Unesi JMBAG novog korisnika: '))
+			for col in df.columns:
+				new_input = input(f'Unesi {col}: ')
+				new_user.append(new_input)
+			df.loc[new_jmbag] = new_user
+			print(Fore.GREEN + 'SPREMI SLJEDEĆI UNOS?', Fore.RESET)
+			print(df.loc[new_jmbag])
+			answer = input('Unesi 0 za otkazivanje, 1 za spremanje unosa: ')
+			if answer == '1':
+				df.to_excel('testbase.xlsx')
+				print(Fore.GREEN + 'Spremljeno.', Fore.RESET)
+				break
+		if action == 'izbriši':
+			print(df)
+			deleted_user = int(input('Unesi JMBAG korisnika kojeg želiš izbrisati: '))
+			df.drop(index = deleted_user, inplace = True)
+			print(Fore.GREEN + 'SPREMI SLJEDEĆI UNOS?', Fore.RESET)
+			print(df)
+			answer = input('Unesi 0 za otkazivanje, 1 za spremanje unosa: ')
+			if answer == '1':
+				df.to_excel('testbase.xlsx')
+				print(Fore.GREEN + 'Spremljeno.', Fore.RESET)
+				break
 
 if __name__ == '__main__':
 	CLI()
