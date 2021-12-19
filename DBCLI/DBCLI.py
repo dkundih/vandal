@@ -144,11 +144,9 @@ def liste():
 		if action == 'izbriši':
 			print(df)
 			deleted_user = int(input('Unesi JMBAG korisnika kojeg želiš izbrisati: '))
-			df.drop(index = deleted_user, inplace = True)
-			print(Fore.GREEN + 'SPREMI SLJEDEĆI UNOS?', Fore.RESET)
-			print(df)
 			answer = input('Unesi 0 za otkazivanje, 1 za spremanje unosa: ')
 			if answer == '1':
+				df.drop(index = deleted_user, inplace = True)
 				df.to_excel('testbase.xlsx')
 				print(Fore.GREEN + 'Spremljeno.', Fore.RESET)
 				break
