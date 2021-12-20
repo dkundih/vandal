@@ -61,8 +61,8 @@ def CLI():
 		elif choice == '2':
 			liste()
 		elif choice == '3':
-			print(Fore.RED + 'Izlazim iz aplikacije', Fore.RESET)
-			break
+			print(Fore.RED + 'Izlazim iz aplikacije...', Fore.RESET)
+			quit()
 		else:
 			print(Fore.RED + 'Nevaljan odabir, pokušajte ponovno.', Fore.RESET)
 			print('')
@@ -140,7 +140,7 @@ def liste():
 			if answer == '1':
 				df.to_excel('testbase.xlsx')
 				print(Fore.GREEN + 'Spremljeno.', Fore.RESET)
-				break
+				quit()
 		if action == 'izbriši':
 			print(df)
 			deleted_user = int(input('Unesi JMBAG korisnika kojeg želiš izbrisati: '))
@@ -149,7 +149,7 @@ def liste():
 				df.drop(index = deleted_user, inplace = True)
 				df.to_excel('testbase.xlsx')
 				print(Fore.GREEN + 'Spremljeno.', Fore.RESET)
-				break
+				quit()
 
 if __name__ == '__main__':
 	CLI()
