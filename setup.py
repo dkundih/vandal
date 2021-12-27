@@ -58,6 +58,6 @@ setup(
     'matplotlib >= 3.4.3',
     'openpyxl',
     'colorama >= 0.4.4',
-    'duality >= 3.6.4',
+    'duality >= 4.0.0',
 ]
   )
