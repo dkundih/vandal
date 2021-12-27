@@ -75,9 +75,9 @@ vandal is completely free of charge for both personal and commercial use, but on
 
 **A word from the author!**
 
-The module itself, it's maintenance, updates and stability, logo, videos, promotional materials and everything associated with vandal are done by **David Kundih** from **Croatia**.
+The module itself, it's maintenance, updates and stability, logo, videos, promotional materials and everything associated with duality are done by **David Kundih** from **Croatia**.
 
-<h1 align='center'> Hi!</h1>
+<h1 align='center'> Hi! :wave:</h1>
  
 <img src='https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg'/>
 
@@ -86,6 +86,8 @@ My name is <b>David Kundih</b> and I am a Master's student of <b>Logistics syste
 </p>
  
 <h4 align='center'>My latest projects:</h4>
+<p align='center'>
+<a href="https://github.com/dkundih/vandal">vandal</p>  
 <p align='center'>
 <a href="https://github.com/dkundih/duality">duality</p>  
 <p align='center'>

@@ -326,3 +326,7 @@ CHANGELOG
 - duality package merged back into vandal.
 - perform_block added into graph() so it fits any IDE requirements in an agile way.
 - requirements added to requirements.txt
+
+3.0.1 (28/12/2021)
+- code cleanup from previous versions.
+- setup for introduction of duality decorators into DEVELOPER MODE.

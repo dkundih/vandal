@@ -13,8 +13,8 @@ class Dijkstra:
 
     eg. vandal.Dijkstra.function()
 
-        .execute() - executes a Dijkstra algorithm route scan on a defined path.
-        * takes 4 additional arguments.
+        .execute() -  contains the data of defined nodes, origin and the desired destination, executes a Dijkstra algorithm route scan on a defined path.
+        * takes 3 additional arguments.
             nodes - dictionary of dictionaries of nodes with their corelating weights.
 
             eg.
@@ -24,22 +24,18 @@ class Dijkstra:
             'c':{'b':5,'d':4,'e':3},
             'd':{'e':5},
             'e':{'d':6}
-                }
+            }
 
             origin - origin node as a starting point.
             destination - destination node of the desired route.
-            log_summary (default: log_summary = False) - event log of executed functions. - DEVELOPER MODE ONLY
-        * automatically executes the .execute() function.
 
     (DEVELOPER MODE)
     ----------------
 
     Developer mode functions can only be set up manually by removing the '#DEVELOPER MODE -' in the source code.
 
-        .get_logs() - shows the event log of executed functions.
         * takes no additional arguments.
         * Requirements:
-            log_summary = True.
             '# DEVELOPER MODE -' removed in the code.
 
     '''
@@ -59,24 +55,6 @@ class Dijkstra:
     # initial value configuration.
     def __init__(self):
         pass
-
-    # DEVELOPER MODE - creates an event log that tracks the function execution time and duration.
-    def classLog(func_name):
-        def log(func):
-                import time
-                import datetime
-                def logsaver(self, *args, **kwargs):
-                    if self.log_summary == True:
-                        start = time.time()
-                        results = func(self, *args, **kwargs)
-                        with open('vandal Logs.txt', 'a') as f:
-                            f.write('Performed a function ' + func_name + ' at: ' + str(datetime.datetime.now()) + '.' + ' Time spent performing the action: ' + str(time.time() - start) + ' seconds.' + '\n')
-                            return results
-                    else:
-                            results = func(self, *args, **kwargs)
-                            return results
-                return logsaver
-        return log
 
     # DEVELOPER MODE - @classLog('__str__()')
     # class information.
@@ -129,9 +107,3 @@ class Dijkstra:
         output_path.insert(0, self.origin)
         if optimal_distance[self.destination] != float('inf'):
             print('Optimal path: ' + str(output_path), '\nMinimal distance: ' + str(optimal_distance[self.destination]))
-
-    # DEVELOPER MODE - @classLog('get_logs()')
-    # returns the saved logs of executed functions.
-    def get_logs(self):
-        f = open('vandal Logs.txt', 'r')
-        print(f.read())

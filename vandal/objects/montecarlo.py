@@ -6,7 +6,7 @@ class MonteCarlo:
     (OBJECT INFO)
     -------------
 
-    vandal.MonteCarlo - main class that defines the data, desired time sequence and number of simulations.
+    vandal.MonteCarlo - main class.
 
     (OBJECT FUNCTIONS)
     ------------------
@@ -14,16 +14,14 @@ class MonteCarlo:
     eg. vandal.MonteCarlo.function()
 
         .execute() - executes a Monte Carlo simulation on a defined data set.
-            * takes 5 additional arguments.
+            * takes 4 additional arguments.
             list_of_values - pandas dataframe of values.
             time_seq - desired time sequence.
             num_sims - desired number of simulation iterations.
             ref_value_index (default: ref_value_index = 0) - index on which the starting point of the simulation is created.
-            log_summary (default: log_summary = False) - event log of executed functions. - DEVELOPER MODE ONLY
         * Requirements:
             pandas Python module.
             pd.DataFrame() defined data set.
-        * automatically executes the .execute() function.
 
         .graph() - plots the Monte Carlo simulation on a graph.
             * takes 5 optional customization arguments. (default: graph_title = 'Monte Carlo simulation', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), perform_block = True).
@@ -58,10 +56,8 @@ class MonteCarlo:
 
     Developer mode functions can only be set up manually by removing the '#DEVELOPER MODE -' in the source code.
 
-        .get_logs() - shows the event log of executed functions.
         * takes no additional arguments.
         * Requirements:
-            log_summary = True.
             '# DEVELOPER MODE -' removed in the code.
 
     '''
@@ -82,24 +78,6 @@ class MonteCarlo:
     def __init__(self):
         pass
 
-    # DEVELOPER MODE - creates an event log that tracks the function execution time and duration.
-    def classLog(func_name):
-        def log(func):
-                import time
-                import datetime
-                def logsaver(self, *args, **kwargs):
-                    if self.log_summary == True:
-                        start = time.time()
-                        results = func(self, *args, **kwargs)
-                        with open('vandal Logs.txt', 'a') as f:
-                            f.write('Performed a function ' + func_name + ' at: ' + str(datetime.datetime.now()) + '.' + ' Time spent performing the action: ' + str(time.time() - start) + ' seconds.' + '\n')
-                            return results
-                    else:
-                            results = func(self, *args, **kwargs)
-                            return results
-                return logsaver
-        return log
-
     # DEVELOPER MODE - @classLog('__str__()')
     #class information.
     def __str__(self):
@@ -112,12 +90,11 @@ class MonteCarlo:
 
     # DEVELOPER MODE - @classLog('execute() - built in function.')
     # executes a Monte Carlo simulation on a defined data set.
-    def execute(self, list_of_values, time_seq, num_sims, ref_value_index = 0, log_summary = False):
+    def execute(self, list_of_values, time_seq, num_sims, ref_value_index = 0):
         self.list_of_values = list_of_values
         self.time_seq = time_seq
         self.num_sims = num_sims
         self.ref_value_index = ref_value_index
-        self.log_summary = log_summary
         print(f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units.')
         from vandal.hub.toolkit import random_value
         print('Monte Carlo simulation has been executed.')
@@ -271,9 +248,3 @@ class MonteCarlo:
         plt.ylabel(y_title, weight= 'semibold')
         plt.show(block = perform_block)
         print('Histogram plotting finished.')
-
-    # DEVELOPER MODE - @classLog('get_logs()')
-    # returns the saved logs of executed functions.
-    def get_logs(self):
-        f = open('vandal Logs.txt', 'r')
-        print(f.read())
