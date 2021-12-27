@@ -3,6 +3,12 @@ from setuptools import setup, find_packages
 classifiers = [
   'Development Status :: 5 - Production/Stable',
   'Intended Audience :: Education',
+  'Intended Audience :: Science/Research',
+  'Intended Audience :: Customer Service',
+  'Intended Audience :: Financial and Insurance Industry',
+  'Operating System :: Microsoft :: Windows :: Windows 7',
+  'Operating System :: Microsoft :: Windows :: Windows 8',
+  'Operating System :: Microsoft :: Windows :: Windows 8.1',
   'Operating System :: Microsoft :: Windows :: Windows 10',
   'License :: OSI Approved :: Apache Software License',
   'Programming Language :: Python',
@@ -15,24 +21,42 @@ classifiers = [
    'Programming Language :: Python :: 3.10',
     'Topic :: Database',
     'Topic :: Education',
-    'Topic :: Office/Business'
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Topic :: Scientific/Engineering :: Visualization',
+    'Topic :: Office/Business :: Financial :: Investment',
+    'Topic :: Office/Business :: Financial :: Accounting',
+    'Topic :: Office/Business :: Financial :: Point-Of-Sale',
+    'Topic :: Office/Business :: Financial :: Spreadsheet',
 ]
-
-#import current duality version.  
+ 
+# import current vandal version.
 from vandal.misc._meta import __version__
 
 setup(
-  name='vandal',
+  name = 'vandal',
   version = __version__,
-  description='Archived predecessor of duality package.',
-  long_description_content_type='text/markdown',
-  long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.md').read(), 
-  author='David Kundih',
-  author_email='kundihdavid@gmail.com',
-  url='http://github.com/dkundih/duality',
-  license='Apache Software License', 
-  classifiers=classifiers,
-  keywords='data science, machine learning, data manipulation, artificial intelligence, AI, duality',
-  packages=find_packages(),
-  install_requires=['duality', 'pandas >= 1.2.3', 'numpy >= 1.19.5' , 'matplotlib >= 3.4.3']
-)
+  description = 'Data science, Data manipulation and Machine learning library.',
+  long_description_content_type = 'text/markdown',
+  long_description = open('README.md').read() + '\n\n' + open('CHANGELOG.md').read(), 
+  author = 'David Kundih',
+  author_email = 'kundihdavid@gmail.com',
+  maintainer = 'David Kundih',
+  maintainer_email = 'kundihdavid@gmail.com',
+  url = 'http://github.com/dkundih/vandal',
+  download_url = f'https://github.com/dkundih/vandal/archive/refs/tags/v{__version__}.tar.gz',
+  license = 'Apache Software License',
+  project_urls = {
+    'Documentation': 'https://github.com/dkundih/vandal/blob/main/README.md',
+    'Source Code': 'https://github.com/dkundih/vandal/tree/main/vandal'
+  }, 
+  classifiers = classifiers,
+  keywords = 'data science, machine learning, data manipulation, artificial intelligence, AI, unin, duality, vandal, vandal-py, vandal.py',
+  packages = find_packages(),
+  install_requires = [
+    'pandas >= 1.2.3',
+    'numpy >= 1.19.5',
+    'matplotlib >= 3.4.3',
+    'openpyxl',
+    'colorama >= 0.4.4',
+]
+  )

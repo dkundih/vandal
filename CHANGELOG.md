@@ -19,7 +19,7 @@ CHANGELOG
 - functionality confirmed in testing environment (Visual Studio Code, PyCharm, JupyterLab, Google Colab).
 
 0.0.5 (23/08/2021)
--minor README update with Documentation link changed.
+- minor README update with Documentation link changed.
 
 1.0.0 (28/08/2021)
 - first stable release.
@@ -158,14 +158,170 @@ CHANGELOG
 2.2.2 (28/10/2021)
 - now properly shows CHANGELOG of discarded alunari package.
 
-2.2.3 (28/10/2021)
-- discarded package.
+**as duality**
 
-2.2.4 (12/10/2021)
-- due to multiple requests to make vandal alive, it now fetches the functionality of the newest duality package as a temporary solution.
+3.0.0 (03/11/2021)
+- initial release
+- now properly shows CHANGELOG of vandal package history.
 
-2.2.5 (12/10/2021)
-- dependency resolve.
+3.0.1 (04/11/2021)
+- code tweaks.
 
-2.2.6 (12/10/2021)
-- README merge.
+3.1.1 (06/11/2021)
+- MonteCarlo and EOQ now automatically perform .execute() function.
+- MonteCarlo.hist() now executes get_stats() alongside to get info about standard deviation.
+- MonteCarlo and EOQ are now being imported as objects.
+- global_functions removed and merged into meta folder.
+
+3.1.1+ (06/11/2021)
+- functionality tests.
+
+3.1.2 (06/11/2021)
+- complete redesign pushed to public.
+
+3.1.3 (06/11/2021)
+- initial import now imports hub module as well as associated contents in order to enable print(help(duality.hub)) function.
+
+3.1.4 (07/11/2021)
+- updated README.
+
+3.1.5 (08/11/2021)
+- untracked changes.
+
+3.1.6 (12/11/2021) - not useable.
+- code cleanup in hub and montecarlo modules.
+
+3.1.7 (12/11/2021)
+- quick bug fix.
+
+3.1.8 (12/11/2021)
+- sync with recent GitHub changes.
+
+3.1.9 (13/11/2021)
+- README style update.
+
+3.2.0 (13/11/2021)
+- return_data = True added into MonteCarlo object for decision of the time of execution manually.
+
+3.2.1 (14/11/2021)
+- setup.py redefined with metadata.
+
+3.2.2 (17/11/2021)
+- regular maintainance.
+
+3.3.0 (19/11/2021) - UNSTABLE
+- package now becomes a library.
+- DEVELOPER MODE introduced.
+- disables @classlog functions outside of DEVELOPER MODE.
+- code readability improved.
+- duality.hub.hub is now duality.hub.toolkit.
+- eoq and montecarlo folders merged into objects folder.
+- added support for import __all__ contents of a module.
+
+3.3.2 (19/11/2021) - UNSTABLE
+- republish and 3.3.1 ghost overwrite.
+
+3.3.3 (20/11/2021) - UNSTABLE
+- initial bug fix deployed.
+
+3.3.4 (20/11/2021) - UNSTABLE
+- additional bug fixes deployed.
+
+3.3.5 (20/11/2021) - UNSTABLE
+- additional bug fixes deployed.
+- code readability improved.
+
+3.3.6 (20/11/2021)
+- confirmed functionality and stability.
+
+3.3.7 (20/11/2021)
+- code reconstruction.
+
+3.4.0 (22/11/2021)
+- NEW FEATURE: duality.Dijkstra algorithm.
+
+3.4.1 (22/11/2021)
+- minor code cleanup.
+
+3.4.2 (22/11/2021)
+- functionality confirmed.
+
+3.4.3 (22/11/2021)
+- upstream/downstream fix.
+
+3.4.4 (01/12/2021)
+- CLI environment setup.
+
+3.5.0 (01/12/2021)
+- CLI environment tests.
+- demonstration repository now merged into duality.
+- MonteCarlo, Dijsktra and EOQ no longer define the data, data config shifted to .execute() function of every object.
+- CLI can now be executed in teminal using 'duality.__main__' for IDE or 'python __main__.py' for CMD or Powershell after locating with cd.
+- stability of 3.5. series will not be guaranteed, it is a transitional phase for future integrations into applications and web applications.
+
+3.5.1 (01/12/2021)
+- CLI environment tests.
+- code readablity improved.
+
+3.5.2 (01/12/2021)
+- CLI environment tests.
+- dualityCLI integration into the source.
+- CLI contents added into __all__ and __init__ files.
+
+3.5.3 (01/12/2021) - UNSTABLE
+- first functional CLI for MonteCarlo imlpemented.
+- added saving to .csv, .xlsx and .json for out-of-terminal functions.
+
+3.5.4 (01/12/2021) - UNSTABLE
+- active tests.
+
+3.5.5 (01/12/2021) - UNSTABLE
+- bug fixes.
+
+3.5.6 (01/12/2021)
+- functionality resolved using pypyxl.
+- duality.dualityCLI and python __main__.py now officially work.
+
+3.5.7 (01/12/2021)
+- added block = False to plt.show() in order to unlock further actions after a graph in dualityCLI.
+
+3.5.8 (01/12/2021) - UNSTABLE
+- cli code redefined and made user friendly.
+- dualityCLI is not CLI.
+
+3.5.9 (01/12/2021) - UNSTABLE
+- now contains the executable CLI file with .exe extension within CLIexe folder.
+- dualityCLI.exe v1.0 functionality equalized with 3.5.9 version of python __main__.py and duality.CLI()
+
+3.5.10 (01/12/2021) - UNSTABLE
+- dualityCLI.exe release postponed, use python __main__.py or duality.CLI() to execute.
+
+3.5.11 (01/12/2021)
+- dualityCLI.exe files removed from the package.
+- CLIexeversion is now CLIversion.
+
+3.5.12+ (02-03/12/2021)
+- CLI v1.1 version replaces the CLI v1.0
+- added menu and help actions to Dijkstra and EOQ until they become implemented.
+- bugfix of MonteCarlo simulations being period and vice versa.
+
+3.6.1 (03/12/2021) - STABLE
+- CLI v1.21 version added.
+- CLI stable after initial tests.
+
+3.6.2 (04/12/2021) - STABLE
+- CLI v1.22 version added.
+- colored CLI functions.
+- colorama added to dependencies.
+- added clear screen after exiting clients.
+
+3.6.4 (04/12/2021)
+- skips ghost 3.6.3 version.
+- CLI v1.23 version added.
+- quick bugfix of executing greet() after cls in CLI.
+
+**as vandal**
+
+3.0.0 (27/12/2021)
+- duality package merged back into vandal.
+- perform_block added into graph() so it fits any IDE requirements in an agile way.
