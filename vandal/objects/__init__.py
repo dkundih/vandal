@@ -1,7 +1,7 @@
 # import all relevant contents from the associated module.
-from .montecarlo import MonteCarlo
-from .eoq import EOQ
-from .dijkstra import Dijkstra
+from vandal.objects.montecarlo import MonteCarlo
+from vandal.objects.eoq import EOQ
+from vandal.objects.dijkstra import Dijkstra
 
 # all relevant contents.
 __all__ = [

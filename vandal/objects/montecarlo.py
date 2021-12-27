@@ -67,7 +67,7 @@ class MonteCarlo:
     '''
 
     # metadata of the used library.
-    from misc._meta import (
+    from vandal.misc._meta import (
         __author__,
         __copyright__,
         __credits__,
@@ -119,7 +119,7 @@ class MonteCarlo:
         self.ref_value_index = ref_value_index
         self.log_summary = log_summary
         print(f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units.')
-        from hub.toolkit import random_value
+        from vandal.hub.toolkit import random_value
         print('Monte Carlo simulation has been executed.')
         print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.\nThe model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
         import pandas as pd

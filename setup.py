@@ -50,7 +50,7 @@ setup(
     'Source Code': 'https://github.com/dkundih/vandal/tree/main/vandal'
   }, 
   classifiers = classifiers,
-  keywords = 'data science, machine learning, data manipulation, artificial intelligence, AI, unin, duality, vandal, vandal-py, vandal.py',
+  keywords = 'data science, machine learning, data manipulation, artificial intelligence, AI, unin, duality, duality-py, duality.py, vandal, vandal-py, vandal.py',
   packages = find_packages(),
   install_requires = [
     'pandas >= 1.2.3',
@@ -58,5 +58,6 @@ setup(
     'matplotlib >= 3.4.3',
     'openpyxl',
     'colorama >= 0.4.4',
+    'duality >= 3.6.4',
 ]
   )

@@ -1,5 +1,5 @@
 # import all relevant contents from the associated module.
-from ._meta import (
+from vandal.misc._meta import (
     __author__,
     __copyright__,
     __credits__,

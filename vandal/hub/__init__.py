@@ -1,6 +1,6 @@
 # import all relevant contents from the associated module.
-from . import toolkit
-from .toolkit import (
+from vandal.hub import toolkit
+from vandal.hub.toolkit import (
     random_value,
     random_pool,
     split_values,

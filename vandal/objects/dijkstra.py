@@ -45,7 +45,7 @@ class Dijkstra:
     '''
 
     # metadata of the used library.
-    from misc._meta import (
+    from vandal.misc._meta import (
         __author__,
         __copyright__,
         __credits__,

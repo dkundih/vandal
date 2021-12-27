@@ -63,7 +63,7 @@ import sys
 sys.dont_write_bytecode = True
 
 # meta data imports from the vandal library.
-from .misc._meta import (
+from vandal.misc._meta import (
     __author__,
     __copyright__,
     __credits__,
@@ -74,17 +74,14 @@ from .misc._meta import (
     __donate__,
 )
 
-# vandalCLI.exe version.
-from .cli.cli import __CLIversion__
-
 # object and module imports.
-from .hub import toolkit
-from .objects.eoq import EOQ
-from .objects.montecarlo import MonteCarlo
-from .objects.dijkstra import Dijkstra
+from vandal.hub import toolkit
+from vandal.objects.eoq import EOQ
+from vandal.objects.montecarlo import MonteCarlo
+from vandal.objects.dijkstra import Dijkstra
 
 # hub imports.
-from .hub.toolkit import (
+from vandal.hub.toolkit import (
     random_value,
     random_pool,
     split_values,
@@ -94,9 +91,6 @@ from .hub.toolkit import (
     index_sort,
     auto_sort,
 )
-
-# cli imports
-from .cli.cli import *
 
 # all relevant contents.
 __all__ = [
@@ -112,5 +106,4 @@ __all__ = [
     MonteCarlo,
     EOQ,
     Dijkstra,
-    CLI,
 ]
