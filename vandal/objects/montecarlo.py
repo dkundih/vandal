@@ -74,22 +74,30 @@ class MonteCarlo:
         __donate__,
     )
 
+    # import duality package decorators.
+    from duality import track, record
+
     # initial launch.
+    @track.entry('init')
+    @record.entry(option_name = 'init', option_description = 'initial launch.')
     def __init__(self):
         pass
 
-    # DEVELOPER MODE - @classLog('__str__()')
-    #class information.
+    # class information.
+    @track.entry('string')
+    @record.entry(option_name = 'string', option_description = 'class information.')
     def __str__(self):
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
-    # DEVELOPER MODE - @classLog('__repr__()')
     # class information.
+    @track.entry('representation')
+    @record.entry(option_name = 'repr', option_description = 'shows object details.')
     def __repr__(self):
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
-    # DEVELOPER MODE - @classLog('execute() - built in function.')
     # executes a Monte Carlo simulation on a defined data set.
+    @track.entry('execution')
+    @record.entry(option_name = 'execution', option_description = 'executes a Monte Carlo simulation on a defined data set.')
     def execute(self, list_of_values, time_seq, num_sims, ref_value_index = 0):
         self.list_of_values = list_of_values
         self.time_seq = time_seq
@@ -137,13 +145,15 @@ class MonteCarlo:
         self.results = data
         return data
 
-    # DEVELOPER MODE - @classLog('get_change()')
-    #shows the percentage of Monte Carlo simulation value change for every iteration.
+    # shows the percentage of Monte Carlo simulation value change for every iteration.
+    @track.entry('change')
+    @record.entry(option_name = 'change', option_description = 'shows the percentage of Monte Carlo simulation value change for every iteration.')
     def get_change(self):
         return self.results.pct_change()
 
-    # DEVELOPER MODE - @classLog('get_risk()')
     # calculates the risk of negative values occuring.
+    @track.entry('risk')
+    @record.entry(option_name = 'risk', option_description = 'calculates the risk of negative values occuring.')
     def get_risk(self, risk_sims = 5000):
         import random
         import pandas as pd
@@ -172,8 +182,9 @@ class MonteCarlo:
 
         print('\nRisk for this option is', round(NRisk,2), '%.')
 
-    # DEVELOPER MODE - @classLog('graph()')
     # plots the Monte Carlo simulation on a graph.
+    @track.entry('graph')
+    @record.entry(option_name = 'graph', option_description = 'plots the Monte Carlo simulation on a graph.')
     def graph(self, graph_title = 'Monte Carlo simulation', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), perform_block = True):
         print('\nMonteCarlo() plotting initialized.')
         import matplotlib.pyplot as plt
@@ -187,8 +198,9 @@ class MonteCarlo:
         plt.show(block = perform_block)
         print('MonteCarlo() plotting finished.')
 
-    # DEVELOPER MODE - @classLog('get_stats()')
     # shows the statistics of the Monte Carlo simulation.
+    @track.entry('statistics')
+    @record.entry(option_name = 'statistics', option_description = 'shows the statistics of the Monte Carlo simulation.')
     def get_stats(self, filtered = False):
         import numpy as np
         mean_value = np.mean(self.results.loc[self.time_seq])
@@ -209,8 +221,9 @@ class MonteCarlo:
             print('Maximum: ', maximum_value)
             print('Minimum: ', minimum_value, '\n')
 
-    # DEVELOPER MODE - @classLog('hist()')
     # plots the histogram of Monte Carlo simulation.
+    @track.entry('histogram')
+    @record.entry(option_name = 'histogram', option_description = 'plots the histogram of Monte Carlo simulation.')
     def hist(self, graph_title = 'Histogram of value frequencies', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), perform_block = True, **method):
         self.get_stats(filtered = True)
         std_plus = self.mean_value + self.standard_deviation
@@ -248,3 +261,17 @@ class MonteCarlo:
         plt.ylabel(y_title, weight= 'semibold')
         plt.show(block = perform_block)
         print('Histogram plotting finished.')
+
+    @record.display(method='dictionary')
+    @track.entry('logs')
+    @record.entry(option_name = 'logs', option_description = 'access saved logs from function execution.')
+    # access saved menu particles from function execution.  
+    def get_menu(self):
+        return
+
+    @track.display()
+    @track.entry('logs')
+    @record.entry(option_name = 'logs', option_description = 'access saved logs from function execution.')
+    # access saved logs from function execution.
+    def get_logs(self):
+        return
