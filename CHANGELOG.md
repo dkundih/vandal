@@ -333,3 +333,6 @@ CHANGELOG
 
 3.0.2 (28/12/2021) - DEVELOPER MODE TEST (IGNORE THIS VERSION!)
 - duality decorators set to test in public environment
+
+3.1.0 (28/12/2021)
+- confirmed functionality of the DEVELOPER MODE, reverted to basic user mode.
