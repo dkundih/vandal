@@ -262,7 +262,7 @@ class MonteCarlo:
         plt.show(block = perform_block)
         print('Histogram plotting finished.')
 
-    @record.display(method='dictionary')
+    @record.display(method = 'dictionary')
     @track.entry('logs')
     @record.entry(option_name = 'logs', option_description = 'access saved logs from function execution.')
     # access saved menu particles from function execution.  

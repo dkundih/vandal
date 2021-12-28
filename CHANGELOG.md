@@ -330,3 +330,6 @@ CHANGELOG
 3.0.1 (28/12/2021)
 - code cleanup from previous versions.
 - setup for introduction of duality decorators into DEVELOPER MODE.
+
+3.0.2 (28/12/2021) - DEVELOPER MODE TEST (IGNORE THIS VERSION!)
+- duality decorators set to test in public environment
