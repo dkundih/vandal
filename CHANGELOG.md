@@ -336,3 +336,6 @@ CHANGELOG
 
 3.1.0 (28/12/2021)
 - confirmed functionality of the DEVELOPER MODE, reverted to basic user mode.
+
+3.1.1 (30/12/2021)
+- create_password() added to toolkit.

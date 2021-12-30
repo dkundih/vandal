@@ -9,6 +9,7 @@ from vandal.hub.toolkit import (
     list_sort,
     index_sort,
     auto_sort,
+    create_password,
 )
 
 # all relevant contents.
@@ -21,5 +22,6 @@ __all__ = [
     list_sort,
     index_sort,
     auto_sort,
+    create_password,
     toolkit,
 ]

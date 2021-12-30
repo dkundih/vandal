@@ -110,3 +110,9 @@ def auto_sort(data, split_method, trigger = lambda x: x[0]):
         for i in auto_sort:
                 merged_final += ['-'.join(i)]
         return merged_final
+
+# creates a random password with adjustable lenght (default: lenght = 8).
+def create_password(lenght = 8):
+        import random
+        particles = 'abcdefghijklmnoprstuxwyzqABCDEFGHIJKLMNOPRSTUXWYZQ0123456789'
+        return ''.join(random.sample(particles, lenght))
