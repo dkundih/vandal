@@ -346,3 +346,7 @@ CHANGELOG
 3.2.0 (04/01/2022)
 - confirmed vandal.App functionality.
 - followup changes of duality decorators added to EOQ and Dijkstra.
+
+3.2.1 (04/01/2022)
+vandal.cli renamed to vandal.app.
+CLIsets renamed to MC_testassets.

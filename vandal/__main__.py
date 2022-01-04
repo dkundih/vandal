@@ -1,6 +1,6 @@
 # imports all CLI clients.
-from vandal.cli import particles
-from vandal.cli.particles import App
+from vandal.app import particles
+from vandal.app.particles import App
 
 # runs the main CLI client.
 if __name__ == '__main__':

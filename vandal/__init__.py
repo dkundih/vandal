@@ -83,8 +83,8 @@ from vandal.objects.montecarlo import MonteCarlo
 from vandal.objects.dijkstra import Dijkstra
 
 # app imports.
-from vandal.cli import particles
-from vandal.cli.particles import (
+from vandal.app import particles
+from vandal.app.particles import (
 		App,
 		__APPversion__,
 )
