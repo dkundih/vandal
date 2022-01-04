@@ -52,11 +52,11 @@ AVAILABLE FEATURES IN THE LIBRARY:
 	vandal.Dijkstra is a module for finding the optimal route between the defined nodes from the place of origin to the final destination.
 		print(help(vandal.Dijkstra)) in order to see available features.
 
-	CLI (EXECUTABLE FUNCTION)
+	App (EXECUTABLE MODULE)
 	-------------------------
 
-	vandal.CLI is an executable function that runs the Command Line Inerface of the vandal package.
-		print(help(vandal.CLI)) in order to see available features.
+	vandal.App is an executable function that runs the Command Line Inerface of the vandal package.
+		print(help(vandal.App)) in order to see available features.
 
 '''
 
@@ -81,6 +81,8 @@ from vandal.hub import toolkit
 from vandal.objects.eoq import EOQ
 from vandal.objects.montecarlo import MonteCarlo
 from vandal.objects.dijkstra import Dijkstra
+from vandal.cli import particles
+from vandal.cli.particles import App
 
 # hub imports.
 from vandal.hub.toolkit import (
@@ -107,6 +109,8 @@ __all__ = [
     auto_sort,
 	create_password,
     toolkit,
+	App,
+	particles,
     MonteCarlo,
     EOQ,
     Dijkstra,
