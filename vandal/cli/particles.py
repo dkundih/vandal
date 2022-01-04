@@ -1,5 +1,5 @@
 # dependency imports.
-import colorama, traceback
+import colorama
 from colorama import Fore
 import os
 
@@ -10,11 +10,11 @@ colorama.init()
 from vandal.misc._meta import __version__
 
 # vandalCLI version.
-__CLIversion__ = 'v1.25'
+__APPversion__ = 'v1.26'
 
 # intro to the client.
 def greet():
-    print(Fore.GREEN + '\n - vandal Command Line Interface © David Kundih -', __CLIversion__)
+    print(Fore.GREEN + '\n - vandal Command Line Interface © David Kundih -', __APPversion__)
     print(Fore.GREEN + ' - vandal package version - ', __version__, Fore.RESET)
 
 # menu.

@@ -42,22 +42,30 @@ class EOQ:
 	__donate__,
 )
 
-    # initial value configuration.
+    # import duality package decorators.
+    # DEVELOPER MODE - from duality import track, record
+
+    # initial launch.
+    # DEVELOPER MODE - @track.entry('init')
+    # DEVELOPER MODE - @record.entry(option_name = 'init', option_description = 'initial launch.')
     def __init__(self):
         pass
 
-    # DEVELOPER MODE - @classLog('__str__()')
     # class information.
+    # DEVELOPER MODE - @track.entry('string')
+    # DEVELOPER MODE - @record.entry(option_name = 'string', option_description = 'class information.')
     def __str__(self):
         return f'EOQ defining object that contains annual demand quantity of {self.annual_demand_quantity} pieces, fixed cost of the order of {self.order_fixed_cost} and with the annual holding cost of {self.annual_holding_cost}.'
 
-    # DEVELOPER MODE - @classLog('__repr__()')
     # class information.
+    # DEVELOPER MODE - @track.entry('representation')
+    # DEVELOPER MODE - @record.entry(option_name = 'repr', option_description = 'shows object details.')
     def __repr__(self):
         return f'EOQ defining object that contains annual demand quantity of {self.annual_demand_quantity} pieces, fixed cost of the order of {self.order_fixed_cost} and with the annual holding cost of {self.annual_holding_cost}.'
 
-    # DEVELOPER MODE - @classLog('execute() - built in function.')
     # executes the calculation of EOQ over the defined parameters.
+    # DEVELOPER MODE - @track.entry('execution')
+    # DEVELOPER MODE - @record.entry(option_name = 'execution', option_description = 'executes the calculation of EOQ over the defined parameters.')
     def execute(self, annual_demand_quantity, order_fixed_cost, annual_holding_cost):
         self.annual_demand_quantity = annual_demand_quantity
         self.order_fixed_cost = order_fixed_cost

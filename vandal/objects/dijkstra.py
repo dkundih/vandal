@@ -52,22 +52,30 @@ class Dijkstra:
         __donate__,
     )
 
-    # initial value configuration.
+    # import duality package decorators.
+    # DEVELOPER MODE - from duality import track, record
+
+    # initial launch.
+    # DEVELOPER MODE - @track.entry('init')
+    # DEVELOPER MODE - @record.entry(option_name = 'init', option_description = 'initial launch.')
     def __init__(self):
         pass
 
-    # DEVELOPER MODE - @classLog('__str__()')
     # class information.
+    # DEVELOPER MODE - @track.entry('string')
+    # DEVELOPER MODE - @record.entry(option_name = 'string', option_description = 'class information.')
     def __str__(self):
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
-    # DEVELOPER MODE - @classLog('__repr__()')
     # class information.
+    # DEVELOPER MODE - @track.entry('representation')
+    # DEVELOPER MODE - @record.entry(option_name = 'repr', option_description = 'shows object details.')
     def __repr__(self):
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
-    # DEVELOPER MODE - @classLog('execute() - built in function.')
     # executes a Dijkstra algorithm route scan on a defined path.
+    # DEVELOPER MODE - @track.entry('execution')
+    # DEVELOPER MODE - @record.entry(option_name = 'execution', option_description = 'executes a Dijkstra algorithm route scan on a defined path.')
     def execute(self, nodes, origin, destination, log_summary = False):
         self.nodes = nodes
         self.origin = origin

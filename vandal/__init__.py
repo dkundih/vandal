@@ -81,8 +81,13 @@ from vandal.hub import toolkit
 from vandal.objects.eoq import EOQ
 from vandal.objects.montecarlo import MonteCarlo
 from vandal.objects.dijkstra import Dijkstra
+
+# app imports.
 from vandal.cli import particles
-from vandal.cli.particles import App
+from vandal.cli.particles import (
+		App,
+		__APPversion__,
+)
 
 # hub imports.
 from vandal.hub.toolkit import (
@@ -108,8 +113,8 @@ __all__ = [
     index_sort,
     auto_sort,
 	create_password,
-    toolkit,
 	App,
+    toolkit,
 	particles,
     MonteCarlo,
     EOQ,

@@ -342,3 +342,7 @@ CHANGELOG
 
 3.1.2, 3.1.3 (04/01/2022)
 - return of cli module put to test as vandal.App.
+
+3.2.0 (04/01/2022)
+- confirmed vandal.App functionality.
+- followup changes of duality decorators added to EOQ and Dijkstra.
