@@ -188,7 +188,7 @@ CHANGELOG
 3.1.5 (08/11/2021)
 - untracked changes.
 
-3.1.6 (12/11/2021) - not useable.
+3.1.6 (12/11/2021) - not usable.
 - code cleanup in hub and montecarlo modules.
 
 3.1.7 (12/11/2021)
@@ -287,7 +287,7 @@ CHANGELOG
 
 3.5.8 (01/12/2021) - UNSTABLE
 - cli code redefined and made user friendly.
-- dualityCLI is not CLI.
+- dualityCLI is now CLI.
 
 3.5.9 (01/12/2021) - UNSTABLE
 - now contains the executable CLI file with .exe extension within CLIexe folder.
@@ -348,5 +348,5 @@ CHANGELOG
 - followup changes of duality decorators added to EOQ and Dijkstra.
 
 3.2.1 (04/01/2022)
-vandal.cli renamed to vandal.app.
-CLIsets renamed to MC_testassets.
+- vandal.cli renamed to vandal.app.
+- CLIsets renamed to MC_testassets.
