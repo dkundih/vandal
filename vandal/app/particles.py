@@ -9,10 +9,10 @@ colorama.init()
 # vandal version.
 from vandal.misc._meta import __version__
 
-# vandalCLI version.
+# vandal.App version.
 __APPversion__ = 'v1.26'
 
-# intro to the client.
+# intro to the application client.
 def greet():
     print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
     print(Fore.GREEN + ' - vandal package version - ', __version__, Fore.RESET)
@@ -33,7 +33,7 @@ def App():
     '''
     (FUNCTION INFO)
     ---------------
-    vandal.App - main client that serves as an access to other module clients.
+    vandal.App - main application client that serves as an access to other module clients.
     '''
 
     while True:
@@ -43,26 +43,26 @@ def App():
         choice = input('Choose an option: ')
         if choice == '1':
             print(Fore.GREEN + '=== ENTERING MONTECARLO CLIENT... ===\n', Fore.RESET)
-            MonteCarloCLI()
+            MonteCarloApp()
         elif choice == '2':
             print(Fore.GREEN + '=== ENTERING DIJKSTRA CLIENT... ===\n', Fore.RESET)
-            DijkstraCLI()
+            DijkstraApp()
         elif choice == '3':
             print(Fore.GREEN + '=== ENTERING EOQ CLIENT... ===\n', Fore.RESET)
-            EOQCLI()
+            EOQApp()
         elif choice == '4':
             print(Fore.GREEN + 'Exiting...', Fore.RESET)
             break
         else:
             print(Fore.RED + '=== OPTION NOT EXISTENT OR AVAILABLE, PLEASE WRITE THE EXISTING NUMBER FROM THE MENU TO CONTINUE. ===', Fore.RESET)
 
-# MonteCarlo client extension.
-def MonteCarloCLI():
+# MonteCarlo application client extension.
+def MonteCarloApp():
 
     '''
     (FUNCTION INFO)
     ---------------
-    vandal.MonteCarloCLI - MonteCarlo client extension.
+    vandal.MonteCarloApp - MonteCarlo application client extension.
     '''
 
     from vandal.objects import MonteCarlo
@@ -161,13 +161,13 @@ def save_to(file, func_name, choice):
     else:
         print(Fore.RED + '=== NO OPTION CHOSEN, EXITING THE MENU... =\n', Fore.RESET)
 
-# Dijkstra client extension.
-def DijkstraCLI():
+# Dijkstra application client extension.
+def DijkstraApp():
 
     '''
     (FUNCTION INFO)
     ---------------
-    vandal.DijkstraCLI - Dijkstra client extension.
+    vandal.DijkstraApp - Dijkstra application client extension.
     '''
 
     from vandal.objects import Dijkstra
@@ -178,13 +178,13 @@ def DijkstraCLI():
         if action == 'help':
             print(Fore.YELLOW + 'https://github.com/dkundih/vandal\n', Fore.RESET)
 
-# EOQ client extension.
-def EOQCLI():
+# EOQ application client extension.
+def EOQApp():
 
     '''
     (FUNCTION INFO)
     ---------------
-    vandal.EOQCLI - EOQ client extension.
+    vandal.EOQApp - EOQ application client extension.
     '''
 
     from vandal.objects import EOQ
@@ -195,6 +195,6 @@ def EOQCLI():
         if action == 'help':
             print(Fore.YELLOW + 'https://github.com/dkundih/vandal\n', Fore.RESET)
 
-# runs client.
+# runs main application client.
 if __name__ == '__main__':
     App()
