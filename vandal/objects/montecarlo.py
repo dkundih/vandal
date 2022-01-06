@@ -262,7 +262,7 @@ class MonteCarlo:
         plt.show(block = perform_block)
         print('Histogram plotting finished.')
 
-    # DEVELOPER MODE - @record.display(method = 'dictionary')
+    # DEVELOPER MODE - @record.display()
     # DEVELOPER MODE - @track.entry('menu')
     # DEVELOPER MODE - @record.entry(option_name = 'menu', option_description = 'access saved menu particles from function execution.')
     # access saved menu particles from function execution.  
