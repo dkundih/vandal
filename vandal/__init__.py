@@ -58,6 +58,18 @@ AVAILABLE FEATURES IN THE LIBRARY:
 	vandal.App is an executable function that runs the Command Line Inerface of the vandal package.
 		print(help(vandal.App)) in order to see available features.
 
+	record (OBJECT/DECORATOR)
+	-------------------
+
+	vandal.record is an object decorator class that stores menu options over functions and class methods for listing and executing in a CLI.
+		print(help(vandal.record)) in order to see available features.
+
+	track (OBJECT/DECORATOR)
+	------------
+
+	vandal.track is an object decorator class that tracks function behaviuor and stores it into a JSON file.
+		print(help(vandal.track)) in order to see available features.
+
 '''
 
 # ignore __pycache__ from forming inside the library directory.
