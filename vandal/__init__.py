@@ -82,6 +82,12 @@ from vandal.objects.eoq import EOQ
 from vandal.objects.montecarlo import MonteCarlo
 from vandal.objects.dijkstra import Dijkstra
 
+# duality client decorator imports.
+from duality.decorators.particles import (
+	record,
+	track,
+)
+
 # app imports.
 from vandal.app import particles
 from vandal.app.particles import (
@@ -114,6 +120,8 @@ __all__ = [
     auto_sort,
 	create_password,
 	App,
+	record,
+	track,
     toolkit,
 	particles,
     MonteCarlo,

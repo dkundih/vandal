@@ -350,3 +350,6 @@ CHANGELOG
 3.2.1 (04/01/2022)
 - vandal.cli renamed to vandal.app.
 - CLIsets renamed to MC_testassets.
+
+3.2.2 (07/01/2022)
+- now imports duality particles for building a CLI. 
