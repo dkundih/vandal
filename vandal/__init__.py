@@ -96,9 +96,9 @@ from vandal.objects.dijkstra import Dijkstra
 
 # duality client decorator imports.
 from duality.decorators.particles import (
+	Meta,
 	record,
 	track,
-	Meta
 )
 
 # app imports.
@@ -133,9 +133,9 @@ __all__ = [
     auto_sort,
 	create_password,
 	App,
+	Meta,
 	record,
 	track,
-	Meta,
     toolkit,
 	particles,
     MonteCarlo,
