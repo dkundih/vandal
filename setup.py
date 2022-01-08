@@ -53,7 +53,7 @@ setup(
   keywords = 'data science, machine learning, data manipulation, artificial intelligence, AI, unin, duality, duality-py, duality.py, vandal, vandal-py, vandal.py',
   packages = find_packages(),
   install_requires = [
-    'duality >= 4.1.7',
+    'duality >= 4.1.9',
     'pandas >= 1.2.3',
     'numpy >= 1.19.5',
     'matplotlib >= 3.4.3',

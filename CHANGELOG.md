@@ -353,3 +353,6 @@ CHANGELOG
 
 3.2.2 (07/01/2022)
 - now imports duality particles for building a CLI. 
+
+3.2.3 (08/01/2022)
+- recent duality changes fetched.
