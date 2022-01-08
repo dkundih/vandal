@@ -98,6 +98,7 @@ from vandal.objects.dijkstra import Dijkstra
 from duality.decorators.particles import (
 	record,
 	track,
+	Meta
 )
 
 # app imports.
@@ -134,6 +135,7 @@ __all__ = [
 	App,
 	record,
 	track,
+	Meta,
     toolkit,
 	particles,
     MonteCarlo,
