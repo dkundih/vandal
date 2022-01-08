@@ -75,7 +75,7 @@ class MonteCarlo:
     )
 
     # import duality package decorators.
-    # DEVELOPER MODE -  from duality import track, record
+    # DEVELOPER MODE -  from duality.decorators.classparticles import track, record
 
     # initial launch.
     # DEVELOPER MODE - @track.entry('init')
