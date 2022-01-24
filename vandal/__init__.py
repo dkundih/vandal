@@ -96,16 +96,16 @@ from vandal.objects.dijkstra import Dijkstra
 
 # duality client decorator imports.
 from duality.decorators.particles import (
-	Meta,
-	record,
-	track,
+    Meta,
+    record,
+    track,
 )
 
 # app imports.
 from vandal.app import particles
 from vandal.app.particles import (
-		App,
-		__APPversion__,
+    App,
+    __APPversion__,
 )
 
 # hub imports.
@@ -118,7 +118,7 @@ from vandal.hub.toolkit import (
     list_sort,
     index_sort,
     auto_sort,
-	create_password,
+    create_password,
 )
 
 # all relevant contents.
@@ -131,13 +131,13 @@ __all__ = [
     list_sort,
     index_sort,
     auto_sort,
-	create_password,
-	App,
-	Meta,
-	record,
-	track,
+    create_password,
+    App,
+    Meta,
+    record,
+    track,
     toolkit,
-	particles,
+    particles,
     MonteCarlo,
     EOQ,
     Dijkstra,
