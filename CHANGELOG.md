@@ -365,3 +365,6 @@ CHANGELOG
 3.2.5 (25/01/2022)
 - duality requirement 4.1.10 -> 4.1.11
 - DEVELOPER MODE removed due to changes to duality package being only for static functions.
+
+3.2.6 (25/01/2022)
+- duality and colorama removed due to incoming argparse changes.
