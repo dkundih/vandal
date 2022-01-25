@@ -275,3 +275,26 @@ class MonteCarlo:
     # access saved logs from function execution.
     def get_logs(self):
         return
+
+# WIP
+
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dani', help = 'Unesi broj simulacija', type = int)
+    parser.add_argument('--simulacija', help = 'Unesi broj simulacija', type = int)
+    parser.add_argument('--opcija', help='Unesi opciju', type = str,
+    choices = ['risk', 'graph'])
+    args = parser.parse_args()
+    MC = MonteCarlo()
+
+    import pandas as pd
+    df = pd.DataFrame({
+        'Data' : [20,21,20,18,20,22,19]
+    })
+
+    MC.execute(list_of_values = df['Data'], time_seq=args.dani, num_sims= args.simulacija)
+
+    if args.opcija == 'risk':
+        MC.get_risk()
+
