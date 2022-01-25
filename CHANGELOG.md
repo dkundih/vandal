@@ -356,3 +356,8 @@ CHANGELOG
 
 3.2.3 (08/01/2022)
 - recent duality changes fetched.
+
+3.2.4 (25/01/2022)
+- regular maintenance activities.
+- create_password typo fixed.
+- create_password now included in toolkit help option.
