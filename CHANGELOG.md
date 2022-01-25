@@ -361,3 +361,7 @@ CHANGELOG
 - regular maintenance activities.
 - create_password typo fixed.
 - create_password now included in toolkit help option.
+
+3.2.X (X/X/X)
+- duality requirement 4.1.10 -> 4.1.11
+- 
