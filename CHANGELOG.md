@@ -362,6 +362,6 @@ CHANGELOG
 - create_password typo fixed.
 - create_password now included in toolkit help option.
 
-3.2.X (X/X/X)
+3.2.5 (25/01/2022)
 - duality requirement 4.1.10 -> 4.1.11
-- 
+- DEVELOPER MODE removed due to changes to duality package being only for static functions.

@@ -29,15 +29,6 @@ class Dijkstra:
             origin - origin node as a starting point.
             destination - destination node of the desired route.
 
-    (DEVELOPER MODE)
-    ----------------
-
-    Developer mode functions can only be set up manually by removing the '#DEVELOPER MODE -' in the source code.
-
-        * takes no additional arguments.
-        * Requirements:
-            '# DEVELOPER MODE -' removed in the code.
-
     '''
 
     # metadata of the used library.
@@ -52,30 +43,19 @@ class Dijkstra:
         __donate__,
     )
 
-    # import duality package decorators.
-    # DEVELOPER MODE - from duality import track, record
-
     # initial launch.
-    # DEVELOPER MODE - @track.entry('init')
-    # DEVELOPER MODE - @record.entry(option_name = 'init', option_description = 'initial launch.')
     def __init__(self):
         pass
 
     # class information.
-    # DEVELOPER MODE - @track.entry('string')
-    # DEVELOPER MODE - @record.entry(option_name = 'string', option_description = 'class information.')
     def __str__(self):
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
     # class information.
-    # DEVELOPER MODE - @track.entry('representation')
-    # DEVELOPER MODE - @record.entry(option_name = 'repr', option_description = 'shows object details.')
     def __repr__(self):
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
     # executes a Dijkstra algorithm route scan on a defined path.
-    # DEVELOPER MODE - @track.entry('execution')
-    # DEVELOPER MODE - @record.entry(option_name = 'execution', option_description = 'executes a Dijkstra algorithm route scan on a defined path.')
     def execute(self, nodes, origin, destination, log_summary = False):
         self.nodes = nodes
         self.origin = origin
