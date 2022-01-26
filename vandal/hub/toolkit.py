@@ -118,3 +118,50 @@ def create_password(length = 8):
         import random
         particles = 'abcdefghijklmnoprstuxwyzqABCDEFGHIJKLMNOPRSTUXWYZQ0123456789'
         return ''.join(random.sample(particles, length))
+
+# handles the file extenstion.
+def file_handler(file):
+        import pandas as pd
+        file = file.replace("'", '"').strip('"')
+        if str(file).endswith('.csv'):
+            data = pd.read_csv(file)
+            print('AVAILABLE COLUMNS: ')
+            for col in data.columns:
+                print(col)
+        elif str(file).endswith('.xlsx'):
+            data = pd.read_excel(file)
+            print('AVAILABLE COLUMNS: ')
+            for col in data.columns:
+                print(col)
+        elif str(file).endswith('.json'):
+            data = pd.read_json(file)
+            print('AVAILABLE COLUMNS: ')
+            for col in data.columns:
+                print(col)
+        else:
+            raise Exception('=== ONLY CSV, XLSX AND JSON FILES SUPPORTED. ===\n')
+        file_col = input('\nEnter column name: ').replace("'", '"').strip('"')
+        try:
+            data = data[file_col]
+            return data
+        except:
+            raise Exception('=== INVALID COLUMN NAME. ===\n')
+
+# file saver for code clarity.
+def save_to(file, prefix, func_name, choice):
+        import pandas as pd
+        import os
+        if choice == '1' or choice == 'csv':
+                extension = '.csv'
+                file.to_csv('vandal.MonteCarlo - ' + func_name + extension)
+                print(os.path.join(os.getcwd() + prefix + func_name + extension))
+        elif choice == '2' or choice == 'xlsx':
+                extension = '.xlsx'
+                file.to_excel('vandal.MonteCarlo - ' + func_name + extension)
+                print(os.path.join(os.getcwd() + prefix + func_name + extension))
+        elif choice == '3' or choice == 'json':
+                extension = '.json'
+                file.to_json('vandal.MonteCarlo - ' + func_name + extension)
+                print(os.path.join(os.getcwd() + prefix + func_name + extension))
+        else:
+                print('=== NO OPTION CHOSEN, EXITING THE MENU... =\n')

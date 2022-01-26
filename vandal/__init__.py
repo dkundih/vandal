@@ -52,7 +52,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
 	vandal.Dijkstra is a module for finding the optimal route between the defined nodes from the place of origin to the final destination.
 		print(help(vandal.Dijkstra)) in order to see available features.
 
-	App (EXECUTABLE MODULE)
+	App (EXECUTABLE MODULE) - DEPRECATED
 	-------------------------
 
 	vandal.App is an executable function that runs the Command Line Inerface of the vandal package.
@@ -100,6 +100,8 @@ from vandal.hub.toolkit import (
     index_sort,
     auto_sort,
     create_password,
+    file_handler,
+    save_to,
 )
 
 # all relevant contents.
@@ -113,6 +115,8 @@ __all__ = [
     index_sort,
     auto_sort,
     create_password,
+    file_handler,
+    save_to,
     App,
     toolkit,
     particles,

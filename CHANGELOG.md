@@ -368,3 +368,11 @@ CHANGELOG
 
 3.2.6 (25/01/2022)
 - duality and colorama removed due to incoming argparse changes.
+
+3.3.0 (26/01/2022)
+- switch from App to argparse CLI put to test.
+- App now marked as deprecated and will be set for removal after test confirmation.
+- introduced save_to and file_handler features within toolkit.
+
+3.3.1 (26/01/2022)
+- new test iteration.

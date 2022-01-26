@@ -1,4 +1,7 @@
 # object that contains the simulation data.
+from sys import prefix
+
+
 class MonteCarlo:
 
     '''
@@ -240,25 +243,69 @@ class MonteCarlo:
     def get_logs(self):
         return
 
-# WIP
+# CLI application.
+def Main():
+    import argparse
+    from vandal import (
+        file_handler,
+        save_to,
+    )
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--file', help = 'Enter file destination', type = str)
+    parser.add_argument('-t', '--time', help = 'Enter the time sequence', type = int)
+    parser.add_argument('-s', '--simulations', help = 'Enter the number of simulations', type = int)
+    parser.add_argument('-o', '--option', nargs = '*', help = 'Enter options', type = str, 
+    choices = ['graph', 'change', 'values', 'stats', 'risk', 'hist', 'help'])
+    args = parser.parse_args()
+
+    MC = MonteCarlo()
+    data = file_handler(args.file)
+    executed = MC.execute(list_of_values = data, time_seq=args.time, num_sims= args.simulations)
+
+    for arg in args.option:
+        if arg == 'graph':
+            title = input('Title: ')
+            x_axis = input('X axis title:')
+            y_axis = input('Y axis title:')
+            MC.graph(graph_title = title, x_title = x_axis, y_title = y_axis)
+        if arg == 'change':
+            print('1 | csv')
+            print('2 | xlsx')
+            print('3 | json')
+            file_type = input('\nEnter the number or name of file type:')
+            output = MC.get_change()
+            try:
+                save_to(file = output, prefix = '\vandal.MonteCarlo - ', func_name = 'change', choice = file_type)
+            except:
+                raise Exception('=== UNABLE TO SAVE, PLEASE SELECT ONE OF THE OPTIONS AND/OR RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
+        if arg == 'values':
+            print('1 | csv')
+            print('2 | xlsx')
+            print('3 | json')
+            file_type = input('\nEnter the number or name of file type:')
+            try:
+                save_to(file = executed, prefix = '\vandal.MonteCarlo - ', func_name = 'values', choice = file_type)
+            except:
+                raise Exception('=== UNABLE TO SAVE, PLEASE RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
+        if arg == 'stats' or arg == 'statistics':
+            MC.get_stats()
+        if arg == 'risk':
+            sample = int(input('Number of iterations to measure risk on: ') or 5000)
+            MC.get_risk(risk_sims = sample)
+        if arg == 'hist' or arg == 'histogram':
+            x_axis = input('X axis title:')
+            y_axis = input('Y axis title:')
+            print('1 | Basic Histogram')
+            print('2 | Empirical Rule Histogram')
+            method = input('Enter histogram method: ')
+            if method == '1':
+                MC.hist(x_title = x_axis, y_title = y_axis)
+            elif method == '2':
+                MC.hist(x_title = x_axis, y_title = y_axis, method = 'e')
+            else:
+                print('=== INVALID METHOD. ===\n')
+        if arg == 'help':
+            print('https://github.com/dkundih/vandal\n')
 
 if __name__ == '__main__':
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--dani', help = 'Unesi broj simulacija', type = int)
-    parser.add_argument('--simulacija', help = 'Unesi broj simulacija', type = int)
-    parser.add_argument('--opcija', help='Unesi opciju', type = str,
-    choices = ['risk', 'graph'])
-    args = parser.parse_args()
-    MC = MonteCarlo()
-
-    import pandas as pd
-    df = pd.DataFrame({
-        'Data' : [20,21,20,18,20,22,19]
-    })
-
-    MC.execute(list_of_values = df['Data'], time_seq=args.dani, num_sims= args.simulacija)
-
-    if args.opcija == 'risk':
-        MC.get_risk()
-
+    Main()

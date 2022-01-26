@@ -1,3 +1,5 @@
+#DEPRECATED
+
 # dependency imports.
 import colorama
 from colorama import Fore
