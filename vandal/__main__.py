@@ -1,6 +1,6 @@
 # imports all CLI clients.
-from vandal.objects import montecarlo 
 import vandal
+from vandal.objects import montecarlo 
 
 # runs the main CLI client.
 if __name__ == '__main__':
