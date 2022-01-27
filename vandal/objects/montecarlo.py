@@ -1,7 +1,4 @@
 # object that contains the simulation data.
-from sys import prefix
-
-
 class MonteCarlo:
 
     '''
