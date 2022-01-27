@@ -380,3 +380,11 @@ CHANGELOG
 3.4.0 (27/01/2022)
 - new argparse application that leads to the Monte Carlo app put to test.
 - old vandal.App moved to .deprecated.
+
+3.4.1 (28/01/2022)
+- confirmed functionality of Monte Carlo app.
+- added an option to input values manually without having to provide a file.
+- preparation for introduction of EOQ and Dijkstra modules for argparse integration.
+
+3.4.2. (28/01/2022)
+- fixed save_to bug, now properly saves change and values.

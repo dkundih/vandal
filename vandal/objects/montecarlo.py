@@ -259,15 +259,38 @@ def MCapp():
     colorama.init()
 
     # vandal.App version.
-    __APPversion__ = 'v1.2.0'
+    __APPversion__ = 'v 1.2.1'
     
     # greeting.
     print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
-    print(Fore.GREEN + ' - vandal package version - ', __version__, Fore.RESET, '\n')
+    print(Fore.GREEN + ' - vandal package version -', 'v',__version__, Fore.RESET, '\n')
+    print(Fore.YELLOW + 'How do you wish to input your data?', Fore.RESET)
+    print('0 | Manual input')
+    print('1 | File input\n')
+    inputchoice = input('Enter the option number: ')
 
-    # app start.
-    inputfile = input('Enter the file destination: ')
-    data = file_handler(file = inputfile)
+    # manual input.
+    if inputchoice == '0':
+        import pandas as pd
+        iter = True
+        print(Fore.RED + 'Write any non-number value to stop.', Fore.RESET)
+        data = []
+
+        while iter:
+            try:
+                listinput = int(input('Enter a value: '))
+                data.append(listinput)
+            except:
+                iter = False
+
+        data = pd.DataFrame(data)
+        data = data[0]
+
+    # file input.
+    elif inputchoice == '1':
+        inputfile = input('Enter the file destination: ')
+        data = file_handler(file = inputfile)
+
     MC = MonteCarlo()
     simulations = int(input('Enter number of simulations: ') or 100)
     period = int(input('Enter desired period: ') or 50)
@@ -285,19 +308,19 @@ def MCapp():
             print('1 | csv')
             print('2 | xlsx')
             print('3 | json')
-            file_type = input('\nEnter the number or name of file type:')
+            file_type = input('\nEnter the number or name of file type: ')
             output = MC.get_change()
             try:
-                save_to(output, 'change', choice = file_type)
+                save_to(executed, prefix = 'vandal.MonteCarlo - ' ,func_name = 'change', choice = file_type)
             except:
                 raise Exception('=== UNABLE TO SAVE, PLEASE SELECT ONE OF THE OPTIONS AND/OR RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
         if action == 'values':
             print('1 | csv')
             print('2 | xlsx')
             print('3 | json')
-            file_type = input('\nEnter the number or name of file type:')
+            file_type = input('\nEnter the number or name of file type: ')
             try:
-                save_to(executed, 'values', choice = file_type)
+                save_to(executed, prefix = 'vandal.MonteCarlo - ', func_name = 'values', choice = file_type)
             except:
                 raise Exception('=== UNABLE TO SAVE, PLEASE RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
         if action == 'stats' or action == 'statistics':

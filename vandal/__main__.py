@@ -10,7 +10,7 @@ colorama.init()
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('-e', '--entry', help = 'Enter options', type = str,
+    parser.add_argument('-e', '--entry', help = 'start Monte Carlo application.', type = str,
     choices = ['montecarlo'])
     args = parser.parse_args()
 
