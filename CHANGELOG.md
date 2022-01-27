@@ -374,5 +374,9 @@ CHANGELOG
 - App now marked as deprecated and will be set for removal after test confirmation.
 - introduced save_to and file_handler features within toolkit.
 
-3.3.1 (26/01/2022)
-- new test iteration.
+3.3.1+ (26/01/2022)
+- new test iterations.
+
+3.4.0 (27/01/2022)
+- new argparse application that leads to the Monte Carlo app put to test.
+- old vandal.App moved to .deprecated.

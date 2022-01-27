@@ -244,55 +244,68 @@ class MonteCarlo:
         return
 
 # CLI application.
-def Main():
-    import argparse
-    from vandal import (
-        file_handler,
+def MCapp():
+    import colorama
+    from colorama import Fore
+    import os
+    from vandal.misc._meta import __version__
+    from vandal.objects import MonteCarlo
+    from vandal.hub.toolkit import (
         save_to,
+        file_handler,
     )
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '--file', help = 'Enter file destination', type = str)
-    parser.add_argument('-t', '--time', help = 'Enter the time sequence', type = int)
-    parser.add_argument('-s', '--simulations', help = 'Enter the number of simulations', type = int)
-    parser.add_argument('-o', '--option', nargs = '*', help = 'Enter options', type = str, 
-    choices = ['graph', 'change', 'values', 'stats', 'risk', 'hist', 'help'])
-    args = parser.parse_args()
+    os.system('cls')
+    # initiates coloring.
+    colorama.init()
 
+    # vandal.App version.
+    __APPversion__ = 'v1.2.0'
+    
+    # greeting.
+    print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
+    print(Fore.GREEN + ' - vandal package version - ', __version__, Fore.RESET, '\n')
+
+    # app start.
+    inputfile = input('Enter the file destination: ')
+    data = file_handler(file = inputfile)
     MC = MonteCarlo()
-    data = file_handler(args.file)
-    executed = MC.execute(list_of_values = data, time_seq=args.time, num_sims= args.simulations)
+    simulations = int(input('Enter number of simulations: ') or 100)
+    period = int(input('Enter desired period: ') or 50)
+    executed = MC.execute(list_of_values = data, num_sims = simulations, time_seq = period)
 
-    for arg in args.option:
-        if arg == 'graph':
+    # options after defining the parameters. 
+    while True:
+        action = input('ACTIONS: graph, change, values, stats, risk, hist, home, help: ')
+        if action == 'graph':
             title = input('Title: ')
             x_axis = input('X axis title:')
             y_axis = input('Y axis title:')
             MC.graph(graph_title = title, x_title = x_axis, y_title = y_axis)
-        if arg == 'change':
+        if action == 'change':
             print('1 | csv')
             print('2 | xlsx')
             print('3 | json')
             file_type = input('\nEnter the number or name of file type:')
             output = MC.get_change()
             try:
-                save_to(file = output, prefix = '\vandal.MonteCarlo - ', func_name = 'change', choice = file_type)
+                save_to(output, 'change', choice = file_type)
             except:
                 raise Exception('=== UNABLE TO SAVE, PLEASE SELECT ONE OF THE OPTIONS AND/OR RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
-        if arg == 'values':
+        if action == 'values':
             print('1 | csv')
             print('2 | xlsx')
             print('3 | json')
             file_type = input('\nEnter the number or name of file type:')
             try:
-                save_to(file = executed, prefix = '\vandal.MonteCarlo - ', func_name = 'values', choice = file_type)
+                save_to(executed, 'values', choice = file_type)
             except:
                 raise Exception('=== UNABLE TO SAVE, PLEASE RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
-        if arg == 'stats' or arg == 'statistics':
+        if action == 'stats' or action == 'statistics':
             MC.get_stats()
-        if arg == 'risk':
+        if action == 'risk':
             sample = int(input('Number of iterations to measure risk on: ') or 5000)
             MC.get_risk(risk_sims = sample)
-        if arg == 'hist' or arg == 'histogram':
+        if action == 'hist' or action == 'histogram':
             x_axis = input('X axis title:')
             y_axis = input('Y axis title:')
             print('1 | Basic Histogram')
@@ -303,9 +316,11 @@ def Main():
             elif method == '2':
                 MC.hist(x_title = x_axis, y_title = y_axis, method = 'e')
             else:
-                print('=== INVALID METHOD. ===\n')
-        if arg == 'help':
-            print('https://github.com/dkundih/vandal\n')
+                print(Fore.RED + '=== INVALID METHOD. ===\n', Fore.RESET)
+        if action == 'home':
+            break
+        if action == 'help':
+            print(Fore.YELLOW + 'https://github.com/dkundih/vandal\n', Fore.RESET)
 
 if __name__ == '__main__':
-    Main()
+    MCapp()

@@ -57,5 +57,6 @@ setup(
     'numpy >= 1.19.5',
     'matplotlib >= 3.4.3',
     'openpyxl',
+    'colorama >= 0.4.4',
 ]
   )

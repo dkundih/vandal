@@ -33,6 +33,10 @@ AVAILABLE FEATURES IN THE LIBRARY:
 		auto_sort(data, split_method, trigger = lambda x: x[0]) - automatically splits all values in a list and sorts them based on the added trigger as lambda x: [x[i], x[i]] and joins them back together.
 
 		create_password(length) - creates a random password with adjustable lenght (default: length = 8).
+
+        save_to(file, prefix, func_name, choice) - file saver for code clarity.
+
+        file_handler(file) - handles the file extenstion upon import.
 		
 	MONTECARLO (OBJECT)
 	-------------------
@@ -52,11 +56,11 @@ AVAILABLE FEATURES IN THE LIBRARY:
 	vandal.Dijkstra is a module for finding the optimal route between the defined nodes from the place of origin to the final destination.
 		print(help(vandal.Dijkstra)) in order to see available features.
 
-	App (EXECUTABLE MODULE) - DEPRECATED
+	MCapp (EXECUTABLE CLI MODULE)
 	-------------------------
 
-	vandal.App is an executable function that runs the Command Line Inerface of the vandal package.
-		print(help(vandal.App)) in order to see available features.
+	vandal.MCapp is an executable function that runs the Command Line Interface of the vandal MonteCarlo module.
+		print(help(vandal.MCapp)) in order to see available features.
 
 '''
 
@@ -79,15 +83,11 @@ from vandal.misc._meta import (
 # object and module imports.
 from vandal.hub import toolkit
 from vandal.objects.eoq import EOQ
-from vandal.objects.montecarlo import MonteCarlo
-from vandal.objects.dijkstra import Dijkstra
-
-# app imports.
-from vandal.app import particles
-from vandal.app.particles import (
-    App,
-    __APPversion__,
+from vandal.objects.montecarlo import (
+    MonteCarlo,
+    MCapp,
 )
+from vandal.objects.dijkstra import Dijkstra
 
 # hub imports.
 from vandal.hub.toolkit import (
@@ -117,10 +117,9 @@ __all__ = [
     create_password,
     file_handler,
     save_to,
-    App,
     toolkit,
-    particles,
     MonteCarlo,
+    MCapp,
     EOQ,
     Dijkstra,
 ]

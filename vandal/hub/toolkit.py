@@ -22,6 +22,10 @@ vandal.toolkit is a set of data manipulation tools that can be directly accessed
         auto_sort(data, split_method, trigger = lambda x: x[0]) - automatically splits all values in a list and sorts them based on the added trigger as lambda x: [x[i], x[i]] and joins them back together.
 
 	create_password(length) - creates a random password with adjustable lenght (default: length = 8).
+
+        save_to(file, prefix, func_name, choice) - file saver for code clarity.
+
+        file_handler(file) - handles the file extenstion upon import.
 	
 '''
 
@@ -119,7 +123,7 @@ def create_password(length = 8):
         particles = 'abcdefghijklmnoprstuxwyzqABCDEFGHIJKLMNOPRSTUXWYZQ0123456789'
         return ''.join(random.sample(particles, length))
 
-# handles the file extenstion.
+# handles the file extenstion upon import.
 def file_handler(file):
         import pandas as pd
         file = file.replace("'", '"').strip('"')
