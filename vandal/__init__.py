@@ -7,14 +7,14 @@ This is a connection to the __init__ file of the vandal library.
 
 AVAILABLE FEATURES IN THE LIBRARY:
 
-	TOOLKIT (MODULE FUNCTIONS)
-	--------------------------
+    TOOLKIT (MODULE FUNCTIONS)
+    --------------------------
 
-	set of available data manipulation functions from the vandal library.
-		print(help(any_function_listed_below)) in order to see the function details or print(help(vandal.toolkit)) for all functions at once.
-        
-		FUNCTIONS (ACCESSIBLE DIRECTLY FROM THE LIBRARY)
-		------------------------------------------------
+    set of available data manipulation functions from the vandal library.
+        print(help(any_function_listed_below)) in order to see the function details or print(help(vandal.toolkit)) for all functions at once.
+
+        FUNCTIONS (ACCESSIBLE DIRECTLY FROM THE LIBRARY)
+        ------------------------------------------------
 
             random_value(mean, st_dev, **rounded) - gives a random value of mean and standard deviation inputed, if rounded = 'y', value will be rounded.
 
@@ -23,7 +23,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
             split_values(data, split_method) - splits the data using a split method character.
 
             join_values(data, join_method) - joins the data using a join metod character.
-            
+
             replace_values(data, replaced_value, replacing_value) - replaces a defined value with a desired value.
 
             list_sort(data, array) - manually sorts data depending on defined array of indexes.
@@ -39,28 +39,28 @@ AVAILABLE FEATURES IN THE LIBRARY:
             file_handler(file) - handles the file extenstion upon import.
 
     MONTECARLO (OBJECT)
-	-------------------
+    -------------------
 
-	vandal.MonteCarlo is a module for performing the Monte Carlo simulation over the defined data with a lot of useful features.
-		print(help(vandal.MonteCarlo)) in order to see available features.
+    vandal.MonteCarlo is a module for performing the Monte Carlo simulation over the defined data with a lot of useful features.
+        print(help(vandal.MonteCarlo)) in order to see available features.
 
     EOQ (OBJECT)
-	------------
+    ------------
 
-	vandal.EOQ is a module for finding an Economic order quantity over the defined data with a lot of useful features.
-		print(help(vandal.EOQ)) in order to see available features.
+    vandal.EOQ is a module for finding an Economic order quantity over the defined data with a lot of useful features.
+        print(help(vandal.EOQ)) in order to see available features.
 
     Dijkstra (OBJECT)
-	-----------------
+    -----------------
 
-	vandal.Dijkstra is a module for finding the optimal route between the defined nodes from the place of origin to the final destination.
-		print(help(vandal.Dijkstra)) in order to see available features.
+    vandal.Dijkstra is a module for finding the optimal route between the defined nodes from the place of origin to the final destination.
+        print(help(vandal.Dijkstra)) in order to see available features.
 
     MCapp (EXECUTABLE CLI MODULE)
-	-------------------------
+    -------------------------
 
-	vandal.MCapp is an executable function that runs the Command Line Interface of the vandal MonteCarlo module.
-		print(help(vandal.MCapp)) in order to see available features.
+    vandal.MCapp is an executable function that runs the Command Line Interface of the vandal MonteCarlo module.
+        print(help(vandal.MCapp)) in order to see available features.
 
 '''
 
