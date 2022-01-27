@@ -12,7 +12,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
 	set of available data manipulation functions from the vandal library.
 		print(help(any_function_listed_below)) in order to see the function details or print(help(vandal.toolkit)) for all functions at once.
-
+        
 		FUNCTIONS (ACCESSIBLE DIRECTLY FROM THE LIBRARY)
 		------------------------------------------------
 
@@ -23,7 +23,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
             split_values(data, split_method) - splits the data using a split method character.
 
             join_values(data, join_method) - joins the data using a join metod character.
-
+            
             replace_values(data, replaced_value, replacing_value) - replaces a defined value with a desired value.
 
             list_sort(data, array) - manually sorts data depending on defined array of indexes.
