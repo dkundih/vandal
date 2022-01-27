@@ -34,9 +34,9 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
 		create_password(length) - creates a random password with adjustable lenght (default: length = 8).
 
-        	save_to(file, prefix, func_name, choice) - file saver for code clarity.
+        save_to(file, prefix, func_name, choice) - file saver for code clarity.
 
-        	file_handler(file) - handles the file extenstion upon import.
+        file_handler(file) - handles the file extenstion upon import.
 
 	MONTECARLO (OBJECT)
 	-------------------
