@@ -16,27 +16,27 @@ AVAILABLE FEATURES IN THE LIBRARY:
 		FUNCTIONS (ACCESSIBLE DIRECTLY FROM THE LIBRARY)
 		------------------------------------------------
 
-                random_value(mean, st_dev, **rounded) - gives a random value of mean and standard deviation inputed, if rounded = 'y', value will be rounded.
+        random_value(mean, st_dev, **rounded) - gives a random value of mean and standard deviation inputed, if rounded = 'y', value will be rounded.
 
-                random_pool(mean, st_dev, pool_size, **rounded) - gives random values of mean and standard deviation inputed for the amount of values defined in the pool size, if rounded = 'y', values will be rounded.
+        random_pool(mean, st_dev, pool_size, **rounded) - gives random values of mean and standard deviation inputed for the amount of values defined in the pool size, if rounded = 'y', values will be rounded.
 
-                split_values(data, split_method) - splits the data using a split method character.
+        split_values(data, split_method) - splits the data using a split method character.
 
-                join_values(data, join_method) - joins the data using a join metod character.
+        join_values(data, join_method) - joins the data using a join metod character.
 
-                replace_values(data, replaced_value, replacing_value) - replaces a defined value with a desired value.
+        replace_values(data, replaced_value, replacing_value) - replaces a defined value with a desired value.
 
-                list_sort(data, array) - manually sorts data depending on defined array of indexes.
+        list_sort(data, array) - manually sorts data depending on defined array of indexes.
 
-                index_sort(data, split_method, index_array) - sorts the indicies in a list of values based on the index array defined as [x,x,x].
+        index_sort(data, split_method, index_array) - sorts the indicies in a list of values based on the index array defined as [x,x,x].
 
-                auto_sort(data, split_method, trigger = lambda x: x[0]) - automatically splits all values in a list and sorts them based on the added trigger as lambda x: [x[i], x[i]] and joins them back together.
+        auto_sort(data, split_method, trigger = lambda x: x[0]) - automatically splits all values in a list and sorts them based on the added trigger as lambda x: [x[i], x[i]] and joins them back together.
 
-                create_password(length) - creates a random password with adjustable lenght (default: length = 8).
+        create_password(length) - creates a random password with adjustable lenght (default: length = 8).
 
-                save_to(file, prefix, func_name, choice) - file saver for code clarity.
+        save_to(file, prefix, func_name, choice) - file saver for code clarity.
 
-                file_handler(file) - handles the file extenstion upon import.
+        file_handler(file) - handles the file extenstion upon import.
 
     MONTECARLO (OBJECT)
 	-------------------
@@ -44,19 +44,19 @@ AVAILABLE FEATURES IN THE LIBRARY:
 	vandal.MonteCarlo is a module for performing the Monte Carlo simulation over the defined data with a lot of useful features.
 		print(help(vandal.MonteCarlo)) in order to see available features.
 
-	EOQ (OBJECT)
+    EOQ (OBJECT)
 	------------
 
 	vandal.EOQ is a module for finding an Economic order quantity over the defined data with a lot of useful features.
 		print(help(vandal.EOQ)) in order to see available features.
 
-	Dijkstra (OBJECT)
+    Dijkstra (OBJECT)
 	-----------------
 
 	vandal.Dijkstra is a module for finding the optimal route between the defined nodes from the place of origin to the final destination.
 		print(help(vandal.Dijkstra)) in order to see available features.
 
-	MCapp (EXECUTABLE CLI MODULE)
+    MCapp (EXECUTABLE CLI MODULE)
 	-------------------------
 
 	vandal.MCapp is an executable function that runs the Command Line Interface of the vandal MonteCarlo module.
