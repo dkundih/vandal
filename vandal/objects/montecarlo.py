@@ -256,7 +256,7 @@ def MCapp():
     colorama.init()
 
     # vandal.App version.
-    __APPversion__ = 'v 1.2.1'
+    __APPversion__ = 'v 1.2.3'
     
     # greeting.
     print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
@@ -308,7 +308,7 @@ def MCapp():
             file_type = input('\nEnter the number or name of file type: ')
             output = MC.get_change()
             try:
-                save_to(executed, prefix = 'vandal.MonteCarlo - ' ,func_name = 'change', choice = file_type)
+                save_to(file = executed, prefix = 'vandal.MonteCarlo - ' , func_name = 'change', choice = file_type)
             except:
                 raise Exception('=== UNABLE TO SAVE, PLEASE SELECT ONE OF THE OPTIONS AND/OR RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
         if action == 'values':
@@ -317,7 +317,7 @@ def MCapp():
             print('3 | json')
             file_type = input('\nEnter the number or name of file type: ')
             try:
-                save_to(executed, prefix = 'vandal.MonteCarlo - ', func_name = 'values', choice = file_type)
+                save_to(file = executed, prefix = 'vandal.MonteCarlo - ', func_name = 'values', choice = file_type)
             except:
                 raise Exception('=== UNABLE TO SAVE, PLEASE RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
         if action == 'stats' or action == 'statistics':

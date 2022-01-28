@@ -162,10 +162,10 @@ def save_to(file, prefix, func_name, choice):
         elif choice == '2' or choice == 'xlsx':
                 extension = '.xlsx'
                 file.to_excel(prefix + func_name + extension)
-                print(os.path.join(os.getcwd() + prefix + func_name + extension))
+                print(os.path.join(os.getcwd() + '\\' + prefix + func_name + extension))
         elif choice == '3' or choice == 'json':
                 extension = '.json'
                 file.to_json(prefix + func_name + extension)
-                print(os.path.join(os.getcwd() + prefix + func_name + extension))
+                print(os.path.join(os.getcwd() + '\\' + prefix + func_name + extension))
         else:
                 print('=== NO OPTION CHOSEN, EXITING THE MENU... =\n')

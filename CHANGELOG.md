@@ -388,3 +388,10 @@ CHANGELOG
 
 3.4.2. (28/01/2022)
 - fixed save_to bug, now properly saves change and values.
+
+3.4.3. (28/01/2022)
+- indent fix.
+- fixed destination shown using save_to.
+
+3.4.4. (28/01/2022) - STABLE
+- quick bug fix related to change save to file option.
