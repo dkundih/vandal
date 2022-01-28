@@ -256,7 +256,7 @@ def MCapp():
     colorama.init()
 
     # vandal.App version.
-    __APPversion__ = 'v 1.2.4'
+    __APPversion__ = 'v 1.2.5'
     
     # greeting.
     print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
@@ -275,7 +275,9 @@ def MCapp():
 
         while iter:
             try:
-                listinput = float(input('Enter a value: '))
+                listinput = input('Enter a value: ')
+                listinput = listinput.replace(",", ".")
+                listinput = float(listinput)
                 data.append(listinput)
             except:
                 iter = False
@@ -291,11 +293,12 @@ def MCapp():
     MC = MonteCarlo()
     simulations = int(input('Enter number of simulations: ') or 100)
     period = int(input('Enter desired period: ') or 50)
+    print('')
     executed = MC.execute(list_of_values = data, num_sims = simulations, time_seq = period)
 
     # options after defining the parameters. 
     while True:
-        action = input('ACTIONS: graph, change, values, stats, risk, hist, home, help: ')
+        action = input('\n>>> ACTIONS: graph, change, values, stats, risk, hist, home, help: ')
         if action == 'graph':
             title = input('Title: ')
             x_axis = input('X axis title:')
@@ -310,7 +313,7 @@ def MCapp():
             try:
                 save_to(file = executed, prefix = 'vandal.MonteCarlo - ' , func_name = 'change', choice = file_type)
             except:
-                raise Exception('=== UNABLE TO SAVE, PLEASE SELECT ONE OF THE OPTIONS AND/OR RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
+                raise Exception('=== UNABLE TO SAVE, PLEASE SELECT ONE OF THE OPTIONS AND/OR RUN THE TERMINAL AS AN ADMINISTRATOR. ===')
         if action == 'values':
             print('1 | csv')
             print('2 | xlsx')
@@ -319,7 +322,7 @@ def MCapp():
             try:
                 save_to(file = executed, prefix = 'vandal.MonteCarlo - ', func_name = 'values', choice = file_type)
             except:
-                raise Exception('=== UNABLE TO SAVE, PLEASE RUN THE TERMINAL AS AN ADMINISTRATOR. ===\n')
+                raise Exception('=== UNABLE TO SAVE, PLEASE RUN THE TERMINAL AS AN ADMINISTRATOR. ===')
         if action == 'stats' or action == 'statistics':
             MC.get_stats()
         if action == 'risk':
@@ -328,19 +331,19 @@ def MCapp():
         if action == 'hist' or action == 'histogram':
             x_axis = input('X axis title:')
             y_axis = input('Y axis title:')
-            print('1 | Basic Histogram')
-            print('2 | Empirical Rule Histogram')
-            method = input('Enter histogram method: ')
-            if method == '1':
+            print('0 | Basic Histogram')
+            print('1 | Empirical Rule Histogram')
+            method = input('\nEnter histogram method: ')
+            if method == '0':
                 MC.hist(x_title = x_axis, y_title = y_axis)
-            elif method == '2':
+            elif method == '1':
                 MC.hist(x_title = x_axis, y_title = y_axis, method = 'e')
             else:
                 print(Fore.RED + '=== INVALID METHOD. ===\n', Fore.RESET)
         if action == 'home':
             break
         if action == 'help':
-            print(Fore.YELLOW + 'https://github.com/dkundih/vandal\n', Fore.RESET)
+            print(Fore.YELLOW + 'https://github.com/dkundih/vandal', Fore.RESET)
 
 if __name__ == '__main__':
     MCapp()

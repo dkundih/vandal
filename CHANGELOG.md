@@ -400,3 +400,4 @@ CHANGELOG
 - floats allowed in manual input of values instead od integers only.
 - fixed .csv file save location.
 - redefined README.
+- now supports both 'x,y' and 'x.y' format of decimal numbers in manual input.
