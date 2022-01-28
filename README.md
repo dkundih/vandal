@@ -20,44 +20,75 @@ Visit my Data Library at https://github.com/dkundih/DataLibrary in order to see 
 **Installation**
 
 ```sh
-# using pip
+# using pip.
 pip install vandal
 ```
+
+<h3>Terminal CLI application</h3>
+
+vandal provides an option of being run within any terminal as a data science/machine learning application. 
+
+**Terminal options**
+
+```sh
+# terminal app options help.
+python -m vandal -h / python -m vandal --help
+```
+
+```sh
+# terminal app entry choices.
+python -m vandal -e / python -m vandal --entry
+```
+
+```sh
+# terminal app entry example.
+python -m vandal -e montecarlo / python -m vandal --entry montecarlo
+```
+
+```sh
+# for Python environment.
+import vandal
+```
+
+<h3>Python library</h3>
+
+vandal functions as a library that can be run in python/jupyter environment and also integrated in other libraries and projects.
+
 **Import**
 
 ```sh
-# for Python environment
+# import the library.
 import vandal
 ```
 
 **Help**
 
 ```sh
-# library help
+# library help.
 print(help(vandal))
 ```
 
 ```sh
-# module/object help
+# module/object help.
 print(help(vandal.MonteCarlo))
 ```
 
 **Meta data**
 
 ```sh
-# meta data (individual)
+# meta data (individual).
 print(vandal.__version__)
 ```
 
 ```sh
-# all meta data
+# all meta data.
 print(help(vandal.misc._meta))
 ```
 
 **Library location**
 
 ```sh
-# file location after installation
+# file location after installation.
 print(help(vandal.__file__))
 ```
 
@@ -71,11 +102,11 @@ As a vandal gives abandoned walls meaning with graffiti, so does vandal library 
 
 **Is vandal free to use?**
 
-vandal is completely free of charge for both personal and commercial use, but only under the conditions stated in the license. Developing such a complex module isn't easy and takes a lot of time and knowledge in several fields of science such as statistics, programming and domain knowledge, so any donation at https://patreon.com/dkundih or https://www.buymeacoffee.com/dkundih in order to keep vandal free is more than welcome.
+vandal is completely free of charge for both personal and commercial use, but only under the conditions stated in the license. Developing such a complex library isn't easy and takes a lot of time and knowledge in several fields of science such as statistics, programming and domain knowledge, so any donation at https://patreon.com/dkundih or https://www.buymeacoffee.com/dkundih in order to keep vandal free is more than welcome.
 
 **A word from the author!**
 
-The module itself, it's maintenance, updates and stability, logo, videos, promotional materials and everything associated with duality are done by **David Kundih** from **Croatia**.
+The library itself, it's maintenance, updates and stability, logo, videos, promotional materials and everything associated with duality are done by **David Kundih** from **Croatia**.
 
 <h1 align='center'> Hi! :wave:</h1>
  

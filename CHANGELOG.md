@@ -386,12 +386,16 @@ CHANGELOG
 - added an option to input values manually without having to provide a file.
 - preparation for introduction of EOQ and Dijkstra modules for argparse integration.
 
-3.4.2. (28/01/2022)
+3.4.2 (28/01/2022)
 - fixed save_to bug, now properly saves change and values.
 
-3.4.3. (28/01/2022)
+3.4.3 (28/01/2022)
 - indent fix.
 - fixed destination shown using save_to.
 
-3.4.4. (28/01/2022) - STABLE
+3.4.4 (28/01/2022) 
 - quick bug fix related to change save to file option.
+
+3.4.5 (28/01/2022) - STABLE
+- floats allowed in manual input of values instead od integers only.
+- redefined README

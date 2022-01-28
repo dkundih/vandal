@@ -256,7 +256,7 @@ def MCapp():
     colorama.init()
 
     # vandal.App version.
-    __APPversion__ = 'v 1.2.3'
+    __APPversion__ = 'v 1.2.4'
     
     # greeting.
     print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
@@ -275,7 +275,7 @@ def MCapp():
 
         while iter:
             try:
-                listinput = int(input('Enter a value: '))
+                listinput = float(input('Enter a value: '))
                 data.append(listinput)
             except:
                 iter = False
