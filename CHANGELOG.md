@@ -398,4 +398,5 @@ CHANGELOG
 
 3.4.5 (28/01/2022) - STABLE
 - floats allowed in manual input of values instead od integers only.
-- redefined README
+- fixed .csv file save location.
+- redefined README.
