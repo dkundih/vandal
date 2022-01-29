@@ -15,5 +15,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.entry == 'montecarlo':
-        print(Fore.GREEN + '=== ENTERING MONTECARLO CLIENT... ===\n', Fore.RESET)
+        print(Fore.YELLOW + '=== ENTERING MONTECARLO CLIENT... ===\n', Fore.RESET)
         vandal.objects.montecarlo.MCapp()
