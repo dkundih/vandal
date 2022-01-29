@@ -312,7 +312,7 @@ def MCapp():
 
     # options after defining the parameters. 
     while True:
-        action = input('\n>>> ACTIONS: graph, change, values, stats, risk, hist, home, help: ')
+        action = input('\n>>> ACTIONS: graph, change, values, stats, risk, hist, help, home: ')
         if action == 'graph':
             print('')
             title = input('Title: ')
