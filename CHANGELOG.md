@@ -396,8 +396,16 @@ CHANGELOG
 3.4.4 (28/01/2022) 
 - quick bug fix related to change save to file option.
 
-3.4.5 (28/01/2022) - STABLE
+3.4.5 (28/01/2022)
 - floats allowed in manual input of values instead od integers only.
 - fixed .csv file save location.
 - redefined README.
 - now supports both 'x,y' and 'x.y' format of decimal numbers in manual input.
+
+3.4.6+ (29/01/2022) - UNSTABLE
+- UX improved.
+- coloring put to test.
+
+3.5.0 (29/01/2022)
+- confirmed functionality and final changes.
+- LICENSE 2022. added.

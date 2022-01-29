@@ -1,3 +1,8 @@
+# coloring.
+from colorama import Fore
+import colorama
+colorama.init()
+
 # object that contains the simulation data.
 class MonteCarlo:
 
@@ -83,10 +88,10 @@ class MonteCarlo:
         self.time_seq = time_seq
         self.num_sims = num_sims
         self.ref_value_index = ref_value_index
-        print(f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units.')
+        print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
         from vandal.hub.toolkit import random_value
-        print('Monte Carlo simulation has been executed.')
-        print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.\nThe model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
+        print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.')
+        #print('The model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
         import pandas as pd
         # this removes pandas warning of highly fragmented DataFrame for newer pandas versions.
         from warnings import simplefilter
@@ -121,7 +126,7 @@ class MonteCarlo:
 
             data[num_sim] = index_array
         print(end = '\r')
-        print('Monte Carlo simulation set up and ready to plot.')
+        print(Fore.GREEN + 'Monte Carlo simulation set up and ready to plot.' + Fore.RESET)
         self.results = data
         return data
 
@@ -156,21 +161,21 @@ class MonteCarlo:
 
         assert (NRisk < 100), '\nTime sequence and/or number of iterations are too low for the proper risk calculation.'
 
-        print('\nRisk for this option is', round(NRisk,2), '%.')
+        print(Fore.GREEN + '\nRisk for this option is' + Fore.RESET, round(NRisk,2), '%.')
 
     # plots the Monte Carlo simulation on a graph.
     def graph(self, graph_title = 'Monte Carlo simulation', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), perform_block = True):
-        print('\nMonteCarlo() plotting initialized.')
+        print(Fore.GREEN + '\nMonteCarlo() plotting initialized.' + Fore.RESET)
         import matplotlib.pyplot as plt
         plt.figure(figsize = plot_size)
-        plt.title('vandal (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
+        plt.title('vandal (c) David Kundih, 2021-2022', fontsize = 14, weight = 'regular', loc = 'right')
         plt.suptitle(graph_title, fontsize = 25, weight = 'bold')
         plt.plot(self.results)
         plt.axhline(y = self.results[0][0], color = 'k', linestyle = 'solid')
         plt.xlabel(x_title, fontsize = 18, weight = 'semibold')
         plt.ylabel(y_title, fontsize = 18, weight = 'semibold')
         plt.show(block = perform_block)
-        print('MonteCarlo() plotting finished.')
+        print(Fore.GREEN + 'MonteCarlo() plotting finished.' + Fore.RESET)
 
     # shows the statistics of the Monte Carlo simulation.
     def get_stats(self, filtered = False):
@@ -186,12 +191,12 @@ class MonteCarlo:
         self.standard_deviation = standard_deviation
         self.mean_value = mean_value
         if filtered == False:
-            print('\nNumber of simulations: ', self.time_seq)
-            print('Number of iterations: ', self.num_sims)
-            print('Mean value: ', mean_value)
-            print('Standard deviation: ', standard_deviation)
-            print('Maximum: ', maximum_value)
-            print('Minimum: ', minimum_value, '\n')
+            print(Fore.GREEN + '\nNumber of simulations: ' + Fore.RESET, self.time_seq)
+            print(Fore.GREEN + 'Number of iterations: ' + Fore.RESET, self.num_sims)
+            print(Fore.GREEN + 'Mean value: ' + Fore.RESET, mean_value)
+            print(Fore.GREEN + 'Standard deviation: ' + Fore.RESET, standard_deviation)
+            print(Fore.GREEN + 'Maximum: ' + Fore.RESET, maximum_value)
+            print(Fore.GREEN + 'Minimum: ' + Fore.RESET, minimum_value)
 
     # plots the histogram of Monte Carlo simulation.
     def hist(self, graph_title = 'Histogram of value frequencies', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), perform_block = True, **method):
@@ -204,19 +209,19 @@ class MonteCarlo:
         std_minus3 = self.mean_value - (self.standard_deviation * 3)
 
         if self.time_seq > 50:
-            print('NOTE: Time sequence defined greatly impacts the lenght of histogram plotting.\n')
+            print(Fore.RED + 'NOTE: Time sequence defined greatly impacts the lenght of histogram plotting.\n' + Fore.RESET)
 
-        print('Histogram plotting initiated...')
+        print(Fore.GREEN + 'Histogram plotting initiated...' + Fore.RESET)
         import matplotlib.pyplot as plt
         plt.figure(figsize = plot_size)
-        plt.title('vandal (c) David Kundih, 2021.', fontsize = 14, weight = 'regular', loc = 'right')
+        plt.title('vandal (c) David Kundih, 2021-2022', fontsize = 14, weight = 'regular', loc = 'right')
 
         if method.get("method") != "e":
-            print('CHOSEN METHOD: Basic histogram model.')
+            print(Fore.GREEN + 'CHOSEN METHOD: Basic histogram model.' + Fore.RESET)
             plt.suptitle(graph_title, fontsize = 25, weight = 'bold')
 
         if method.get("method") == "e":
-            print('CHOSEN METHOD: Empirical rule.')
+            print(Fore.GREEN + 'CHOSEN METHOD: Empirical rule.' + Fore.RESET)
             plt.suptitle('Value division based on the Empirical rule', fontsize = 25, weight = 'bold')
             plt.axvline(x = std_plus, color = 'g', linestyle = 'dashed')
             plt.axvline(x = std_minus, color = 'r', linestyle = 'dashed')
@@ -230,20 +235,25 @@ class MonteCarlo:
         plt.xlabel(x_title, weight = 'semibold')
         plt.ylabel(y_title, weight= 'semibold')
         plt.show(block = perform_block)
-        print('Histogram plotting finished.')
+        print(Fore.GREEN + 'Histogram plotting finished.', Fore.RESET)
 
     # access saved menu particles from function execution.  
     def get_menu(self):
         return
-
-    # access saved logs from function execution.
-    def get_logs(self):
-        return
-
+        
+    
 # CLI application.
 def MCapp():
-    import colorama
-    from colorama import Fore
+
+    '''
+    runs as:
+
+        *IDE: vandal.MCapp()
+        *TERMINAL: python -m vandal -e montecarlo / python -m vandal --entry montecarlo
+        
+    '''
+
+    # relevant imports.
     import os
     from vandal.misc._meta import __version__
     from vandal.objects import MonteCarlo
@@ -252,16 +262,14 @@ def MCapp():
         file_handler,
     )
     os.system('cls')
-    # initiates coloring.
-    colorama.init()
 
     # vandal.App version.
-    __APPversion__ = 'v 1.2.5'
+    __APPversion__ = 'v 1.3.0'
     
     # greeting.
     print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
     print(Fore.GREEN + ' - vandal package version -', 'v',__version__, Fore.RESET, '\n')
-    print(Fore.YELLOW + 'How do you wish to input your data?', Fore.RESET)
+    print(Fore.YELLOW + 'DATA INPUT OPTIONS', Fore.RESET)
     print('0 | Manual input')
     print('1 | File input\n')
     inputchoice = input('Enter the option number: ')
@@ -270,7 +278,7 @@ def MCapp():
     if inputchoice == '0':
         import pandas as pd
         iter = True
-        print(Fore.RED + 'Write any non-number value to stop.', Fore.RESET)
+        print(Fore.RED + '\nWrite any non-number value to stop.', Fore.RESET)
         data = []
 
         while iter:
@@ -280,6 +288,7 @@ def MCapp():
                 listinput = float(listinput)
                 data.append(listinput)
             except:
+                print('')
                 iter = False
 
         data = pd.DataFrame(data)
@@ -290,6 +299,11 @@ def MCapp():
         inputfile = input('Enter the file destination: ')
         data = file_handler(file = inputfile)
 
+    # error on input.
+    else:
+            raise KeyError('Invalid input, please choose one of the stated options.')
+
+    # simulation parameters and execution.
     MC = MonteCarlo()
     simulations = int(input('Enter number of simulations: ') or 100)
     period = int(input('Enter desired period: ') or 50)
@@ -300,14 +314,16 @@ def MCapp():
     while True:
         action = input('\n>>> ACTIONS: graph, change, values, stats, risk, hist, home, help: ')
         if action == 'graph':
+            print('')
             title = input('Title: ')
             x_axis = input('X axis title:')
             y_axis = input('Y axis title:')
             MC.graph(graph_title = title, x_title = x_axis, y_title = y_axis)
         if action == 'change':
-            print('1 | csv')
-            print('2 | xlsx')
-            print('3 | json')
+            print(Fore.YELLOW + '\nSAVE OPTIONS', Fore.RESET)
+            print('0 | csv')
+            print('1 | xlsx')
+            print('2 | json')
             file_type = input('\nEnter the number or name of file type: ')
             output = MC.get_change()
             try:
@@ -315,9 +331,10 @@ def MCapp():
             except:
                 raise Exception('=== UNABLE TO SAVE, PLEASE SELECT ONE OF THE OPTIONS AND/OR RUN THE TERMINAL AS AN ADMINISTRATOR. ===')
         if action == 'values':
-            print('1 | csv')
-            print('2 | xlsx')
-            print('3 | json')
+            print(Fore.YELLOW + '\nSAVE OPTIONS', Fore.RESET)
+            print('0 | csv')
+            print('1 | xlsx')
+            print('2 | json')
             file_type = input('\nEnter the number or name of file type: ')
             try:
                 save_to(file = executed, prefix = 'vandal.MonteCarlo - ', func_name = 'values', choice = file_type)
@@ -329,11 +346,13 @@ def MCapp():
             sample = int(input('Number of iterations to measure risk on: ') or 5000)
             MC.get_risk(risk_sims = sample)
         if action == 'hist' or action == 'histogram':
+            print('')
             x_axis = input('X axis title:')
             y_axis = input('Y axis title:')
+            print(Fore.YELLOW + '\nHISTOGRAM METHODS', Fore.RESET)
             print('0 | Basic Histogram')
             print('1 | Empirical Rule Histogram')
-            method = input('\nEnter histogram method: ')
+            method = input('\nEnter the histogram method number: ')
             if method == '0':
                 MC.hist(x_title = x_axis, y_title = y_axis)
             elif method == '1':
@@ -341,9 +360,11 @@ def MCapp():
             else:
                 print(Fore.RED + '=== INVALID METHOD. ===\n', Fore.RESET)
         if action == 'home':
+            print(Fore.YELLOW + 'Exiting...', Fore.RESET)
             break
         if action == 'help':
-            print(Fore.YELLOW + 'https://github.com/dkundih/vandal', Fore.RESET)
+            print(Fore.YELLOW + '\nhttps://github.com/dkundih/vandal', Fore.RESET)
 
+# runs module as an app.
 if __name__ == '__main__':
     MCapp()

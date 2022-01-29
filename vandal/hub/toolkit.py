@@ -1,3 +1,7 @@
+import colorama
+from colorama import Fore
+colorama.init()
+
 '''
 
 (MODULE FUNCTIONS)
@@ -129,17 +133,17 @@ def file_handler(file):
         file = file.replace("'", '"').strip('"')
         if str(file).endswith('.csv'):
             data = pd.read_csv(file)
-            print('AVAILABLE COLUMNS: ')
+            print(Fore.YELLOW + '\nAVAILABLE COLUMNS' + Fore.RESET)
             for col in data.columns:
                 print(col)
         elif str(file).endswith('.xlsx'):
             data = pd.read_excel(file)
-            print('AVAILABLE COLUMNS: ')
+            print(Fore.YELLOW + '\nAVAILABLE COLUMNS' + Fore.RESET)
             for col in data.columns:
                 print(col)
         elif str(file).endswith('.json'):
             data = pd.read_json(file)
-            print('AVAILABLE COLUMNS: ')
+            print(Fore.YELLOW + '\nAVAILABLE COLUMNS' + Fore.RESET)
             for col in data.columns:
                 print(col)
         else:
@@ -155,17 +159,17 @@ def file_handler(file):
 def save_to(file, prefix, func_name, choice):
         import pandas as pd
         import os
-        if choice == '1' or choice == 'csv':
+        if choice == '0' or choice == 'csv':
                 extension = '.csv'
                 file.to_csv(prefix + func_name + extension)
-                print(os.path.join(os.getcwd() + '\\' + prefix + func_name + extension))
-        elif choice == '2' or choice == 'xlsx':
+                print(Fore.YELLOW + os.path.join(os.getcwd() + '\\' + prefix + func_name + extension) + Fore.RESET)
+        elif choice == '1' or choice == 'xlsx':
                 extension = '.xlsx'
                 file.to_excel(prefix + func_name + extension)
-                print(os.path.join(os.getcwd() + '\\' + prefix + func_name + extension))
-        elif choice == '3' or choice == 'json':
+                print(Fore.YELLOW + os.path.join(os.getcwd() + '\\' + prefix + func_name + extension) + Fore.RESET)
+        elif choice == '2' or choice == 'json':
                 extension = '.json'
                 file.to_json(prefix + func_name + extension)
-                print(os.path.join(os.getcwd() + '\\' + prefix + func_name + extension))
+                print(Fore.YELLOW + os.path.join(os.getcwd() + '\\' + prefix + func_name + extension) + Fore.RESET)
         else:
                 print('=== NO OPTION CHOSEN, EXITING THE MENU... =\n')
