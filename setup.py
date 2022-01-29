@@ -46,8 +46,8 @@ setup(
   download_url = f'https://github.com/dkundih/vandal/archive/refs/tags/v{__version__}.tar.gz',
   license = 'Apache Software License',
   project_urls = {
-    'Documentation': 'https://github.com/dkundih/vandal/blob/main/README.md',
-    'Source Code': 'https://github.com/dkundih/vandal/tree/main/vandal'
+    'Documentation': 'https://github.com/dkundih/vandal/blob/master/README.md',
+    'Source Code': 'https://github.com/dkundih/vandal/tree/master/vandal'
   }, 
   classifiers = classifiers,
   keywords = 'data science, machine learning, data manipulation, artificial intelligence, AI, unin, duality, duality-py, duality.py, vandal, vandal-py, vandal.py',
