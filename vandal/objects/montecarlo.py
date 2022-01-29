@@ -90,7 +90,7 @@ class MonteCarlo:
         self.ref_value_index = ref_value_index
         print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
         from vandal.hub.toolkit import random_value
-        print('NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.')
+        print(Fore.RED + 'NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.' + Fore.RESET)
         #print('The model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
         import pandas as pd
         # this removes pandas warning of highly fragmented DataFrame for newer pandas versions.
@@ -161,7 +161,7 @@ class MonteCarlo:
 
         assert (NRisk < 100), '\nTime sequence and/or number of iterations are too low for the proper risk calculation.'
 
-        print(Fore.GREEN + '\nRisk for this option is' + Fore.RESET, round(NRisk,2), '%.')
+        print(Fore.GREEN + '\nRisk for this option is' + Fore.RESET, round(NRisk,2), Fore.GREEN + '%.' + Fore.RESET)
 
     # plots the Monte Carlo simulation on a graph.
     def graph(self, graph_title = 'Monte Carlo simulation', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), perform_block = True):
@@ -264,7 +264,7 @@ def MCapp():
     os.system('cls')
 
     # vandal.App version.
-    __APPversion__ = 'v 1.3.0'
+    __APPversion__ = 'v 1.3.1'
     
     # greeting.
     print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)

@@ -407,5 +407,9 @@ CHANGELOG
 - coloring put to test.
 
 3.5.0 (29/01/2022)
-- confirmed functionality and final changes.
+- final changes and put to test.
 - LICENSE 2022. added.
+
+3.5.1 (29/01/2022) - STABLE
+- followup changes after test.
+- confirmed functionality.
