@@ -1,6 +1,7 @@
-import colorama
-from colorama import Fore
-colorama.init()
+# coloring.
+from colorama import Fore, init
+
+init()
 
 '''
 

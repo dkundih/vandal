@@ -24,11 +24,17 @@ Visit my Data Library at https://github.com/dkundih/DataLibrary in order to see 
 pip install vandal
 ```
 
+**Dependencies**
+
+```sh
+# using pip.
+pip install vandal -r requirements.txt
+```
+
 
 <h3>Terminal CLI application</h3>
 
 vandal provides an option of being run within any terminal as a data science/machine learning application. 
-
 
 **Terminal options**
 
@@ -49,13 +55,13 @@ python -m vandal -e montecarlo / python -m vandal --entry montecarlo
 
 **Example use**
 
-TERMINAL USE #1
+<b>TERMINAL USE #1</b>
 ![vandal-terminal1](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI1.jpg)
-TERMINAL USE #2
+<b>TERMINAL USE #2</b>
 ![vandal-terminal2](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI2.jpg)
-EXAMPLE GRAPH
+<b>EXAMPLE GRAPH</b>
 ![vandal-terminal3](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI3.jpeg)
-EXAMPLE OUTPUT
+<b>EXAMPLE OUTPUT</b>
 ![vandal-terminal4](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI4.jpg)
 
 

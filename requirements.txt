@@ -1,5 +1,5 @@
+colorama >= 0.4.4
 pandas >= 1.2.3
 numpy >= 1.19.5
 matplotlib >= 3.4.3
-colorama >= 0.4.4
 openpyxl

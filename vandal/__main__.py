@@ -1,10 +1,11 @@
 # imports all relevant contents.
 import vandal
 from vandal.objects import montecarlo
-from colorama import Fore
-import colorama
 
-colorama.init()
+# coloring.
+from colorama import Fore, init
+
+init()
 
 # runs the main CLI client that leads to individual apps.
 if __name__ == '__main__':

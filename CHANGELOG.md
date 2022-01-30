@@ -410,6 +410,10 @@ CHANGELOG
 - final changes and put to test.
 - LICENSE 2022. added.
 
-3.5.1 (29/01/2022) - STABLE
+3.5.1 (29/01/2022)
 - followup changes after test.
 - confirmed functionality.
+
+3.5.2 (30/01/2022)
+- code cleanup.
+- README update.

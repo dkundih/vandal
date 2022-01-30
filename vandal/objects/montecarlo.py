@@ -1,7 +1,7 @@
 # coloring.
-from colorama import Fore
-import colorama
-colorama.init()
+from colorama import Fore, init 
+
+init()
 
 # object that contains the simulation data.
 class MonteCarlo:
