@@ -417,3 +417,6 @@ CHANGELOG
 3.5.2 (30/01/2022)
 - code cleanup.
 - README update.
+
+3.5.3 (30/01/2022)
+- colorama rework.

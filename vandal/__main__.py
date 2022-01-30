@@ -3,6 +3,7 @@ import vandal
 from vandal.objects import montecarlo
 
 # coloring.
+import colorama
 from colorama import Fore, init
 
 init()
