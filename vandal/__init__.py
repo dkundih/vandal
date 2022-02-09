@@ -78,11 +78,15 @@ from vandal.misc._meta import (
     __documentation__,
     __contact__,
     __donate__,
+    __APPversion__,
 )
 
 # object and module imports.
 from vandal.hub import toolkit
-from vandal.objects.eoq import EOQ
+from vandal.objects.eoq import(
+    EOQ,
+    EOQapp,
+)
 from vandal.objects.montecarlo import (
     MonteCarlo,
     MCapp,

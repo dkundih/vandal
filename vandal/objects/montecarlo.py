@@ -69,6 +69,7 @@ class MonteCarlo:
         __documentation__,
         __contact__,
         __donate__,
+        __APPversion__,
     )
 
     # initial launch.
@@ -257,20 +258,20 @@ def MCapp():
 
     # relevant imports.
     import os
-    from vandal.misc._meta import __version__
-    from vandal.objects import MonteCarlo
+    from vandal.misc._meta import (
+        __version__,
+        __APPversion__,
+    )
+    from vandal.objects.montecarlo import MonteCarlo
     from vandal.hub.toolkit import (
         save_to,
         file_handler,
     )
     os.system('cls')
 
-    # vandal.App version.
-    __APPversion__ = 'v 1.3.1'
-    
     # greeting.
-    print(Fore.GREEN + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
-    print(Fore.GREEN + ' - vandal package version -', 'v',__version__, Fore.RESET, '\n')
+    print(Fore.YELLOW + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
+    print(Fore.YELLOW + ' - vandal package version -', 'v',__version__, Fore.RESET, '\n')
     print(Fore.YELLOW + 'DATA INPUT OPTIONS', Fore.RESET)
     print('0 | Manual input')
     print('1 | File input\n')

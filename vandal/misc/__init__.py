@@ -8,6 +8,7 @@ from vandal.misc._meta import (
     __documentation__,
     __contact__,
     __donate__,
+    __APPversion__,
 )
 
 # all relevant contents.
@@ -20,4 +21,5 @@ __all__ = [
     __documentation__,
     __contact__,
     __donate__,
+    __APPversion__,
 ]

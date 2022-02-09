@@ -420,3 +420,11 @@ CHANGELOG
 
 3.5.3 (30/01/2022)
 - colorama rework.
+
+3.5.4 (09/02/2022)
+- EOQ app put to test.
+- APPversion moved to _misc.meta.
+
+3.5.5 (09/02/2022)
+- initial EOQ app tests passed.
+- full CLI set to test.

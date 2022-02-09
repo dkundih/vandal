@@ -41,6 +41,7 @@ class Dijkstra:
         __documentation__,
         __contact__,
         __donate__,
+        __APPversion__,
     )
 
     # initial launch.
