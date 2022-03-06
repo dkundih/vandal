@@ -3,7 +3,12 @@ from vandal.objects.montecarlo import (
     MonteCarlo,
     MCapp,
 )
-from vandal.objects.eoq import EOQ
+
+from vandal.objects.eoq import(
+    EOQ,
+    EOQapp,
+)
+
 from vandal.objects.dijkstra import Dijkstra
 
 # all relevant contents.

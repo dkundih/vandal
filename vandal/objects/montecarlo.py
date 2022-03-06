@@ -93,7 +93,6 @@ class MonteCarlo:
         print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
         from vandal.hub.toolkit import random_value
         print(Fore.RED + 'NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.' + Fore.RESET)
-        #print('The model that will be able to handle big standard deviations is currently being worked on, thank you for your patience.\n')
         import pandas as pd
         # this removes pandas warning of highly fragmented DataFrame for newer pandas versions.
         from warnings import simplefilter
@@ -140,10 +139,10 @@ class MonteCarlo:
     def get_risk(self, risk_sims = 5000):
         import random
         import pandas as pd
-        #This removes pandas warning of highly fragmented DataFrame for newer pandas versions.
+        # this removes pandas warning of highly fragmented DataFrame for newer pandas versions.
         from warnings import simplefilter
         simplefilter(action = 'ignore', category = pd.errors.PerformanceWarning)
-        #End of pandas warning removal block.
+        # end of pandas warning removal block.
         today_value = self.list_of_values.iloc[self.ref_value_index]
         percent_change = self.list_of_values.pct_change()
         data = pd.DataFrame()

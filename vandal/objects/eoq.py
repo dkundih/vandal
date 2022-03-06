@@ -86,6 +86,7 @@ def EOQapp():
     # greeting.
     print(Fore.YELLOW + '\n - vandal Command Line Interface Application © David Kundih -', __APPversion__)
     print(Fore.YELLOW + ' - vandal package version -', 'v',__version__, Fore.RESET, '\n')
+    
     EOQObj = EOQ()
     adq = int(input('Enter the annual demand quantity: '))
     ofc = int(input('Enter the fixed cost of the order: '))

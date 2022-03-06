@@ -428,3 +428,6 @@ CHANGELOG
 3.5.5 (09/02/2022)
 - initial EOQ app tests passed.
 - full CLI set to test.
+
+3.5.6 (06/03/2022)
+- regular maintenance.

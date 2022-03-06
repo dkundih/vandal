@@ -1,5 +1,4 @@
 # imports all relevant contents.
-from random import choice
 import vandal
 from vandal.objects import montecarlo
 

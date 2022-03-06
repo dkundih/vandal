@@ -62,6 +62,12 @@ AVAILABLE FEATURES IN THE LIBRARY:
     vandal.MCapp is an executable function that runs the Command Line Interface of the vandal MonteCarlo module.
         print(help(vandal.MCapp)) in order to see available features.
 
+    EOQapp (EXECUTABLE CLI MODULE)
+    -------------------------
+
+    vandal.EOQapp is an executable function that runs the Command Line Interface of the vandal EOQ module.
+        print(help(vandal.EOQapp)) in order to see available features.
+
 '''
 
 # ignore __pycache__ from forming inside the library directory.
