@@ -131,5 +131,6 @@ __all__ = [
     MonteCarlo,
     MCapp,
     EOQ,
+    EOQapp,
     Dijkstra,
 ]

@@ -1,6 +1,9 @@
 # imports all relevant contents.
 import vandal
-from vandal.objects import montecarlo
+from vandal.objects import (
+    montecarlo,
+    eoq,
+)
 
 # coloring.
 import colorama

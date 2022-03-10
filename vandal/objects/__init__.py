@@ -17,4 +17,5 @@ __all__ = [
     EOQ,
     Dijkstra,
     MCapp,
+    EOQapp,
 ]
