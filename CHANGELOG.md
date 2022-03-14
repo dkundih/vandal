@@ -445,3 +445,9 @@ CHANGELOG
 
 3.6.5 (14/03/2022)
 - new set of tests deployed.
+
+3.6.6 (14/03/2022)
+- ref_value_index is now ref_row.
+- ref_col added to locate the index.
+- now automatically transforms the dictionary into a pandas DataFrame.
+- apps now create an output in yellow color, while the module printed options are green.

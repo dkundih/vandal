@@ -19,11 +19,10 @@ class MonteCarlo:
             list_of_values - pandas dataframe of values.
             time_seq - desired time sequence.
             num_sims - desired number of simulation iterations.
-            ref_value_index (default: ref_value_index = 0) - index on which the starting point of the simulation is created.
-            filtered (defualt: filtered = True) - filters the print option and leaves just the return object.
+            ref_col (default: ref_col = 0) - column index of the dictionary values.
+            ref_row (default: ref_row = 0) - row index on which the starting point of the simulation is created.
         * Requirements:
-            pandas Python module.
-            pd.DataFrame() defined data set.
+            dictionary of key, value pair.
 
     (OBJECT FUNCTIONS)
     ------------------
@@ -31,15 +30,8 @@ class MonteCarlo:
     eg. vandal.MonteCarlo.function()
 
         .execute() - executes a Monte Carlo simulation on a defined data set.
-            * takes 5 additional arguments.
-            list_of_values - pandas dataframe of values.
-            time_seq - desired time sequence.
-            num_sims - desired number of simulation iterations.
-            ref_value_index (default: ref_value_index = 0) - index on which the starting point of the simulation is created.
-            filtered (defualt: filtered = True) - filters the print options and leaves just the return object.
-        * Requirements:
-            pandas Python module.
-            pd.DataFrame() defined data set.
+            * takes 1 additional argument.
+                filtered (defualt: filtered = True) - filters the print option and leaves just the return object.
 
         .graph() - plots the Monte Carlo simulation on a graph.
             * takes 5 optional customization arguments. (default: graph_title = 'Monte Carlo simulation', x_title = 'X axis', y_title = 'Y axis', plot_size = (25,10), perform_block = True).
@@ -95,16 +87,20 @@ class MonteCarlo:
     # initial launch.
     def __init__(
         self, 
-        list_of_values : list = None, 
+        list_of_values : dict[str, list] = None, 
         time_seq : int = None, 
-        num_sims : int = None, 
-        ref_value_index : int = 0,
+        num_sims : int = None,
+        ref_col : int = 0, 
+        ref_row : int = 0,
         ) -> object:
 
         self.list_of_values = list_of_values
         self.time_seq = time_seq
         self.num_sims = num_sims
-        self.ref_value_index = ref_value_index
+        self.ref_col = ref_col
+        self.ref_row = ref_row
+
+        import pandas as pd
 
         return 
 
@@ -126,7 +122,7 @@ class MonteCarlo:
     def execute(
         self,
         filtered : bool = True,
-        ) -> list:
+        ) -> dict[int, float]:
 
         if filtered == False:
             print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
@@ -140,7 +136,13 @@ class MonteCarlo:
         simplefilter(action = 'ignore', category = pd.errors.PerformanceWarning)
         # end of pandas warning removal block.
 
-        today_value = self.list_of_values.iloc[self.ref_value_index]
+        try:
+            self.list_of_values = pd.DataFrame(self.list_of_values)
+            self.list_of_values = self.list_of_values.iloc[:, self.ref_col]
+        except:
+            raise KeyError('Impossible to reach a defined key, value pair. Try repositioning the indexing row_col index, must be of type: int.')
+
+        today_value = self.list_of_values.iloc[self.ref_col]
         data = pd.DataFrame()
         loading = 0
 
@@ -150,7 +152,7 @@ class MonteCarlo:
             index_array = []
             index_array += [today_value * (1 + rand_change)]
 
-            if index_array[count] > (index_array[-1] * 2):
+            if index_array[count] > (index_array[-1] * 3):
                 raise Exception('Variation between data is too big, due to detection of exponentional increase of values or non-sequential data Monte Carlo simulation cannot be executed properly.')
 
             for num_day in range(self.time_seq):
@@ -160,7 +162,7 @@ class MonteCarlo:
                 index_array += [index_array[count] * (1 + rand_change)]
                 count += 1
 
-                if index_array[count] > (index_array[-1] * 2):
+                if index_array[count] > (index_array[-1] * 3):
                     raise Exception('Variation between data is too big, due to detection of exponentional increase of values or non-sequential data Monte Carlo simulation function cannot be executed properly.')
 
             loading += 1
@@ -195,7 +197,7 @@ class MonteCarlo:
         simplefilter(action = 'ignore', category = pd.errors.PerformanceWarning)
         # end of pandas warning removal block.
 
-        today_value = self.list_of_values.iloc[self.ref_value_index]
+        today_value = self.list_of_values.iloc[self.ref_row]
         percent_change = self.list_of_values.pct_change()
         data = pd.DataFrame()
         smaller = []
@@ -243,7 +245,7 @@ class MonteCarlo:
     # shows the statistics of the Monte Carlo simulation.
     def get_stats(
         self,
-        ) -> dict:
+        ) -> dict[str, float]:
         
         import numpy as np
         import pandas as pd
@@ -451,7 +453,7 @@ def MCapp():
 
             executed_risk = MC.get_risk(risk_sims = sample)
 
-            print(Fore.GREEN + '\nRisk for this option is' + Fore.RESET, executed_risk[:-1], Fore.GREEN + '%.' + Fore.RESET)
+            print(Fore.YELLOW + '\nRisk for this option is' + Fore.RESET, executed_risk[:-1], Fore.YELLOW + '%.' + Fore.RESET)
 
         if action == 'hist' or action == 'histogram':
             print('')
