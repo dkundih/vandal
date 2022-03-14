@@ -22,7 +22,7 @@ class MonteCarlo:
             ref_col (default: ref_col = 0) - column index of the dictionary values.
             ref_row (default: ref_row = 0) - row index on which the starting point of the simulation is created.
         * Requirements:
-            dictionary of key, value pair.
+            data stored as dictionary of key, value pair | list | numpy array | pandas DataFrame.
 
     (OBJECT FUNCTIONS)
     ------------------
