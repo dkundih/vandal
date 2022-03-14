@@ -431,3 +431,17 @@ CHANGELOG
 
 3.5.6 (06/03/2022)
 - regular maintenance.
+
+3.6.0 (13/03/2022)
+- set of changes deployed.
+- code readability improved.
+- many options set for testing.
+
+3.6.1 (13/03/2022)
+- minor tests.
+
+3.6.2+ (14/03/2022)
+- bug fixes.
+
+3.6.5 (14/03/2022)
+- new set of tests deployed.

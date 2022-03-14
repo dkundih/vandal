@@ -36,7 +36,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
             save_to(file, prefix, func_name, choice) - file saver for code clarity.
 
-            file_handler(file) - handles the file extenstion upon import.
+            file_handler(file) - handles the file extension upon import.
 
     MONTECARLO (OBJECT)
     -------------------
