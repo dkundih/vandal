@@ -140,7 +140,7 @@ class MonteCarlo:
             self.list_of_values = pd.DataFrame(self.list_of_values)
             self.list_of_values = self.list_of_values.iloc[:, self.ref_col]
         except:
-            raise KeyError('Impossible to reach a defined key, value pair. Try repositioning the indexing row_col index, must be of type: int.')
+            raise KeyError('Impossible to reach a defined key, value pair. Data types supported: dictionary, list, numpy array, pandas DataFrame. Make sure to set index row_col on an existing field. Must be of type: int.')
 
         today_value = self.list_of_values.iloc[self.ref_col]
         data = pd.DataFrame()
