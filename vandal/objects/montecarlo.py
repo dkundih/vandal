@@ -87,7 +87,7 @@ class MonteCarlo:
     # initial launch.
     def __init__(
         self, 
-        list_of_values : dict[str, list] = None, 
+        list_of_values : dict = None, 
         time_seq : int = None, 
         num_sims : int = None,
         ref_col : int = 0, 
@@ -122,7 +122,7 @@ class MonteCarlo:
     def execute(
         self,
         filtered : bool = True,
-        ) -> dict[int, float]:
+        ) -> dict:
 
         if filtered == False:
             print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
@@ -245,7 +245,7 @@ class MonteCarlo:
     # shows the statistics of the Monte Carlo simulation.
     def get_stats(
         self,
-        ) -> dict[str, float]:
+        ) -> dict:
         
         import numpy as np
         import pandas as pd

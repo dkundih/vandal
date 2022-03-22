@@ -451,3 +451,6 @@ CHANGELOG
 - ref_col added to locate the index.
 - now automatically transforms the dictionary into a pandas DataFrame.
 - apps now create an output in yellow color, while the module printed options are green.
+
+3.6.7 (22/03/2022)
+- dict output redefined.
