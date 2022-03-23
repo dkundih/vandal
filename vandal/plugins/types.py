@@ -5,7 +5,7 @@ VandalType = 'Specific Input / Output vandal type of supported data.'
 # generic types
 IntegerType: VandalType = int # integer.
 FloatType: VandalType = float # float.
-NumberType: VandalType = Union[IntegerType, FloatType]
+NumberType: VandalType = Union[IntegerType, FloatType] # float and int supported.
 ReturnType: VandalType = object # basic return object.
 PrintType: VandalType = str # print function as an output.
 GraphType: VandalType = object # graph return.
