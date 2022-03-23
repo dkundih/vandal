@@ -9,6 +9,7 @@ from vandal.plugins.types import (
     GraphType,
     StringType,
     ListType,
+    TupleType,
     DictionaryType,
     BooleanType,
     NumberVector,
@@ -28,7 +29,7 @@ class Meta(type):
         self, 
         *args, 
         **kwargs,
-        ) -> object:
+        ) -> ReturnType:
         instance = super(Meta, self).__call__(*args, **kwargs)
 
         return instance
@@ -38,5 +39,5 @@ class Meta(type):
         name, 
         base, 
         attr,
-        ) -> object:
+        ) -> ReturnType:
         super(Meta, self).__init__(name, base, attr)
