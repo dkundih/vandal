@@ -72,6 +72,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
 # ignore __pycache__ from forming inside the library directory.
 import sys
+from tokenize import Number
 sys.dont_write_bytecode = True
 
 # meta data imports from the vandal library.
@@ -86,6 +87,55 @@ from vandal.misc._meta import (
     __donate__,
     __APPversion__,
 )
+
+# imports plugins.
+from vandal.plugins.metaclass import Meta
+from vandal.plugins.types import (
+    VandalType,
+    IntegerType,
+    FloatType,
+    NumberType,
+    ReturnType,
+    PrintType,
+    GraphType,
+    StringType,
+    ListType,
+    TupleType,
+    DictionaryType,
+    BooleanType,
+    NumberVector,
+    StringVector,
+    StringDictionary,
+    DictionaryVector,
+    NumberVectorAlike,
+    NumberArrayAlike,
+    AnyArrayAlike,
+    AnyVectorAlike,
+)
+
+# available types.
+__types__ = [
+    VandalType,
+    IntegerType,
+    FloatType,
+    NumberType,
+    ReturnType,
+    PrintType,
+    GraphType,
+    StringType,
+    ListType,
+    TupleType,
+    DictionaryType,
+    BooleanType,
+    NumberVector,
+    StringVector,
+    StringDictionary,
+    DictionaryVector,
+    NumberVectorAlike,
+    NumberArrayAlike,
+    AnyArrayAlike,
+    AnyVectorAlike,
+]
 
 # object and module imports.
 from vandal.hub import toolkit

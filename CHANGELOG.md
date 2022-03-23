@@ -454,3 +454,6 @@ CHANGELOG
 
 3.6.7 (22/03/2022)
 - dict output redefined.
+
+3.6.8 (23/03/2022)+
+- various tests.

@@ -1,3 +1,28 @@
+# type hints and annotations.
+from vandal.plugins.metaclass import Meta
+from vandal.plugins.types import (
+    VandalType,
+    IntegerType,
+    FloatType,
+    NumberType,
+    ReturnType,
+    PrintType,
+    GraphType,
+    StringType,
+    ListType,
+    TupleType,
+    DictionaryType,
+    BooleanType,
+    NumberVector,
+    StringVector,
+    StringDictionary,
+    DictionaryVector,
+    NumberVectorAlike,
+    NumberArrayAlike,
+    AnyArrayAlike,
+    AnyVectorAlike,
+)
+
 # object that contains the required data.
 class Dijkstra:
 
@@ -51,10 +76,10 @@ class Dijkstra:
     # initial launch.
     def __init__(
         self,
-        nodes : dict = None, 
-        origin : str = None, 
-        destination : str = None,
-        ) -> object:
+        nodes : DictionaryType = None, 
+        origin : StringType = None, 
+        destination : StringType = None,
+        ) -> ReturnType:
         
         self.nodes = nodes
         self.origin = origin
@@ -65,14 +90,14 @@ class Dijkstra:
     # class information.
     def __str__(
         self,
-        ) -> str:
+        ) -> StringType:
 
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
     # class information.
     def __repr__(
         self,
-        ) -> str:
+        ) -> StringType:
 
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
@@ -80,7 +105,7 @@ class Dijkstra:
     def execute(
         self,
         filtered : bool = True,
-        ) -> dict:
+        ) -> AnyArrayAlike:
 
         import pandas as pd
         import numpy as np

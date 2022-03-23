@@ -6,7 +6,6 @@ from vandal.objects import (
 )
 
 # coloring.
-import colorama
 from colorama import Fore, init
 
 init()

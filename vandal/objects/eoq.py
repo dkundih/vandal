@@ -3,6 +3,31 @@ from colorama import Fore, init
 
 init()
 
+# type hints and annotations.
+from vandal.plugins.metaclass import Meta
+from vandal.plugins.types import (
+    VandalType,
+    IntegerType,
+    FloatType,
+    NumberType,
+    ReturnType,
+    PrintType,
+    GraphType,
+    StringType,
+    ListType,
+    TupleType,
+    DictionaryType,
+    BooleanType,
+    NumberVector,
+    StringVector,
+    StringDictionary,
+    DictionaryVector,
+    NumberVectorAlike,
+    NumberArrayAlike,
+    AnyArrayAlike,
+    AnyVectorAlike,
+)
+
 # object that contains the calculation data.
 class EOQ:
 
@@ -52,10 +77,10 @@ class EOQ:
     # initial launch.
     def __init__(
         self,
-        annual_demand_quantity : float = None,
-        order_fixed_cost : float = None, 
-        annual_holding_cost : float = None,
-    ) -> object:
+        annual_demand_quantity : NumberType = None,
+        order_fixed_cost : NumberType = None, 
+        annual_holding_cost : NumberType = None,
+    ) -> ReturnType:
 
         self.annual_demand_quantity = annual_demand_quantity
         self.order_fixed_cost = order_fixed_cost
@@ -66,14 +91,14 @@ class EOQ:
     # class information.
     def __str__(
         self,
-        ) -> str:
+        ) -> StringType:
 
         return f'EOQ defining object that contains annual demand quantity of {self.annual_demand_quantity} pieces, fixed cost of the order of {self.order_fixed_cost} and with the annual holding cost of {self.annual_holding_cost}.'
 
     # class information.
     def __repr__(
         self,
-        ) -> str:
+        ) -> StringType:
 
         return f'EOQ defining object that contains annual demand quantity of {self.annual_demand_quantity} pieces, fixed cost of the order of {self.order_fixed_cost} and with the annual holding cost of {self.annual_holding_cost}.'
 
@@ -81,7 +106,7 @@ class EOQ:
     def execute(
         self, 
         filtered = True,
-        ) -> float:
+        ) -> NumberType:
 
         if filtered == False:
             print(Fore.GREEN + 'EOQ has been set up with annual demand quantity of ' + Fore.RESET + f'{self.annual_demand_quantity}' + Fore.GREEN + ' pieces, fixed cost of the order of ' + Fore.RESET + f'{self.order_fixed_cost}' + Fore.GREEN + ' and with the annual holding cost of ' + Fore.RESET + f'{self.annual_holding_cost}.')

@@ -3,6 +3,31 @@ from colorama import Fore, init
 
 init()
 
+# type hints and annotations.
+from vandal.plugins.metaclass import Meta
+from vandal.plugins.types import (
+    VandalType,
+    IntegerType,
+    FloatType,
+    NumberType,
+    ReturnType,
+    PrintType,
+    GraphType,
+    StringType,
+    ListType,
+    TupleType,
+    DictionaryType,
+    BooleanType,
+    NumberVector,
+    StringVector,
+    StringDictionary,
+    DictionaryVector,
+    NumberVectorAlike,
+    NumberArrayAlike,
+    AnyArrayAlike,
+    AnyVectorAlike,
+)
+
 # object that contains the simulation data.
 class MonteCarlo:
 
@@ -87,12 +112,12 @@ class MonteCarlo:
     # initial launch.
     def __init__(
         self, 
-        list_of_values : dict = None, 
-        time_seq : int = None, 
-        num_sims : int = None,
-        ref_col : int = 0, 
-        ref_row : int = 0,
-        ) -> object:
+        list_of_values : NumberVectorAlike = None, 
+        time_seq : IntegerType = None, 
+        num_sims : IntegerType = None,
+        ref_col : IntegerType = 0, 
+        ref_row : IntegerType = 0,
+        ) -> ReturnType:
 
         self.list_of_values = list_of_values
         self.time_seq = time_seq
@@ -107,22 +132,22 @@ class MonteCarlo:
     # class information.
     def __str__(
         self,
-        ) -> str:
+        ) -> StringType:
 
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
     # class information.
     def __repr__(
         self,
-        ) -> str:
+        ) -> StringType:
 
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
     # executes a Monte Carlo simulation on a defined data set.
     def execute(
         self,
-        filtered : bool = True,
-        ) -> dict:
+        filtered : BooleanType = True,
+        ) -> NumberArrayAlike:
 
         if filtered == False:
             print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
@@ -179,15 +204,15 @@ class MonteCarlo:
     # shows the percentage of Monte Carlo simulation value change for every iteration.
     def get_change(
         self,
-        ) -> float:
+        ) -> NumberArrayAlike:
 
         return self.results.pct_change()
 
     # calculates the risk of negative values occuring.
     def get_risk(
         self, 
-        risk_sims : int = 5000,
-        ) -> float:
+        risk_sims : IntegerType = 5000,
+        ) -> NumberType:
 
         import random
         import pandas as pd
@@ -221,12 +246,12 @@ class MonteCarlo:
     # plots the Monte Carlo simulation on a graph.
     def graph(
         self, 
-        graph_title : str = 'Monte Carlo simulation', 
-        x_title : str = 'X axis', 
-        y_title : str = 'Y axis', 
-        plot_size : tuple = (25,10), 
-        perform_block : bool = True,
-        ) -> object:
+        graph_title : StringType = 'Monte Carlo simulation', 
+        x_title : StringType = 'X axis', 
+        y_title : StringType = 'Y axis', 
+        plot_size : TupleType = (25,10), 
+        perform_block : BooleanType = True,
+        ) -> GraphType:
 
         print(Fore.GREEN + '\nMonteCarlo() plotting initialized.' + Fore.RESET)
         import matplotlib.pyplot as plt
@@ -245,7 +270,7 @@ class MonteCarlo:
     # shows the statistics of the Monte Carlo simulation.
     def get_stats(
         self,
-        ) -> dict:
+        ) -> AnyArrayAlike:
         
         import numpy as np
         import pandas as pd
@@ -273,18 +298,17 @@ class MonteCarlo:
 
         return stats 
 
-
     # plots the histogram of Monte Carlo simulation.
     def hist(
         self, 
-        graph_title : str = 'Histogram of value frequencies', 
-        x_title : str = 'X axis', 
-        y_title : str = 'Y axis', 
-        plot_size : tuple = (25,10), 
-        perform_block : bool = True,
-        set_bins : int = None,
-        **method : str,
-        ) -> object:
+        graph_title : StringType = 'Histogram of value frequencies', 
+        x_title : StringType = 'X axis', 
+        y_title : StringType = 'Y axis', 
+        plot_size : TupleType = (25,10), 
+        perform_block : BooleanType = True,
+        set_bins : IntegerType = None,
+        **method : StringType,
+        ) -> GraphType:
 
         self.get_stats()
         std_plus = self.mean_value + self.standard_deviation
