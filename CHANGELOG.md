@@ -455,5 +455,11 @@ CHANGELOG
 3.6.7 (22/03/2022)
 - dict output redefined.
 
-3.6.8 (23/03/2022)+
+3.6.8 (23/03/2022)+ - UNSTABLE
 - various tests.
+
+3.6.11 (23/03/2022)
+- plugins package with meta and types added.
+- annotations and type hints updated.
+- created generic, structured and complex types.
+- now all Vandal package particles are assigned VandalType annotations. 
