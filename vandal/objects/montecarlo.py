@@ -125,8 +125,6 @@ class MonteCarlo:
         self.ref_col = ref_col
         self.ref_row = ref_row
 
-        import pandas as pd
-
         return 
 
     # class information.
