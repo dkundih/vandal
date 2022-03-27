@@ -463,3 +463,6 @@ CHANGELOG
 - annotations and type hints updated.
 - created generic, structured and complex types.
 - now all Vandal package particles are assigned VandalType annotations.
+
+3.7.1 (27/03/2022)
+- __all__ is now a list of strings.

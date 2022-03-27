@@ -13,9 +13,9 @@ from vandal.objects.dijkstra import Dijkstra
 
 # all relevant contents.
 __all__ = [
-    MonteCarlo,
-    EOQ,
-    Dijkstra,
-    MCapp,
-    EOQapp,
+    'MonteCarlo',
+    'EOQ',
+    'Dijkstra',
+    'MCapp',
+    'EOQapp',
 ]
