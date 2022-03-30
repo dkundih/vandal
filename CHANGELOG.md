@@ -466,3 +466,6 @@ CHANGELOG
 
 3.7.1 (27/03/2022)
 - __all__ is now a list of strings.
+
+3.7.2 (30/03/2022)
+- AnyType added.

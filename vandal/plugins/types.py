@@ -26,3 +26,4 @@ NumberVectorAlike: VandalType = Union[NumberVector, DictionaryVector] # only num
 NumberArrayAlike: VandalType = Union[List[NumberVector], List[DictionaryVector]] # array of numerical values only.
 AnyArrayAlike: VandalType = Union[List[NumberVector], List[StringVector], List[StringDictionary], List[DictionaryVector]] # any =>2 dimensional type.
 AnyVectorAlike: VandalType = Union[NumberVector, StringVector, StringDictionary, DictionaryVector] # any one-dimensional type.
+AnyType: VandalType = Union[IntegerType, FloatType, NumberType, StringType, ListType, TupleType, DictionaryType, NumberVector, StringVector, StringDictionary, DictionaryVector, NumberVectorAlike, NumberArrayAlike, AnyVectorAlike, AnyArrayAlike] # any type.

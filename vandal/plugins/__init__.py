@@ -21,6 +21,7 @@ from vandal.plugins.types import (
     NumberArrayAlike,
     AnyArrayAlike,
     AnyVectorAlike,
+    AnyType,
 )
 
 # all relevant contents.
@@ -45,6 +46,7 @@ __all__ = [
     'NumberArrayAlike',
     'AnyArrayAlike',
     'AnyVectorAlike',
+    'AnyType',
 ]
 
 # all available types.
@@ -69,4 +71,5 @@ __types__ = [
     NumberArrayAlike,
     AnyArrayAlike,
     AnyVectorAlike,
+    AnyType,
 ]

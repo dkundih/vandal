@@ -20,6 +20,7 @@ from vandal.plugins.types import (
     NumberArrayAlike,
     AnyArrayAlike,
     AnyVectorAlike,
+    AnyType,
 )
 
 # makes multiple instances of the object available.

@@ -111,6 +111,7 @@ from vandal.plugins.types import (
     NumberArrayAlike,
     AnyArrayAlike,
     AnyVectorAlike,
+    AnyType,
 )
 
 # available types.
@@ -135,6 +136,7 @@ __types__ = [
     NumberArrayAlike,
     AnyArrayAlike,
     AnyVectorAlike,
+    AnyType,
 ]
 
 # object and module imports.
