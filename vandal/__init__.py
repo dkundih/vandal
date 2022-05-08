@@ -166,6 +166,9 @@ from vandal.hub.toolkit import (
     save_to,
 )
 
+# colorama imports.
+from colorama import Fore, init
+
 # all relevant contents.
 __all__ = [
     'random_value',
