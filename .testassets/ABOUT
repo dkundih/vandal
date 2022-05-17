@@ -1,1 +1,5 @@
 This is a folder containing miscellaneous test files.
+
+File names starting with D are development phase particles used to test solutions before implementation.
+
+File names starting with T are test files of implemented solutions.
