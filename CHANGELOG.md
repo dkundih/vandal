@@ -470,5 +470,8 @@ CHANGELOG
 3.7.2 (30/03/2022)
 - AnyType added.
 
-3.7.3 (05/08/2022)
-- colorama dependency resolved
+3.7.3 (08/05/2022)
+- colorama dependency resolved.
+
+3.7.4 (18/05/2022)
+- added duality 4.6.0 as a preparation step for CLI creation using the framework.
