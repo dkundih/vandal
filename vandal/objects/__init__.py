@@ -1,3 +1,6 @@
+# metaclass.
+from logistics.plugins.metaclass import Meta
+
 # import all relevant contents from the associated module.
 from vandal.objects.montecarlo import (
     MonteCarlo,
@@ -18,4 +21,5 @@ __all__ = [
     'Dijkstra',
     'MCapp',
     'EOQapp',
+    Meta,
 ]
