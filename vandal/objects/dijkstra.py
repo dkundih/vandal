@@ -1,6 +1,6 @@
 # type hints and annotations.
-from vandal.plugins.metaclass import Meta
-from vandal.plugins.types import (
+from logistics.plugins.metaclass import Meta
+from logistics.plugins.types import (
     VandalType,
     IntegerType,
     FloatType,

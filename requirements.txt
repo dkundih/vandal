@@ -1,5 +1,6 @@
-duality >= 4.6.0
-colorama >= 0.4.4
+duality >= 4.7.1
+logistics >= 0.0.3
+colorama
 pandas >= 1.2.3
 numpy >= 1.19.5
 matplotlib >= 3.4.3

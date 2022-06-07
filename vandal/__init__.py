@@ -72,7 +72,6 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
 # ignore __pycache__ from forming inside the library directory.
 import sys
-from tokenize import Number
 sys.dont_write_bytecode = True
 
 # meta data imports from the vandal library.
@@ -89,8 +88,8 @@ from vandal.misc._meta import (
 )
 
 # imports plugins.
-from vandal.plugins.metaclass import Meta
-from vandal.plugins.types import (
+from logistics.plugins.metaclass import Meta
+from logistics.plugins.types import (
     VandalType,
     IntegerType,
     FloatType,
@@ -137,6 +136,11 @@ __types__ = [
     AnyArrayAlike,
     AnyVectorAlike,
     AnyType,
+]
+
+# metaclass.
+__metaclass__ = [
+    Meta,
 ]
 
 # object and module imports.
@@ -188,4 +192,5 @@ __all__ = [
     'EOQ',
     'EOQapp',
     'Dijkstra',
+    Meta,
 ]
