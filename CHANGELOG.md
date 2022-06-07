@@ -482,3 +482,6 @@ CHANGELOG
 
 3.8.1 (07/06/2022)
 - imports update.
+
+3.8.2 (07/06/2022)
+- logistics 0.0.3 > 0.0.4
