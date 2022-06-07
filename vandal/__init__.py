@@ -140,7 +140,7 @@ __types__ = [
 
 # metaclass.
 __metaclass__ = [
-    Meta,
+    'Meta',
 ]
 
 # object and module imports.
@@ -192,5 +192,5 @@ __all__ = [
     'EOQ',
     'EOQapp',
     'Dijkstra',
-    Meta,
+    'Meta',
 ]

@@ -21,5 +21,5 @@ __all__ = [
     'Dijkstra',
     'MCapp',
     'EOQapp',
-    Meta,
+    'Meta',
 ]
