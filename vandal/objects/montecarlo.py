@@ -405,12 +405,10 @@ class MonteCarlo:
 def MCapp():
 
     '''
-    
     runs as:
 
-        *IDE: vandal.MCapp()
-        *TERMINAL: python -m vandal -e montecarlo / python -m vandal --entry montecarlo
-        
+        * IDE: vandal.MCapp()
+        * TERMINAL: python -m vandal -e montecarlo / python -m vandal --entry montecarlo
     '''
 
     print(Fore.YELLOW + 'MonteCarlo app is initializing...', Fore.RESET)

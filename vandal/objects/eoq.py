@@ -140,12 +140,10 @@ class EOQ:
 def EOQapp():
     
     '''
-    
     runs as:
 
         * IDE: vandal.EOQapp()
         * TERMINAL: python -m vandal -e eoq / python -m vandal --entry eoq
-        
     '''
 
     print(Fore.YELLOW + 'EOQ app is initializing...', Fore.RESET)
@@ -171,5 +169,7 @@ def EOQapp():
     print('')
     EOQObj.execute(filtered = False)
 
+
+# runs module as an app.
 if __name__ == '__main__':
     EOQapp()
