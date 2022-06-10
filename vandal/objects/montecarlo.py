@@ -29,7 +29,7 @@ from logistics.plugins.types import (
     AnyType,
 )
 
-# object that contains the simulation data.
+# package.
 class MonteCarlo:
 
     '''
@@ -110,7 +110,6 @@ class MonteCarlo:
         __APPversion__,
     )
 
-    # initial launch.
     def __init__(
         self, 
         list_of_values : NumberVectorAlike = None, 
@@ -120,6 +119,10 @@ class MonteCarlo:
         ref_row : IntegerType = 0,
         ) -> ReturnType:
 
+        '''
+        * initial launch.
+        '''
+
         self.list_of_values = list_of_values
         self.time_seq = time_seq
         self.num_sims = num_sims
@@ -128,25 +131,37 @@ class MonteCarlo:
 
         return 
 
-    # class information.
     def __str__(
         self,
         ) -> StringType:
 
+        '''
+        * class information.
+        '''
+
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
-    # class information.
     def __repr__(
         self,
         ) -> StringType:
 
+        '''
+        * class information.
+        '''
+
         return f'Monte Carlo defining object that stores the configuration data for creating {self.num_sims} simulations in a period of {self.time_seq} time measurement units.'
 
-    # executes a Monte Carlo simulation on a defined data set.
     def execute(
         self,
         filtered : BooleanType = True,
         ) -> NumberArrayAlike:
+
+        '''
+        * executes a Monte Carlo simulation on a defined data set.
+
+        - filtered (True/False) - filters the data setup print and warnings.
+        # DEFAULT: MonteCarlo.execute(filtered : BooleanType = True.)
+        '''
 
         if filtered == False:
             print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
@@ -200,18 +215,27 @@ class MonteCarlo:
 
         return data
 
-    # shows the percentage of Monte Carlo simulation value change for every iteration.
     def get_change(
         self,
         ) -> NumberArrayAlike:
 
+        '''
+        * shows the percentage of Monte Carlo simulation value change for every iteration.
+        '''
+
         return self.results.pct_change()
 
-    # calculates the risk of negative values occuring.
     def get_risk(
         self, 
         risk_sims : IntegerType = 5000,
         ) -> NumberType:
+
+        '''
+        * calculates the risk of negative values occuring.
+
+        - risk_sims - number of simulations to run risk evaluation on.
+        # DEFAULT: MonteCarlo.get_risk(risk_sims : IntegerType = 5000.)
+        '''
 
         import random
         import pandas as pd
@@ -242,7 +266,6 @@ class MonteCarlo:
 
         return str(round(NRisk, 2)) + '%'
 
-    # plots the Monte Carlo simulation on a graph.
     def graph(
         self, 
         graph_title : StringType = 'Monte Carlo simulation', 
@@ -251,6 +274,17 @@ class MonteCarlo:
         plot_size : TupleType = (25,10), 
         perform_block : BooleanType = True,
         ) -> GraphType:
+
+        '''
+        * plots the Monte Carlo simulation on a graph.
+
+        - graph title - sets a graph title.
+        - x_title - sets an x axis title.
+        - y_title - sets and y axis title.
+        - plot_size - sets a size of graph in a tuple (eg. (x,y).)
+        - perform_block (True/False) - customizable wheel to disable block in some IDEs.
+        # DEFAULT: MonteCarlo.graph(graph_title : StringType = 'Monte Carlo simulation', x_title : StringType = 'X axis', y_title : StringType = 'Y axis', plot_size : TupleType = (25,10), perform_block : BooleanType = True.)
+        '''
 
         print(Fore.GREEN + '\nMonteCarlo() plotting initialized.' + Fore.RESET)
         import matplotlib.pyplot as plt
@@ -266,10 +300,13 @@ class MonteCarlo:
 
         return
 
-    # shows the statistics of the Monte Carlo simulation.
     def get_stats(
         self,
         ) -> AnyArrayAlike:
+
+        '''
+        * shows the statistics of the Monte Carlo simulation.
+        '''
         
         import numpy as np
         import pandas as pd
@@ -297,7 +334,6 @@ class MonteCarlo:
 
         return stats 
 
-    # plots the histogram of Monte Carlo simulation.
     def hist(
         self, 
         graph_title : StringType = 'Histogram of value frequencies', 
@@ -308,6 +344,19 @@ class MonteCarlo:
         set_bins : IntegerType = None,
         **method : StringType,
         ) -> GraphType:
+
+        '''
+        * plots the histogram of Monte Carlo simulation.
+
+        - graph title - sets a graph title.
+        - x_title - sets an x axis title.
+        - y_title - sets and y axis title.
+        - plot_size - sets a size of graph in a tuple (eg. (x,y).)
+        - perform_block (True/False) - customizable wheel to disable block in some IDEs.
+        - set_bins - sets amount of histogram bins.
+        - **method ('e' - empirical, 'b' - basic)- method of a histogram.
+        # DEFAULT: MonteCarlo.hist(graph_title : StringType = 'Histogram of value frequencies', x_title : StringType = 'X axis', y_title : StringType = 'Y axis', plot_size : TupleType = (25,10), perform_block : BooleanType = True,set_bins : IntegerType = None, **method : StringType.)
+        '''
 
         self.get_stats()
         std_plus = self.mean_value + self.standard_deviation

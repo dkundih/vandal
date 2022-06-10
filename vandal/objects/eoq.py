@@ -29,7 +29,7 @@ from logistics.plugins.types import (
     AnyType,
 )
 
-# object that contains the calculation data.
+# package.
 class EOQ:
 
     '''
@@ -75,7 +75,6 @@ class EOQ:
         __APPversion__,
     )
 
-    # initial launch.
     def __init__(
         self,
         annual_demand_quantity : NumberType = None,
@@ -83,31 +82,47 @@ class EOQ:
         annual_holding_cost : NumberType = None,
     ) -> ReturnType:
 
+        '''
+        * initial launch.
+        '''
+
         self.annual_demand_quantity = annual_demand_quantity
         self.order_fixed_cost = order_fixed_cost
         self.annual_holding_cost = annual_holding_cost
         
         return
 
-    # class information.
     def __str__(
         self,
         ) -> StringType:
 
+        '''
+        * class information.
+        '''
+
         return f'EOQ defining object that contains annual demand quantity of {self.annual_demand_quantity} pieces, fixed cost of the order of {self.order_fixed_cost} and with the annual holding cost of {self.annual_holding_cost}.'
 
-    # class information.
     def __repr__(
         self,
         ) -> StringType:
 
+        '''
+        * class information.
+        '''
+
         return f'EOQ defining object that contains annual demand quantity of {self.annual_demand_quantity} pieces, fixed cost of the order of {self.order_fixed_cost} and with the annual holding cost of {self.annual_holding_cost}.'
 
-    # executes the calculation of EOQ over the defined parameters.
     def execute(
         self, 
         filtered = True,
         ) -> NumberType:
+
+        '''
+        * executes the calculation of EOQ over the defined parameters.
+
+        - filtered (True/False) - filters the data of EOQ initial parameters printed.
+        # DEFAULT: EOQ.execute(filtered : BooleanType = True.)
+        '''
 
         if filtered == False:
             print(Fore.GREEN + 'EOQ has been set up with annual demand quantity of ' + Fore.RESET + f'{self.annual_demand_quantity}' + Fore.GREEN + ' pieces, fixed cost of the order of ' + Fore.RESET + f'{self.order_fixed_cost}' + Fore.GREEN + ' and with the annual holding cost of ' + Fore.RESET + f'{self.annual_holding_cost}.')
@@ -121,14 +136,15 @@ class EOQ:
 
         return eoq
 
+# CLI application.
 def EOQapp():
     
     '''
     
     runs as:
 
-        *IDE: vandal.EOQapp()
-        *TERMINAL: python -m vandal -e eoq / python -m vandal --entry eoq
+        * IDE: vandal.EOQapp()
+        * TERMINAL: python -m vandal -e eoq / python -m vandal --entry eoq
         
     '''
 

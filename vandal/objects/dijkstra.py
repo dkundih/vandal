@@ -24,7 +24,7 @@ from logistics.plugins.types import (
     AnyType,
 )
 
-# object that contains the required data.
+# package.
 class Dijkstra:
 
     '''
@@ -74,13 +74,16 @@ class Dijkstra:
         __APPversion__,
     )
 
-    # initial launch.
     def __init__(
         self,
         nodes : DictionaryType = None, 
         origin : StringType = None, 
         destination : StringType = None,
         ) -> ReturnType:
+
+        '''
+        * initial launch.
+        '''
         
         self.nodes = nodes
         self.origin = origin
@@ -88,25 +91,37 @@ class Dijkstra:
         
         return
 
-    # class information.
     def __str__(
         self,
         ) -> StringType:
 
+        '''
+        * class information.
+        '''
+
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
-    # class information.
     def __repr__(
         self,
         ) -> StringType:
 
+        '''
+        * class information.
+        '''
+
         return f'Dijkstra defining object that stores the configuration data for finding the path within {self.nodes} from {self.origin} => {self.destination}.'
 
-    # executes a Dijkstra algorithm route scan on a defined path.
     def execute(
         self,
-        filtered : bool = True,
+        filtered : BooleanType = True,
         ) -> AnyArrayAlike:
+
+        '''
+        * executes a Dijkstra algorithm route scan on a defined path.
+
+        - filtered (True/False) - filters the information about path.
+        # DEFAULT: Dijkstra.execute(filtered : BooleanType = True.)
+        '''
 
         import pandas as pd
         import numpy as np
