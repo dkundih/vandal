@@ -485,3 +485,8 @@ CHANGELOG
 
 3.8.2 (07/06/2022)
 - logistics 0.0.3 > 0.0.4
+
+3.8.3 (11/06/2022)
+- docstrings updated.
+- new types added.
+- types in init updated.

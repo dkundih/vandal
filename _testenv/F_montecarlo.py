@@ -1,61 +1,11 @@
-# makes multiple instances of the object available.
-from vandal.plugins.metaclass import Meta
-
-# imports custom types.
-from vandal.plugins.types import (
-    VandalType,
-    IntegerType,
-    FloatType,
-    NumberType,
-    ReturnType,
-    PrintType,
-    GraphType,
-    StringType,
-    ListType,
-    TupleType,
-    DictionaryType,
-    BooleanType,
-    NumberVector,
-    StringVector,
-    StringDictionary,
-    DictionaryVector,
-    NumberVectorAlike,
-    NumberArrayAlike,
-    AnyArrayAlike,
-    AnyVectorAlike,
-    AnyType,
-)
-
 import pandas as pd
 import numpy as np
 
 # makes multiple instances of the object available.
 from logistics.plugins.metaclass import Meta
 
-# imports custom types.
-from logistics.plugins.types import (
-    VandalType,
-    IntegerType,
-    FloatType,
-    NumberType,
-    ReturnType,
-    PrintType,
-    GraphType,
-    StringType,
-    ListType,
-    TupleType,
-    DictionaryType,
-    BooleanType,
-    NumberVector,
-    StringVector,
-    StringDictionary,
-    DictionaryVector,
-    NumberVectorAlike,
-    NumberArrayAlike,
-    AnyArrayAlike,
-    AnyVectorAlike,
-    AnyType,
-)
+# imports all data types.
+from logistics.plugins.types import *
 
 
 # stores menu options over functions and class methods for listing.
@@ -506,30 +456,10 @@ from colorama import Fore, init
 init()
 
 # type hints and annotations.
-from vandal.plugins.metaclass import Meta
-from vandal.plugins.types import (
-    VandalType,
-    IntegerType,
-    FloatType,
-    NumberType,
-    ReturnType,
-    PrintType,
-    GraphType,
-    StringType,
-    ListType,
-    TupleType,
-    DictionaryType,
-    BooleanType,
-    NumberVector,
-    StringVector,
-    StringDictionary,
-    DictionaryVector,
-    NumberVectorAlike,
-    NumberArrayAlike,
-    AnyArrayAlike,
-    AnyVectorAlike,
-    AnyType,
-)
+from logistics.plugins.metaclass import Meta
+
+# imports all data types.
+from logistics.plugins.types import *
 
 app = Record()
 

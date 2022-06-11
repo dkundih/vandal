@@ -1,6 +1,9 @@
 # metaclass.
 from logistics.plugins.metaclass import Meta
 
+# imports all data types.
+from logistics.plugins.types import *
+
 # import all relevant contents from the associated module.
 from vandal.objects.montecarlo import (
     MonteCarlo,
