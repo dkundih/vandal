@@ -233,7 +233,6 @@ class MonteCarlo:
         for num_sim in range(risk_sims):
             random_change = random.choice(percent_change)
             index_array = []
-
             index_array += [today_value * (1 + (random_change))]
             data[num_sim] = index_array
 
@@ -241,7 +240,6 @@ class MonteCarlo:
                 if sim < today_value:
                     smaller += [sim]
         NRisk = len(smaller) / num_sim * 100
-
         assert (NRisk < 100), '\nTime sequence and/or number of iterations are too low for the proper risk calculation.'
 
         return str(round(NRisk, 2)) + '%'
@@ -427,7 +425,6 @@ def MCapp():
                 listinput = input('Enter a value: ')
                 listinput = listinput.replace(",", ".")
                 listinput = float(listinput)
-
                 data.append(listinput)
             except:
                 print('')
@@ -449,7 +446,7 @@ def MCapp():
     # simulation parameters and execution.
     simulations = int(input('Enter number of simulations: ') or 100)
     period = int(input('Enter desired period: ') or 50)
-
+    
     MC = MonteCarlo(list_of_values = data, num_sims = simulations, time_seq = period)
     print('')
     executed = MC.execute(filtered = False)
@@ -460,11 +457,9 @@ def MCapp():
 
         if action == 'graph':
             print('')
-
             title = input('Title: ')
             x_axis = input('X axis title:')
             y_axis = input('Y axis title:')
-
             MC.graph(graph_title = title, x_title = x_axis, y_title = y_axis)
 
         if action == 'change':
@@ -472,9 +467,8 @@ def MCapp():
             print('0 | csv')
             print('1 | xlsx')
             print('2 | json')
-
+            
             file_type = input('\nEnter the number or name of file type: ')
-
             output = MC.get_change()
 
             try:
@@ -500,9 +494,7 @@ def MCapp():
 
         if action == 'risk':
             sample = int(input('Number of iterations to measure risk on: ') or 5000)
-
             executed_risk = MC.get_risk(risk_sims = sample)
-
             print(Fore.YELLOW + '\nRisk for this option is' + Fore.RESET, executed_risk[:-1], Fore.YELLOW + '%.' + Fore.RESET)
 
         if action == 'hist' or action == 'histogram':

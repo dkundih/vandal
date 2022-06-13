@@ -490,3 +490,8 @@ CHANGELOG
 - docstrings updated.
 - new types added.
 - types in init updated.
+
+3.8.4 (13/06/2022)
+- Manifesto added.
+- special methods redefined.
+- PEP8 alignments.

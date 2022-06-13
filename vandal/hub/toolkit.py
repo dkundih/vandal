@@ -53,6 +53,7 @@ def random_value(mean, st_dev, **rounded):
                 random_value = round(random.gauss(mean, st_dev))
         else:
                 random_value = random.gauss(mean, st_dev)
+
         return random_value
 
 # gives random values of mean and standard deviation inputed for the amount of values defined in the pool size, if rounded = 'y', values will be rounded.
@@ -62,6 +63,7 @@ def random_pool(mean, st_dev, pool_size, **rounded):
                 random_pool = [round(random.gauss(mean, st_dev)) for y in range(pool_size)]
         else:
                 random_pool = [random.gauss(mean, st_dev) for y in range(pool_size)]
+
         return random_pool
 
 # splits the data using a split method character.
@@ -69,6 +71,7 @@ def split_values(data, split_method):
         split_values = []
         for i in data:
                 split_values += [i.split(split_method)]
+
         return split_values
 
 # joins the data using a join metod character.
@@ -76,6 +79,7 @@ def join_values(data, join_method):
         join_values = []
         for i in data:
                 join_values += [join_method.join(i)]
+
         return join_values
 
 # replaces a defined value with a desired value.
@@ -86,6 +90,7 @@ def replace_values(data, replaced_value, replacing_value):
         replace_values = []
         for i in replaced_values:
                 replace_values += [replacing_value.join(i)]
+
         return replace_values
 
 # manually sorts data depending on defined array of indexes.
@@ -93,6 +98,7 @@ def list_sort(data, array):
         redefined_data = []
         for d in array:
                 redefined_data += [data[d]]
+
         return redefined_data
 
 # sorts the indicies in a list of values based on the index array defined as [x,x,x].
@@ -109,6 +115,7 @@ def index_sort(data, split_method, index_array):
                 if array_count == array_lenght:
                         break
                 array_count += 1
+
         return remixed_data
 
 # automatically splits all values in a list and sorts them based on the added trigger as lambda x: [x[i], x[i]] and joins them back together.
@@ -120,12 +127,14 @@ def auto_sort(data, split_method, trigger = lambda x: x[0]):
         auto_sort = sorted(split_values, key = trigger)
         for i in auto_sort:
                 merged_final += ['-'.join(i)]
+
         return merged_final
 
 # creates a random password with adjustable lenght (default: length = 8).
 def create_password(length = 8):
         import random
         particles = 'abcdefghijklmnoprstuxwyzqABCDEFGHIJKLMNOPRSTUXWYZQ0123456789'
+
         return ''.join(random.sample(particles, length))
 
 # handles the file extenstion upon import.
