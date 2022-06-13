@@ -54,7 +54,7 @@ setup(
   packages = find_packages(),
   install_requires = [
     'duality >= 4.7.2',
-    'logistics >= 0.0.6', 
+    'logistics >= 0.0.7', 
     'colorama',
     'pandas >= 1.2.3',
     'numpy >= 1.19.5',
