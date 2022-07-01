@@ -56,13 +56,13 @@ python -m vandal -e montecarlo / python -m vandal --entry montecarlo
 **Example use**
 
 <b>TERMINAL USE #1</b>
-![vandal-terminal1](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI1.jpg)
+![vandal-terminal1](https://raw.githubusercontent.com/dkundih/vandal/master/_logistics/vandalCLI1.jpg)
 <b>TERMINAL USE #2</b>
-![vandal-terminal2](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI2.jpg)
+![vandal-terminal2](https://raw.githubusercontent.com/dkundih/vandal/master/_logistics/vandalCLI2.jpg)
 <b>EXAMPLE GRAPH</b>
-![vandal-terminal3](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI3.jpeg)
+![vandal-terminal3](https://raw.githubusercontent.com/dkundih/vandal/master/_logistics/vandalCLI3.jpeg)
 <b>EXAMPLE OUTPUT</b>
-![vandal-terminal4](https://raw.githubusercontent.com/dkundih/vandal/master/.logistics/vandalCLI4.jpg)
+![vandal-terminal4](https://raw.githubusercontent.com/dkundih/vandal/master/_logistics/vandalCLI4.jpg)
 
 
 <h3>Python library</h3>
