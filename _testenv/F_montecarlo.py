@@ -9,7 +9,7 @@ from logistics.plugins.types import *
 
 
 # stores menu options over functions and class methods for listing.
-class Record(metaclass = Meta):
+class DualityRecord(metaclass = Meta):
 
     # initializes the object and function it is decorating.
     def __init__(
@@ -461,7 +461,7 @@ from logistics.plugins.metaclass import Meta
 # imports all data types.
 from logistics.plugins.types import *
 
-app = Record()
+app = DualityRecord()
 
 # object that contains the simulation data.
 class MonteCarlo:

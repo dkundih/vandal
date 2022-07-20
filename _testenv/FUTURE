@@ -1,5 +1,3 @@
 Upcoming features regarding duality package implementation to run the package as a CLI app.
 
 Import of kundih package particles.
-
-MonteCarlo  x * (1 + x.std) change to x + (x * x.std). 

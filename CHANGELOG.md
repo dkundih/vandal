@@ -498,3 +498,7 @@ CHANGELOG
 
 3.8.5 (13/06/2022)
 - requirements upgrade.
+
+3.8.6 (20/07/2022)
+- MonteCarlo logic redefined.
+- limits of MonteCarlo exponential increase removed.

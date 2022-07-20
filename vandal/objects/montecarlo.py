@@ -147,7 +147,7 @@ class MonteCarlo:
             print(Fore.GREEN + f'Monte Carlo has been set up for {self.num_sims} simulations in a period of {self.time_seq} time measurement units and executed.' + Fore.RESET)
             print(Fore.RED + 'NOTE: Use data with reasonable standard deviation in order to prevent exponential growth of the function that cannot be plotted properly, recognize such abnormal values by a + sign anywhere in the data executed below.' + Fore.RESET)
         
-        from vandal.hub.toolkit import random_value
+        import numpy as np
         import pandas as pd
 
         # this removes pandas warning of highly fragmented DataFrame for newer pandas versions.
@@ -166,23 +166,17 @@ class MonteCarlo:
         loading = 0
 
         for num_sim in range(self.num_sims):
-            rand_change = random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+            rand_change = self.list_of_values.pct_change().std()
             count = 0
             index_array = []
-            index_array += [today_value * (1 + rand_change)]
-
-            if index_array[count] > (index_array[-1] * 3):
-                raise Exception('Variation between data is too big, due to detection of exponentional increase of values or non-sequential data Monte Carlo simulation cannot be executed properly.')
+            index_array += [today_value + (today_value * np.random.normal(0, rand_change))]
 
             for num_day in range(self.time_seq):
-                rand_change = random_value(self.list_of_values.pct_change().mean(), self.list_of_values.pct_change().std())
+                rand_change = self.list_of_values.pct_change().std()
                 if count == self.time_seq:
                     break
-                index_array += [index_array[count] * (1 + rand_change)]
+                index_array += [index_array[count] + (today_value * np.random.normal(0, rand_change))]
                 count += 1
-
-                if index_array[count] > (index_array[-1] * 3):
-                    raise Exception('Variation between data is too big, due to detection of exponentional increase of values or non-sequential data Monte Carlo simulation function cannot be executed properly.')
 
             loading += 1
             print(end = '\r')
