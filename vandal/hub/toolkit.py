@@ -182,4 +182,4 @@ def save_to(file, prefix, func_name, choice):
                 file.to_json(prefix + func_name + extension)
                 print(Fore.YELLOW + os.path.join(os.getcwd() + '\\' + prefix + func_name + extension) + Fore.RESET)
         else:
-                print('=== NO OPTION CHOSEN, EXITING THE MENU... =\n')
+                print('=== NO OPTION CHOSEN, EXITING THE MENU... ===\n')
