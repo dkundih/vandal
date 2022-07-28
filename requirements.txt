@@ -1,5 +1,5 @@
 duality >= 4.8.1
-logistics >= 0.0.10
+logistics >= 0.0.11
 colorama
 pandas >= 1.2.3
 numpy >= 1.19.5

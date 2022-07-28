@@ -105,11 +105,6 @@ from logistics.plugins.metaclass import Meta
 # imports all data types.
 from logistics.plugins.types import *
 
-# available types.
-VandalTypes = [
-    'VandalTypes',
-]
-
 # metaclass.
 metaclass = [
     'Meta',
