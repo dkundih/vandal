@@ -38,6 +38,18 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
             file_handler(file) - handles the file extension upon import.
 
+    EXAMPLE (MODULE FUNCTIONS)
+        --------------------------
+
+        set of example functions to perform machine learning and data science operations over.
+            print(help(any_function_listed_below)) in order to see the function details or print(help(vandal.example)) for all functions at once.
+
+        FUNCTIONS (ACCESSIBLE DIRECTLY FROM THE LIBRARY)
+        ------------------------------------------------
+
+            linear_regression(x_range = (1, 500), y_factor = 2, deviation = 50, min_value = 1) -> ReturnType: - creates an example linear regression data set where x is index 0 and y is index 1.
+
+
     MONTECARLO (OBJECT)
     -------------------
 
@@ -94,30 +106,8 @@ from logistics.plugins.metaclass import Meta
 from logistics.plugins.types import *
 
 # available types.
-types = [
-    VandalType,
-    IntegerType,
-    FloatType,
-    NumberType,
-    ReturnType,
-    PrintType,
-    GraphType,
-    StringType,
-    ListType,
-    TupleType,
-    DictionaryType,
-    BooleanType,
-    FilePathType,
-    SpecialType,
-    NumberVector,
-    StringVector,
-    StringDictionary,
-    DictionaryVector,
-    NumberVectorAlike,
-    NumberArrayAlike,
-    AnyArrayAlike,
-    AnyVectorAlike,
-    AnyType,
+VandalTypes = [
+    'VandalTypes',
 ]
 
 # metaclass.
@@ -127,6 +117,7 @@ metaclass = [
 
 # object and module imports.
 from vandal.hub import toolkit
+from vandal.hub import example
 from vandal.objects.eoq import(
     EOQ,
     EOQapp,
@@ -137,7 +128,7 @@ from vandal.objects.montecarlo import (
 )
 from vandal.objects.dijkstra import Dijkstra
 
-# hub imports.
+# hub toolkit imports.
 from vandal.hub.toolkit import (
     random_value,
     random_pool,
@@ -151,6 +142,9 @@ from vandal.hub.toolkit import (
     file_handler,
     save_to,
 )
+
+# hub example imports.
+from vandal.hub.example import linear_regression
 
 # colorama imports.
 from colorama import Fore, init
@@ -169,10 +163,13 @@ __all__ = [
     'file_handler',
     'save_to',
     'toolkit',
+    'example',
+    'linear_regression',
     'MonteCarlo',
     'MCapp',
     'EOQ',
     'EOQapp',
     'Dijkstra',
+    'VandalTypes',
     'Meta',
 ]

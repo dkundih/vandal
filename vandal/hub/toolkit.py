@@ -1,5 +1,9 @@
-# coloring.
+# coloring and dependencies.
 from colorama import Fore, init
+import pandas as pd
+import os
+import random
+from logistics.plugins.types import *
 
 init()
 
@@ -48,7 +52,6 @@ from vandal.misc._meta import (
 
 # gives a random value of mean and standard deviation inputed, if rounded = 'y', value will be rounded.
 def random_value(mean, st_dev, **rounded):
-        import random
         if rounded.get('rounded') == 'y':
                 random_value = round(random.gauss(mean, st_dev))
         else:
@@ -58,7 +61,6 @@ def random_value(mean, st_dev, **rounded):
 
 # gives random values of mean and standard deviation inputed for the amount of values defined in the pool size, if rounded = 'y', values will be rounded.
 def random_pool(mean, st_dev, pool_size, **rounded):
-        import random
         if rounded.get('rounded') == 'y':
                 random_pool = [round(random.gauss(mean, st_dev)) for y in range(pool_size)]
         else:
@@ -132,14 +134,11 @@ def auto_sort(data, split_method, trigger = lambda x: x[0]):
 
 # creates a random password with adjustable lenght (default: length = 8).
 def create_password(length = 8):
-        import random
         particles = 'abcdefghijklmnoprstuxwyzqABCDEFGHIJKLMNOPRSTUXWYZQ0123456789'
-
         return ''.join(random.sample(particles, length))
 
 # handles the file extenstion upon import.
 def file_handler(file):
-        import pandas as pd
         file = file.replace("'", '"').strip('"')
         if str(file).endswith('.csv'):
             data = pd.read_csv(file)
@@ -167,8 +166,6 @@ def file_handler(file):
 
 # file saver for code clarity.
 def save_to(file, prefix, func_name, choice):
-        import pandas as pd
-        import os
         if choice == '0' or choice == 'csv':
                 extension = '.csv'
                 file.to_csv(prefix + func_name + extension)

@@ -1,5 +1,7 @@
 # import all relevant contents from the associated module.
 from vandal.hub import toolkit
+from vandal.hub import example
+
 from vandal.hub.toolkit import (
     random_value,
     random_pool,
@@ -13,6 +15,8 @@ from vandal.hub.toolkit import (
     file_handler,
     save_to,
 )
+
+from vandal.hub.example import linear_regression
 
 # all relevant contents.
 __all__ = [
@@ -28,4 +32,6 @@ __all__ = [
     'file_handler',
     'save_to',
     'toolkit',
+    'example',
+    'linear_regression',
 ]

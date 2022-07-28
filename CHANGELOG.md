@@ -502,3 +502,7 @@ CHANGELOG
 3.8.6 (20/07/2022)
 - MonteCarlo logic redefined.
 - limits of MonteCarlo exponential increase removed.
+
+3.8.7 (28/07/2022)
+- introduced and added example module into hub with linear_regression function.
+- aligned to logistics changes.
