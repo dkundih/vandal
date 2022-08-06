@@ -1,11 +1,16 @@
-# coloring and dependencies.
-from colorama import Fore, init
+# coloring.
+from colorama import (
+        Fore,
+        init,
+)
+
+init()
+
+# dependencies.
 import pandas as pd
 import os
 import random
 from logistics.plugins.types import *
-
-init()
 
 '''
 
@@ -35,6 +40,8 @@ vandal.toolkit is a set of data manipulation tools that can be directly accessed
         save_to(file, prefix, func_name, choice) - file saver for code clarity.
 
         file_handler(file) - handles the file extenstion upon import.
+        
+        paint_text(text, color, print_trigger = True) - paints the text with a desired color ('r', 'g', 'b', 'k', 'c', 'm', 'y').
 	
 '''
 
@@ -180,3 +187,20 @@ def save_to(file, prefix, func_name, choice):
                 print(Fore.YELLOW + os.path.join(os.getcwd() + '\\' + prefix + func_name + extension) + Fore.RESET)
         else:
                 print('=== NO OPTION CHOSEN, EXITING THE MENU... ===\n')
+
+#p aints the text with a desired color ('r', 'g', 'b', 'k', 'c', 'm', 'y').
+def paint_text(text, color, print_trigger = True):
+    colors = {'r': Fore.RED,
+              'g' : Fore.GREEN,
+              'b' : Fore.BLUE,
+              'k' : Fore.BLACK,
+              'm' : Fore.MAGENTA,
+              'y' : Fore.YELLOW,
+              'c' : Fore.CYAN,
+              }
+    
+    if print_trigger == True:
+        return print(colors[color] + text + Fore.RESET)
+    
+    elif print_trigger == False:
+        return colors[color] + text + Fore.RESET

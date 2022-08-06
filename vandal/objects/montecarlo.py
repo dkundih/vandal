@@ -1,5 +1,8 @@
 # coloring.
-from colorama import Fore, init 
+from colorama import (
+    Fore,
+    init,
+) 
 
 init()
 

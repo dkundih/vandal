@@ -14,6 +14,7 @@ from vandal.hub.toolkit import (
     create_password,
     file_handler,
     save_to,
+    paint_text,
 )
 
 from vandal.hub.example import linear_regression
@@ -31,6 +32,7 @@ __all__ = [
     'create_password',
     'file_handler',
     'save_to',
+    'paint_text',
     'toolkit',
     'example',
     'linear_regression',

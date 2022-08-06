@@ -509,3 +509,7 @@ CHANGELOG
 
 3.8.8 (28/07/2022)
 - aligned to logistics changes.
+
+3.8.9 (07/08/2022)
+- paint_text added to toolkit.
+- now also inits colorama colors before other packages to avoid conflicts.

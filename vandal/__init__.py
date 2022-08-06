@@ -37,6 +37,8 @@ AVAILABLE FEATURES IN THE LIBRARY:
             save_to(file, prefix, func_name, choice) - file saver for code clarity.
 
             file_handler(file) - handles the file extension upon import.
+            
+            paint_text(text, color, print_trigger = True) - paints the text with a desired color ('r', 'g', 'b', 'k', 'c', 'm', 'y').
 
     EXAMPLE (MODULE FUNCTIONS)
         --------------------------
@@ -85,6 +87,14 @@ AVAILABLE FEATURES IN THE LIBRARY:
 # ignore __pycache__ from forming inside the library directory.
 import sys
 sys.dont_write_bytecode = True
+
+# colorama imports.
+from colorama import (
+    Fore,
+    init,
+)
+
+init()
 
 # meta data imports from the vandal library.
 from vandal.misc._meta import (
@@ -136,13 +146,11 @@ from vandal.hub.toolkit import (
     create_password,
     file_handler,
     save_to,
+    paint_text,
 )
 
 # hub example imports.
 from vandal.hub.example import linear_regression
-
-# colorama imports.
-from colorama import Fore, init
 
 # all relevant contents.
 __all__ = [
@@ -157,6 +165,7 @@ __all__ = [
     'create_password',
     'file_handler',
     'save_to',
+    'paint_text',
     'toolkit',
     'example',
     'linear_regression',

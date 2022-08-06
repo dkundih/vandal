@@ -1,3 +1,11 @@
+# coloring.
+from colorama import (
+    Fore,
+    init,
+)
+
+init()
+
 # imports all relevant contents.
 import vandal
 from vandal.objects import (
@@ -10,11 +18,6 @@ from logistics.plugins.metaclass import Meta
 
 # imports all data types.
 from logistics.plugins.types import *
-
-# coloring.
-from colorama import Fore, init
-
-init()
 
 # runs the main CLI client that leads to individual apps.
 if __name__ == '__main__':
