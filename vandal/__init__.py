@@ -38,7 +38,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
             file_handler(file) - handles the file extension upon import.
             
-            paint_text(text, color, print_trigger = True) - paints the text with a desired color ('r', 'g', 'b', 'k', 'c', 'm', 'y').
+            paint_text(text, color, print_trigger) - paints the text with a desired color ('fr', 'fg', 'fb', 'fk', 'fc', 'fm', 'fy', 'br', 'bg', 'bb', 'bk', 'bc', 'bm', 'by').
 
     EXAMPLE (MODULE FUNCTIONS)
         --------------------------
@@ -91,6 +91,8 @@ sys.dont_write_bytecode = True
 # colorama imports.
 from colorama import (
     Fore,
+    Back,
+    Style,
     init,
 )
 

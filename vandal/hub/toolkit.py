@@ -1,7 +1,9 @@
 # coloring.
 from colorama import (
-        Fore,
-        init,
+    Fore,
+    Back,
+    Style,
+    init,
 )
 
 init()
@@ -41,7 +43,7 @@ vandal.toolkit is a set of data manipulation tools that can be directly accessed
 
         file_handler(file) - handles the file extenstion upon import.
         
-        paint_text(text, color, print_trigger = True) - paints the text with a desired color ('r', 'g', 'b', 'k', 'c', 'm', 'y').
+        paint_text(text, color, print_trigger) - paints the text with a desired color ('fr', 'fg', 'fb', 'fk', 'fc', 'fm', 'fy', 'br', 'bg', 'bb', 'bk', 'bc', 'bm', 'by').
 	
 '''
 
@@ -188,19 +190,43 @@ def save_to(file, prefix, func_name, choice):
         else:
                 print('=== NO OPTION CHOSEN, EXITING THE MENU... ===\n')
 
-#p aints the text with a desired color ('r', 'g', 'b', 'k', 'c', 'm', 'y').
-def paint_text(text, color, print_trigger = True):
-    colors = {'r': Fore.RED,
-              'g' : Fore.GREEN,
-              'b' : Fore.BLUE,
-              'k' : Fore.BLACK,
-              'm' : Fore.MAGENTA,
-              'y' : Fore.YELLOW,
-              'c' : Fore.CYAN,
-              }
-    
-    if print_trigger == True:
-        return print(colors[color] + text + Fore.RESET)
-    
-    elif print_trigger == False:
-        return colors[color] + text + Fore.RESET
+# paints the text with a desired color ('fr', 'fg', 'fb', 'fk', 'fc', 'fm', 'fy', 'br', 'bg', 'bb', 'bk', 'bc', 'bm', 'by').
+def paint_text(
+        text : StringType,
+        color : StringType,
+        print_trigger : BooleanType = True
+        ) -> StringType:
+        
+        '''
+        * coloring of CLI.
+        
+        - text - desired text to print.
+        - color - desired color to print in.
+        - print_trigger (True/False) - modify return type.
+        '''
+        
+        # Fore coloring.
+        colors = {
+            'Fr' : Fore.RED,
+            'Fg' : Fore.GREEN,
+            'Fb' : Fore.BLUE,
+            'Fk' : Fore.BLACK,
+            'Fm' : Fore.MAGENTA,
+            'Fy' : Fore.YELLOW,
+            'Fc' : Fore.CYAN,
+            
+        # Back coloring.
+            'Br' : Back.RED,
+            'Bg' : Back.GREEN,
+            'Bb' : Back.BLUE,
+            'Bk' : Back.BLACK,
+            'Bm' : Back.MAGENTA,
+            'By' : Back.YELLOW,
+            'Bc' : Back.CYAN,
+            }
+        
+        if print_trigger == True:
+            return print(colors[color] + str(text) + Style.RESET_ALL)
+        
+        elif print_trigger == False:
+            return colors[color] + str(text) + Style.RESET_ALL

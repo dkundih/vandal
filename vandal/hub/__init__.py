@@ -2,6 +2,16 @@
 from vandal.hub import toolkit
 from vandal.hub import example
 
+# coloring.
+from colorama import (
+    Fore,
+    Back,
+    Style,
+    init,
+)
+
+init()
+
 from vandal.hub.toolkit import (
     random_value,
     random_pool,

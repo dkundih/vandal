@@ -513,3 +513,7 @@ CHANGELOG
 3.8.9 (07/08/2022)
 - paint_text added to toolkit.
 - now also inits colorama colors before other packages to avoid conflicts.
+
+3.8.10 (07/08/2022)
+- changes to coloring policies
+- alligned paint_text to duality._paint_text changes.
