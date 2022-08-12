@@ -1,4 +1,4 @@
-duality >= 4.8.2
+duality >= 5.1.0
 logistics >= 0.0.11
 colorama
 pandas >= 1.2.3
