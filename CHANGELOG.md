@@ -516,4 +516,7 @@ CHANGELOG
 
 3.8.10 (07/08/2022)
 - changes to coloring policies
-- alligned paint_text to duality._paint_text changes.
+- aligned paint_text to duality._paint_text changes.
+
+3.8.11 (13/08/2022)
+- aligned to recent logistics and duality changes.
