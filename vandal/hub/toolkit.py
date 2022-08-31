@@ -191,7 +191,7 @@ def save_to(file, prefix, func_name, choice):
                 print('=== NO OPTION CHOSEN, EXITING THE MENU... ===\n')
 
 # >>> DEPRECATED AND MIGHT BE REMOVED IN THE FUTURE. THIS FUNCTION HAS BEEN MIGRATED TO THE LOGISTICS LIBRARY INSTEAD. <<<
-# paints the text with a desired color ('fr', 'fg', 'fb', 'fk', 'fc', 'fm', 'fy', 'br', 'bg', 'bb', 'bk', 'bc', 'bm', 'by').
+# paints the text with a desired color ('Fr', 'Fg', 'Fb', 'Fk', 'Fc', 'Fm', 'Fy', 'Fw', 'Br', 'Bg', 'Bb', 'Bk', 'Bc', 'Bm', 'By', 'Bw').
 def paint_text(
         text : StringType,
         color : StringType,
@@ -200,7 +200,6 @@ def paint_text(
         
         '''
         * coloring of CLI.
-        # >>> DEPRECATED AND MIGHT BE REMOVED IN THE FUTURE. THIS FUNCTION HAS BEEN MIGRATED TO THE LOGISTICS LIBRARY INSTEAD. <<<
         
         - text - desired text to print.
         - color - desired color to print in.
@@ -216,6 +215,7 @@ def paint_text(
             'Fm' : Fore.MAGENTA,
             'Fy' : Fore.YELLOW,
             'Fc' : Fore.CYAN,
+            'Fw' : Fore.WHITE,
             
         # Back coloring.
             'Br' : Back.RED,
@@ -225,6 +225,7 @@ def paint_text(
             'Bm' : Back.MAGENTA,
             'By' : Back.YELLOW,
             'Bc' : Back.CYAN,
+            'Bw' : Back.WHITE,
             }
         
         if print_trigger == True:

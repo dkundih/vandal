@@ -38,7 +38,7 @@ AVAILABLE FEATURES IN THE LIBRARY:
 
             file_handler(file) - handles the file extension upon import.
             
-            paint_text(text, color, print_trigger) - paints the text with a desired color ('fr', 'fg', 'fb', 'fk', 'fc', 'fm', 'fy', 'br', 'bg', 'bb', 'bk', 'bc', 'bm', 'by').
+            paint_text(text, color, print_trigger) - paints the text with a desired color ('Fr', 'Fg', 'Fb', 'Fk', 'Fc', 'Fm', 'Fy', 'Fw', 'Br', 'Bg', 'Bb', 'Bk', 'Bc', 'Bm', 'By', 'Bw').
 
     EXAMPLE (MODULE FUNCTIONS)
         --------------------------
