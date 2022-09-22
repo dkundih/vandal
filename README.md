@@ -128,7 +128,7 @@ The library itself, it's maintenance, updates and stability, logo, videos, promo
 <img src='https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg'/>
 
 <p align='center'>
-My name is <b>David Kundih</b> and I am a Master's student of <b>Sustainable mobility and logistics</b> at the <b>University North</b>, currently specializing in <b>Digital transformation of traffic and logistics using Python.</b>
+My name is <b>David Kundih</b> and I am a <b>Master of Engineering in Sustainable Mobility and Logistics</b>, currently specializing in <b>Digital Transformation of Traffic and Logistics using Python.</b>
 </p>
  
 <h4 align='center'>My latest projects:</h4>
