@@ -31,6 +31,14 @@ pip install vandal
 pip install vandal -r requirements.txt
 ```
 
+<h3>GUI applications</h3>
+
+vandal provides an option of being run within any terminal as a data science/machine learning application in the form of a GUI. 
+
+```sh
+# terminal app entry choices for GUI apps.
+python -m vandal -e montecarlogui / python -m vandal --entry montecarlogui
+```
 
 <h3>Terminal CLI application</h3>
 
@@ -52,6 +60,10 @@ python -m vandal -e / python -m vandal --entry
 # terminal app entry example.
 python -m vandal -e montecarlo / python -m vandal --entry montecarlo
 ```
+**Example use**
+
+<b>TERMINAL USE #1</b>
+![vandal-terminalgui](https://raw.githubusercontent.com/dkundih/vandal/master/_logistics/MCGUI.png)
 
 **Example use**
 

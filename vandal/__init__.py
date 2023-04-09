@@ -135,6 +135,8 @@ from vandal.objects.montecarlo import (
 )
 from vandal.objects.dijkstra import Dijkstra
 
+from vandal.apps import montecarlo_gui
+
 # hub toolkit imports.
 from vandal.hub.toolkit import (
     random_value,
@@ -173,6 +175,7 @@ __all__ = [
     'linear_regression',
     'MonteCarlo',
     'MCapp',
+    'MonteCarloGUI'
     'EOQ',
     'EOQapp',
     'Dijkstra',

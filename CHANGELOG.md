@@ -515,8 +515,16 @@ CHANGELOG
 - now also inits colorama colors before other packages to avoid conflicts.
 
 3.8.10 (07/08/2022)
-- changes to coloring policies
+- changes to coloring policies.
 - aligned paint_text to duality._paint_text changes.
 
 3.8.11 (13/08/2022)
 - aligned to recent logistics and duality changes.
+
+4.0.0 (09/04/2023)
+Hello everyone, I am back with great news after a few months:
+- MonteCarlo now has a GUI. Call it as python -m vandal -e montecarlogui. It is in testing phase so stay patient.
+
+4.0.9 (09/04/2023)
+- Attempt on fixing GUI issues. 
+- Currently avalable through "python -m vandal -e montecarlogui" or manually running .pyw file from GitHub.

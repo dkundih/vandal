@@ -6,6 +6,8 @@ from colorama import (
     init,
 )
 
+import tkinter as tk
+
 init()
 
 # imports all relevant contents.
@@ -14,6 +16,9 @@ from vandal.objects import (
     montecarlo,
     eoq,
 )
+
+# MC app import.
+from vandal.apps import montecarlo_gui
 
 # imports plugins.
 from logistics.plugins.metaclass import Meta
@@ -26,7 +31,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('-e', '--entry', help = 'start the desired application.', type = str,
-    choices = ['montecarlo', 'eoq'])
+    choices = ['montecarlo', 'eoq', 'montecarlogui'])
     args = parser.parse_args()
 
     if args.entry == 'montecarlo':
@@ -35,3 +40,8 @@ if __name__ == '__main__':
     elif args.entry == 'eoq':
         print(Fore.YELLOW + '=== ENTERING ECONOMIC ORDER QUANTITY CLIENT... ===\n', Fore.RESET)
         vandal.objects.eoq.EOQapp()
+    elif args.entry == 'montecarlogui':
+        print(Fore.YELLOW + '=== ENTERING MONTECARLO GUI... ===\n', Fore.RESET)
+        master = tk.Tk()
+        vandal.apps.montecarlo_gui.MonteCarloGUI(master = master)
+        master.mainloop()

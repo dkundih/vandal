@@ -1,5 +1,5 @@
-logistics >= 0.0.15
 colorama
+logistics >= 0.0.15
 pandas >= 1.2.3
 numpy >= 1.19.5
 matplotlib >= 3.4.3
