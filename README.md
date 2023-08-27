@@ -62,7 +62,7 @@ python -m vandal -e montecarlo / python -m vandal --entry montecarlo
 ```
 **Example use**
 
-<b>TERMINAL USE #1</b>
+<b>GUI USE #1</b>
 ![vandal-terminalgui](https://raw.githubusercontent.com/dkundih/vandal/master/_logistics/MCGUI.png)
 
 **Example use**
