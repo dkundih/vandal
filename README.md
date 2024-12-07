@@ -13,10 +13,6 @@ vandal
 Data science, Data manipulation and Machine learning library.
 Use permitted according to the terms of use and conditions set by the attached license.
 
-**Example of use**
-
-Visit my Data Library at https://github.com/dkundih/DataLibrary in order to see the demonstration of use in practical examples.
-
 **Installation**
 
 ```sh
