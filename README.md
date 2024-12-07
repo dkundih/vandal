@@ -127,10 +127,6 @@ vandal is a Python library for Data science and Machine learning, designed to ai
 
 As a vandal gives abandoned walls meaning with graffiti, so does vandal library to the data.
 
-**Is vandal free to use?**
-
-vandal is completely free of charge for both personal and commercial use, but only under the conditions stated in the license. Developing such a complex library isn't easy and takes a lot of time and knowledge in several fields of science such as statistics, programming and domain knowledge, so any donation at https://patreon.com/dkundih or https://www.buymeacoffee.com/dkundih in order to keep vandal free is more than welcome.
-
 **A word from the author!**
 
 The library itself, it's maintenance, updates and stability, logo, videos, promotional materials and everything associated with duality are done by **David Kundih** from **Croatia**.
@@ -138,7 +134,6 @@ The library itself, it's maintenance, updates and stability, logo, videos, promo
 <h1 align='center'> Hi! :wave:</h1>
  
 <img src='https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg'/>
-
  
 <h4 align='center'>My latest projects:</h4>
 <p align='center'>
